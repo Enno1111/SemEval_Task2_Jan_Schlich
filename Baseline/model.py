@@ -71,7 +71,7 @@ class DualHead(nn.Module):
 #configuration class for the dual-head model
 
 MODEL_NAME = "bert-base-uncased"
-MAX_LENGTH = 128
+MAX_LENGTH = 128 #anschauen mit perzentile
 BATCH_SIZE = 16
 NUM_EPOCHS = 5
 LEARNING_RATE = 2e-5
