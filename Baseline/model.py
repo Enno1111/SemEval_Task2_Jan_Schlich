@@ -85,7 +85,7 @@ class DualHead(nn.Module):
 MODEL_NAME = "bert-base-uncased"
 MAX_LENGTH = 128
 BATCH_SIZE = 16
-DROPOUT = 0.1
+DROPOUT = 0.2
 POOLING_STRATEGY = "mean"
 NUM_EPOCHS = 5
 LEARNING_RATE = 2e-5
