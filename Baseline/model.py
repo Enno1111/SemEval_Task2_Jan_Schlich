@@ -61,7 +61,16 @@ class DualHead(nn.Module):
         self.dropout = nn.Dropout(dropout)
 
     def _pool(self, encoder_output, attention_mask):
-        return encoder_output.last_hidden_state[:, 0, :]
+        if self.pooling_strategy == 'cls':
+            return encoder_output.last_hidden_state[:, 0, :]
+    
+        if self.pooling_strategy == 'mean':
+            mask = attention_mask.unsqueeze(-1).float()
+            summed = (encoder_output.last_hidden_state * mask).sum(dim=1)
+            counts = mask.sum(dim=1).clamp(min=1e-9)
+            return summed / counts
+    
+        raise ValueError(f"Unbekannte pooling_strategy: {self.pooling_strategy}")
         
     def forward(self, input_ids, attention_mask):
         encoder_output = self.encoder(input_ids=input_ids, attention_mask=attention_mask)
