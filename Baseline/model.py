@@ -37,10 +37,13 @@ class AffectDataset(Dataset):
 class ClassificationHead(nn.Module):
     def __init__(self, input_dim, num_classes, hidden_size=128):
         super(ClassificationHead, self).__init__()
-        self.net = nn.Sequential(
-            nn.Linear(input_dim, hidden_size),
-            nn.ReLU(),
-            nn.Linear(hidden_size, num_classes)
+        if hidden_size is None:
+            self.net = nn.Linear(input_dim, num_classes)
+        else:
+            self.net = nn.Sequential(
+                nn.Linear(input_dim, hidden_size),
+                nn.ReLU(),
+                nn.Linear(hidden_size, num_classes)
         )
 
     def forward(self, x):
@@ -80,13 +83,13 @@ class DualHead(nn.Module):
 #configuration class for the dual-head model
 
 MODEL_NAME = "bert-base-uncased"
-MAX_LENGTH = 128 #anschauen mit perzentile
+MAX_LENGTH = 128
 BATCH_SIZE = 16
 DROPOUT = 0.1
-POOLING_STRATEGY = "cls"
+POOLING_STRATEGY = "mean"
 NUM_EPOCHS = 5
 LEARNING_RATE = 2e-5
-HEAD_HIDDEN_SIZE = 128
+HEAD_HIDDEN_SIZE = 258
 NUM_VALENCE_CLASSES = 5
 NUM_AROUSAL_CLASSES = 3
 DATA_CSV = "../data/train_subtask1.csv"
@@ -175,6 +178,9 @@ def main():
                     'num_valence_classes': NUM_VALENCE_CLASSES,
                     'num_arousal_classes': NUM_AROUSAL_CLASSES,
                     'max_length': MAX_LENGTH,
+                    'head_hidden_size': HEAD_HIDDEN_SIZE,
+                    'dropout': DROPOUT,
+                    'pooling_strategy': POOLING_STRATEGY,
                 },
             }, SAVE_PATH)
 

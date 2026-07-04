@@ -17,6 +17,9 @@ def load_model(checkpoint_path):
         config["model_name"],
         config["num_valence_classes"],
         config["num_arousal_classes"],
+        config["head_hidden_size"],
+        config["dropout"],
+        config["pooling_strategy"],
     ).to(DEVICE)
 
     model.load_state_dict(checkpoint["model_state_dict"])

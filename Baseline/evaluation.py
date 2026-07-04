@@ -24,10 +24,13 @@ arousal_scores = task1_correlation(
     labels=df["arousal"],
 )
 
-for i,j in valence_scores.items():
-    print(f"{i}: {round(j, 2)}")
+#for i,j in valence_scores.items():
+#    print(f"{i}: {round(j, 3)}")
 
-for i,j in arousal_scores.items():
-    print(f"{i}: {round(j, 2)}")
+#for i,j in arousal_scores.items():
+#    print(f"{i}: {round(j, 3)}")
 
-print(f"r_composite:{(round(valence_scores['r_composite'], 2) + round(arousal_scores['r_composite'], 2)) / 2}")
+#print(f"r_composite:{(round(valence_scores['r_composite'], 3) + round(arousal_scores['r_composite'], 3)) / 2}")
+print(f"r_composite:{round((valence_scores['r_composite'] + arousal_scores['r_composite']) / 2, 3)}")
+print(f"r_valence:{round(valence_scores['r_composite'], 3)}")
+print(f"r_arousal:{round(arousal_scores['r_composite'], 3)}")
