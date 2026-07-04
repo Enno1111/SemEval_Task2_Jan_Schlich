@@ -6,7 +6,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 import pandas as pd
 from eval import task1_correlation
 
-PREDICTIONS_CSV = "predictions.csv"   # liegt im Arbeitsverzeichnis, daher kein "../"
+PREDICTIONS_CSV = "predictions.csv"
 
 df = pd.read_csv(PREDICTIONS_CSV)
 
