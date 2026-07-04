@@ -49,7 +49,7 @@ class ClassificationHead(nn.Module):
  #Dual-head model for valence and arousal classification
 
 class DualHead(nn.Module):
-    def __init__(self, model_name, num_valence_classes, num_arousal_classes, head_hidden_size=128, dropout=0.1, pooling_strategy='cls'):
+    def __init__(self, model_name, num_valence_classes, num_arousal_classes, head_hidden_size, dropout, pooling_strategy):
         super().__init__()
         self.encoder = AutoModel.from_pretrained(model_name)
         hidden_size = self.encoder.config.hidden_size
@@ -73,8 +73,11 @@ class DualHead(nn.Module):
 MODEL_NAME = "bert-base-uncased"
 MAX_LENGTH = 128 #anschauen mit perzentile
 BATCH_SIZE = 16
+DROPOUT = 0.1
+POOLING_STRATEGY = "cls"
 NUM_EPOCHS = 5
 LEARNING_RATE = 2e-5
+HEAD_HIDDEN_SIZE = 128
 NUM_VALENCE_CLASSES = 5
 NUM_AROUSAL_CLASSES = 3
 DATA_CSV = "../data/train_subtask1.csv"
@@ -143,7 +146,7 @@ def main():
         shuffle=False
     )
 
-    model = DualHead(MODEL_NAME, NUM_VALENCE_CLASSES, NUM_AROUSAL_CLASSES).to(DEVICE)
+    model = DualHead(MODEL_NAME, NUM_VALENCE_CLASSES, NUM_AROUSAL_CLASSES, HEAD_HIDDEN_SIZE, DROPOUT, POOLING_STRATEGY).to(DEVICE)
     optimizer = torch.optim.AdamW(model.parameters(), lr=LEARNING_RATE)
     total_steps = len(train_loader) * NUM_EPOCHS
     scheduler = get_linear_schedule_with_warmup(optimizer, num_warmup_steps=0, num_training_steps=total_steps)
