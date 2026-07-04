@@ -90,8 +90,8 @@ import pandas as pd
 def load_data(csv_path):
     df = pd.read_csv(csv_path)
     texts = df['text'].tolist()
-    valence = (df['valence'] + 2).tolist()
-    arousal = df['arousal'].tolist()
+    valence = (df['valence'] + 2).astype(int).tolist()
+    arousal = df['arousal'].astype(int).tolist()
     return texts, valence, arousal
 
 def run_epoch(model, loader, optimizer, scheduler, criterion, train=True):

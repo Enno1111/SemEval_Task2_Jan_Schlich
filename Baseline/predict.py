@@ -10,7 +10,7 @@ BATCH_SIZE = 16
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 def load_model(checkpoint_path):
-    checkpoint = torch.load(checkpoint_path, map_location=DEVICE)
+    checkpoint = torch.load(checkpoint_path, map_location=DEVICE, weights_only=True)
     config = checkpoint["config"]
 
     model = DualHead(
@@ -60,8 +60,8 @@ def main():
     valence_preds, arousal_preds = predict(model, test_loader)
     valence_preds = [v - 2 for v in valence_preds]
 
-    df['valence'] = valence_preds
-    df['arousal'] = arousal_preds
+    df['valence_preds'] = valence_preds
+    df['arousal_preds'] = arousal_preds
     df.to_csv(OUTPUT_CSV, index=False)
 
 if __name__ == "__main__":

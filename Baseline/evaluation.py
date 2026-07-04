@@ -13,16 +13,21 @@ df = pd.read_csv(PREDICTIONS_CSV)
 valence_scores = task1_correlation(
     user_ids=df["user_id"],
     text_ids=df["text_id"],
-    predictions=df["valence_pred"],
+    predictions=df["valence_preds"],
     labels=df["valence"],
 )
 
 arousal_scores = task1_correlation(
     user_ids=df["user_id"],
     text_ids=df["text_id"],
-    predictions=df["arousal_pred"],
+    predictions=df["arousal_preds"],
     labels=df["arousal"],
 )
 
-print("Valence:", valence_scores)
-print("Arousal:", arousal_scores)
+for i,j in valence_scores.items():
+    print(f"{i}: {round(j, 2)}")
+
+for i,j in arousal_scores.items():
+    print(f"{i}: {round(j, 2)}")
+
+print(f"r_composite:{(round(valence_scores['r_composite'], 2) + round(arousal_scores['r_composite'], 2)) / 2}")
