@@ -109,9 +109,9 @@ SAVE_PATH = "../models/dual_head_model_UserID.pt"
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 #configuration for user ID handling
-MIN_USER_TEXTS = 5
+MIN_USER_TEXTS = 15
 UNKNOWN_USER = "UNKNOWN"
-USER_ID_LENGTH = 5
+USER_ID_LENGTH = 3      #L in paper
 
 #load CSV data and prepare datasets
 
@@ -168,6 +168,8 @@ def generate_user_identifiers(user_mapping, tokenizer, L=USER_ID_LENGTH, seed=SE
     vocab_size = tokenizer.vocab_size
 
     effective_ids = set(user_mapping.values())
+    effective_ids.add(UNKNOWN_USER)
+
     user_id_map = {}
     for eid in effective_ids:
         user_id_map[eid] = random.sample(range(vocab_size), L)
