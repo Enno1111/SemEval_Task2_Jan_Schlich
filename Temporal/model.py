@@ -101,28 +101,17 @@ DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 #load CSV data and prepare datasets
 
 import pandas as pd 
+format = 'year: %Y month: %m'
 
 def load_data(csv_path):
     df = pd.read_csv(csv_path)
 
     texts = df['text'].tolist()
+
     df['timestamp'] = pd.to_datetime(df['timestamp'])
-    df['time_str'] = df['timestamp'].dt.strftime('year: %Y') 
-    #df['time_str'] = df['timestamp'].dt.strftime('year: %Y month: %m') #year_month
-    #df['time_str'] = df['timestamp'].dt.strftime('year: %Y month: %m day: %d') #year_month_day
-    #df['time_str'] = df['timestamp'].dt.strftime('time: %H:%M:%S') #hour_minute_second
+    df['time_str'] = df['timestamp'].dt.strftime(format) #year_month_day
 
     texts = (df['time_str'] + " " + df['text']).tolist()
-    #texts = (df['time_str'] + " [SEP] " + df['text']).tolist()
-
-    #def time_of_day(hour):
-    #    if 5 <= hour < 12:  return 'morning'
-    #    if 12 <= hour < 17: return 'afternoon'
-    #    if 17 <= hour < 21: return 'evening'
-    #    return 'night'
-
-    #df['time_str'] = df['timestamp'].dt.hour.map(time_of_day)
-    #texts = (df['time_str'] + ' [SEP] ' + df['text']).tolist()
 
     valence = (df['valence'] + 2).astype(int).tolist()
     arousal = df['arousal'].astype(int).tolist()
@@ -154,8 +143,20 @@ def run_epoch(model, loader, optimizer, scheduler, criterion, train=True):
 from torch.utils.data import DataLoader
 from transformers import AutoTokenizer, get_linear_schedule_with_warmup
 from sklearn.model_selection import train_test_split
+import random
+import numpy as np
+
+def set_seed(seed):
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
 
 def main():
+    set_seed(SEED)
+
     tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
 
     texts, valence, arousal = load_data(DATA_CSV)
@@ -166,17 +167,21 @@ def main():
         random_state=SEED,
     )
 
+    generator = torch.Generator()
+    generator.manual_seed(SEED)
+
     train_loader = DataLoader(
         AffectDataset(train_texts, train_val, train_aro, tokenizer, MAX_LENGTH),
         batch_size=BATCH_SIZE,
-        shuffle=True
+        shuffle=True,
+        generator=generator,
     )
+
     val_loader = DataLoader(
         AffectDataset(val_texts, val_val, val_aro, tokenizer, MAX_LENGTH),
         batch_size=BATCH_SIZE,
         shuffle=False
     )
-
     model = DualHead(MODEL_NAME, NUM_VALENCE_CLASSES, NUM_AROUSAL_CLASSES, HEAD_HIDDEN_SIZE, DROPOUT, POOLING_STRATEGY).to(DEVICE)
     optimizer = torch.optim.AdamW(model.parameters(), lr=LEARNING_RATE)
     total_steps = len(train_loader) * NUM_EPOCHS
