@@ -37,7 +37,7 @@ def load_test_data(csv_path):
     from model import format
     df['time_str'] = df['timestamp'].dt.strftime(format) #year_month_day
 
-    texts = (df['time_str'] + " " + df['text']).tolist()
+    texts = (df['time_str'] + " [SEP] " + df['text']).tolist()
 
     dummy_labels = [0] * len(texts)
     return texts, dummy_labels, dummy_labels, df

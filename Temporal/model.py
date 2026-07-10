@@ -101,7 +101,7 @@ DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 #load CSV data and prepare datasets
 
 import pandas as pd 
-format = 'year: %Y month: %m'
+format = 'year: %Y month: %m day: %d'
 
 def load_data(csv_path):
     df = pd.read_csv(csv_path)
@@ -109,9 +109,9 @@ def load_data(csv_path):
     texts = df['text'].tolist()
 
     df['timestamp'] = pd.to_datetime(df['timestamp'])
-    df['time_str'] = df['timestamp'].dt.strftime(format) #year_month_day
+    df['time_str'] = df['timestamp'].dt.strftime(format) 
 
-    texts = (df['time_str'] + " " + df['text']).tolist()
+    texts = (df['time_str'] + " [SEP] " + df['text']).tolist()
 
     valence = (df['valence'] + 2).astype(int).tolist()
     arousal = df['arousal'].astype(int).tolist()
