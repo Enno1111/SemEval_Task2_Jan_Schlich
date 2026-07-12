@@ -11,8 +11,8 @@ class AffectDataset(Dataset):
         self.arousal_labels = arousal_labels
         self.tokenizer = tokenizer
         self.max_length = max_length
-        self.user_ids = user_ids   # neu
-        self.uid_map = uid_map     # neu
+        self.user_ids = user_ids
+        self.uid_map = uid_map
 
     def __len__(self):
         return len(self.texts)
@@ -134,10 +134,10 @@ format = 'year: %Y month: %m day: %d'
 def load_data(csv_path):
     df = pd.read_csv(csv_path)
 
-    df['timestamp'] = pd.to_datetime(df['timestamp'])
+    df['timestamp'] = pd.to_datetime(df['collection_phase'])
     df['time_str'] = df['timestamp'].dt.strftime(format)
     
-    texts = (df['time_str'] + " " + df['text']).tolist()
+    texts = (df['timestamp'] + " " + df['text']).tolist()
 
     valence = df['valence'].astype(float).tolist()
     arousal = df['arousal'].astype(float).tolist()
