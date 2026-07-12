@@ -26,38 +26,37 @@ class AffectDataset(Dataset):
         return {
             "input_ids": encoding["input_ids"].squeeze(0),
             "attention_mask": encoding["attention_mask"].squeeze(0),
-            "valence": torch.tensor(self.valence_labels[idx], dtype=torch.long),
-            "arousal": torch.tensor(self.arousal_labels[idx], dtype=torch.long),
+            "valence": torch.tensor(self.valence_labels[idx], dtype=torch.float),
+            "arousal": torch.tensor(self.arousal_labels[idx], dtype=torch.float),
         }
 
 
-class ClassificationHead(nn.Module):
-    def __init__(self, input_dim, num_classes, hidden_size=None, dropout=0.1):
+class RegressionHead(nn.Module):
+    def __init__(self, input_dim, hidden_size=None, dropout=0.1):
         super().__init__()
         if hidden_size is None:
-            self.net = nn.Linear(input_dim, num_classes)
+            self.net = nn.Linear(input_dim, 1)
         else:
             self.net = nn.Sequential(
                 nn.Linear(input_dim, hidden_size),
                 nn.LayerNorm(hidden_size),
                 nn.GELU(),
                 nn.Dropout(dropout),
-                nn.Linear(hidden_size, num_classes)
+                nn.Linear(hidden_size, 1)
             )
 
     def forward(self, x):
-        return self.net(x)
+        return self.net(x).squeeze(-1)
 
 
 class DualHead(nn.Module):
-    def __init__(self, model_name, num_valence_classes, num_arousal_classes,
-                 head_hidden_size, dropout, pooling_strategy):
+    def __init__(self, model_name, head_hidden_size, dropout, pooling_strategy):
         super().__init__()
         self.encoder = AutoModel.from_pretrained(model_name)
         hidden_size = self.encoder.config.hidden_size
 
-        self.valence_head = ClassificationHead(hidden_size, num_valence_classes, head_hidden_size, dropout)
-        self.arousal_head = ClassificationHead(hidden_size, num_arousal_classes, head_hidden_size, dropout)
+        self.valence_head = RegressionHead(hidden_size, head_hidden_size, dropout)
+        self.arousal_head = RegressionHead(hidden_size, head_hidden_size, dropout)
 
         self.pooling_strategy = pooling_strategy
         self.dropout = nn.Dropout(dropout)
@@ -81,16 +80,14 @@ class DualHead(nn.Module):
 
 
 # Konfiguration
-MODEL_NAME        = "cardiffnlp/twitter-roberta-base-sentiment-latest"
+MODEL_NAME        = "cardiffnlp/twitter-roberta-base-emotion"
 MAX_LENGTH        = 128
 BATCH_SIZE        = 16
 DROPOUT           = 0.1
-POOLING_STRATEGY  = "mean"
-NUM_EPOCHS        = 5
+POOLING_STRATEGY  = "cls"
+NUM_EPOCHS        = 10
 LEARNING_RATE     = 2e-5
 HEAD_HIDDEN_SIZE  = 256
-NUM_VALENCE_CLASSES = 5
-NUM_AROUSAL_CLASSES = 3
 DATA_CSV          = "../data/train_subtask1.csv"
 VAL_SPLIT         = 0.2
 SEED              = 42
@@ -119,8 +116,8 @@ def load_data(csv_path):
     df['timestamp'] = pd.to_datetime(df['timestamp'])
     df['time_str'] = df['timestamp'].dt.strftime('year: %Y month: %m day: %d')
     texts = (df['time_str'] + " " + df['text']).tolist()
-    valence = (df['valence'] + 2).astype(int).tolist()
-    arousal = df['arousal'].astype(int).tolist()
+    valence = df['valence'].astype(float).tolist()
+    arousal = df['arousal'].astype(float).tolist()
     return texts, valence, arousal
 
 
@@ -173,14 +170,13 @@ def main():
     )
 
     model = DualHead(
-        MODEL_NAME, NUM_VALENCE_CLASSES, NUM_AROUSAL_CLASSES,
-        HEAD_HIDDEN_SIZE, DROPOUT, POOLING_STRATEGY
+        MODEL_NAME, HEAD_HIDDEN_SIZE, DROPOUT, POOLING_STRATEGY
     ).to(DEVICE)
 
     optimizer    = torch.optim.AdamW(model.parameters(), lr=LEARNING_RATE)
     total_steps  = len(train_loader) * NUM_EPOCHS
     scheduler    = get_linear_schedule_with_warmup(optimizer, num_warmup_steps=0, num_training_steps=total_steps)
-    criterion    = nn.CrossEntropyLoss()
+    criterion    = nn.MSELoss()
     best_val_loss = float('inf')
 
     for epoch in range(NUM_EPOCHS):
@@ -194,8 +190,6 @@ def main():
                 'model_state_dict': model.state_dict(),
                 'config': {
                     'model_name':           MODEL_NAME,
-                    'num_valence_classes':  NUM_VALENCE_CLASSES,
-                    'num_arousal_classes':  NUM_AROUSAL_CLASSES,
                     'max_length':           MAX_LENGTH,
                     'head_hidden_size':     HEAD_HIDDEN_SIZE,
                     'dropout':              DROPOUT,

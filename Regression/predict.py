@@ -15,8 +15,6 @@ def load_model(checkpoint_path):
 
     model = DualHead(
         config["model_name"],
-        config["num_valence_classes"],
-        config["num_arousal_classes"],
         config["head_hidden_size"],
         config["dropout"],
         config["pooling_strategy"],
@@ -45,8 +43,8 @@ def predict(model, loader):
 
             valence_logits, arousal_logits = model(input_ids, attention_mask)
 
-            valence_preds.extend(valence_logits.argmax(dim=-1).cpu().tolist())
-            arousal_preds.extend(arousal_logits.argmax(dim=-1).cpu().tolist())
+            valence_preds.extend(valence_logits.cpu().tolist())
+            arousal_preds.extend(arousal_logits.cpu().tolist())
 
     return valence_preds, arousal_preds
 
@@ -61,7 +59,6 @@ def main():
     )
 
     valence_preds, arousal_preds = predict(model, test_loader)
-    valence_preds = [v - 2 for v in valence_preds]
 
     df['valence_preds'] = valence_preds
     df['arousal_preds'] = arousal_preds
