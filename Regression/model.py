@@ -4,12 +4,15 @@ from torch.utils.data import Dataset
 from transformers import AutoModel
 
 class AffectDataset(Dataset):
-    def __init__(self, texts, valence_labels, arousal_labels, tokenizer, max_length):
+    def __init__(self, texts, valence_labels, arousal_labels, 
+                 tokenizer, max_length, user_ids=None, uid_map=None):
         self.texts = texts
         self.valence_labels = valence_labels
         self.arousal_labels = arousal_labels
         self.tokenizer = tokenizer
         self.max_length = max_length
+        self.user_ids = user_ids   # neu
+        self.uid_map = uid_map     # neu
 
     def __len__(self):
         return len(self.texts)
@@ -23,9 +26,20 @@ class AffectDataset(Dataset):
             max_length=self.max_length,
             return_tensors='pt'
         )
+
+        input_ids = encoding["input_ids"].squeeze(0)
+        attention_mask = encoding["attention_mask"].squeeze(0)
+
+        if self.uid_map is not None and self.user_ids is not None:
+            uid_tokens = self.uid_map[self.user_ids[idx]]
+            uid_tensor = torch.tensor(uid_tokens, dtype=torch.long)
+            input_ids = torch.cat([input_ids[:1], uid_tensor, input_ids[1:]])[:self.max_length]
+            uid_mask = torch.ones(len(uid_tokens), dtype=torch.long)
+            attention_mask = torch.cat([attention_mask[:1], uid_mask, attention_mask[1:]])[:self.max_length]
+
         return {
-            "input_ids": encoding["input_ids"].squeeze(0),
-            "attention_mask": encoding["attention_mask"].squeeze(0),
+            "input_ids": input_ids,
+            "attention_mask": attention_mask,
             "valence": torch.tensor(self.valence_labels[idx], dtype=torch.float),
             "arousal": torch.tensor(self.arousal_labels[idx], dtype=torch.float),
         }
@@ -93,6 +107,11 @@ VAL_SPLIT         = 0.2
 SEED              = 42
 SAVE_PATH         = "../models/dual_head_model.pt"
 DEVICE            = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+#configuration for user ID handling
+MIN_USER_TEXTS = 15
+UNKNOWN_USER = "UNKNOWN"
+USER_ID_LENGTH = 3      #L in paper
+
 
 import pandas as pd
 import random
@@ -118,7 +137,8 @@ def load_data(csv_path):
     texts = (df['time_str'] + " " + df['text']).tolist()
     valence = df['valence'].astype(float).tolist()
     arousal = df['arousal'].astype(float).tolist()
-    return texts, valence, arousal
+    user_ids = df['user_id'].to_list()
+    return texts, valence, arousal, user_ids
 
 
 def run_epoch(model, loader, optimizer, scheduler, criterion, train=True):
@@ -144,29 +164,68 @@ def run_epoch(model, loader, optimizer, scheduler, criterion, train=True):
             total_loss += loss.item()
     return total_loss / len(loader)
 
+def build_user_mapping(user_ids, min_texts=MIN_USER_TEXTS):
+    from collections import Counter
+    counts = Counter(user_ids)
+
+    mapping = {}
+    for user_id in counts:
+        if counts[user_id] < min_texts:
+            mapping[user_id] = UNKNOWN_USER
+        else:
+            mapping[user_id] = user_id
+
+    return mapping
+
+#function to generate token-sequences for user IDs
+import random
+
+def generate_user_identifiers(user_mapping, tokenizer, L=USER_ID_LENGTH, seed=SEED):
+    random.seed(seed)
+    vocab_size = tokenizer.vocab_size
+
+    effective_ids = set(user_mapping.values())
+    effective_ids.add(UNKNOWN_USER)
+
+    user_id_map = {}
+    for eid in effective_ids:
+        user_id_map[eid] = random.sample(range(vocab_size), L)
+
+    return user_id_map
 
 def main():
     set_seed(SEED)
 
     tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
-    texts, valence, arousal = load_data(DATA_CSV)
 
-    train_texts, val_texts, train_val, val_val, train_aro, val_aro = train_test_split(
-        texts, valence, arousal,
-        test_size=VAL_SPLIT,
-        random_state=SEED,
-    )
+    texts, valence, arousal, user_ids = load_data(DATA_CSV)
+
+    user_mapping = build_user_mapping(user_ids, MIN_USER_TEXTS)
+
+    effective_ids = [user_mapping[uid] for uid in user_ids]
+
+    user_id_map = generate_user_identifiers(user_mapping, tokenizer)
+
+    train_texts, val_texts, train_val, val_val, train_aro, val_aro, train_uids, val_uids = \
+        train_test_split(texts, 
+                         valence, 
+                         arousal, 
+                         effective_ids,
+                         test_size=VAL_SPLIT, 
+                         random_state=SEED)
 
     generator = torch.Generator()
     generator.manual_seed(SEED)
 
     train_loader = DataLoader(
-        AffectDataset(train_texts, train_val, train_aro, tokenizer, MAX_LENGTH),
-        batch_size=BATCH_SIZE, shuffle=True, generator=generator,
+        AffectDataset(train_texts, train_val, train_aro,
+                      tokenizer, MAX_LENGTH, train_uids, user_id_map),
+        batch_size=BATCH_SIZE, shuffle=True
     )
     val_loader = DataLoader(
-        AffectDataset(val_texts, val_val, val_aro, tokenizer, MAX_LENGTH),
-        batch_size=BATCH_SIZE, shuffle=False,
+        AffectDataset(val_texts, val_val, val_aro, tokenizer, MAX_LENGTH, val_uids, user_id_map),
+        batch_size=BATCH_SIZE,
+        shuffle=False
     )
 
     model = DualHead(
@@ -188,14 +247,16 @@ def main():
             best_val_loss = val_loss
             torch.save({
                 'model_state_dict': model.state_dict(),
+                'user_id_map': user_id_map,       # <- neu
+                'user_mapping': user_mapping,     # <- neu
                 'config': {
-                    'model_name':           MODEL_NAME,
-                    'max_length':           MAX_LENGTH,
-                    'head_hidden_size':     HEAD_HIDDEN_SIZE,
-                    'dropout':              DROPOUT,
-                    'pooling_strategy':     POOLING_STRATEGY,
-                },
-            }, SAVE_PATH)
+                    'model_name': MODEL_NAME,
+                    'max_length': MAX_LENGTH,
+                    'head_hidden_size': HEAD_HIDDEN_SIZE,
+                    'dropout': DROPOUT,
+                    'pooling_strategy': POOLING_STRATEGY,
+    },
+}, SAVE_PATH)
 
 if __name__ == "__main__":
     main()

@@ -9,9 +9,13 @@ OUTPUT_CSV = "predictions.csv"
 BATCH_SIZE = 16
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+UNKNOWN_USER = "UNKNOWN"
+
 def load_model(checkpoint_path):
-    checkpoint = torch.load(checkpoint_path, map_location=DEVICE, weights_only=True)
+    checkpoint = torch.load(checkpoint_path, map_location=DEVICE, weights_only=False)
     config = checkpoint["config"]
+    user_id_map = checkpoint['user_id_map']
+    user_mapping = checkpoint['user_mapping']
 
     model = DualHead(
         config["model_name"],
@@ -24,13 +28,14 @@ def load_model(checkpoint_path):
     model.eval()
 
     tokenizer = AutoTokenizer.from_pretrained(config["model_name"])
-    return model, tokenizer, config["max_length"]
+    return model, tokenizer, config["max_length"], user_id_map, user_mapping
 
 def load_test_data(csv_path):
     df = pd.read_csv(csv_path)
     texts = df['text'].tolist()
+    user_ids = df['user_id'].tolist()
     dummy_labels = [0] * len(texts)
-    return texts, dummy_labels, dummy_labels, df
+    return texts, dummy_labels, dummy_labels, user_ids, df
 
 from torch.utils.data import DataLoader
 
@@ -49,11 +54,14 @@ def predict(model, loader):
     return valence_preds, arousal_preds
 
 def main():
-    model, tokenizer, max_length = load_model(CHECKPOINT_PATH)
-    texts, dummy_valence, dummy_arousal, df = load_test_data(TEST_CSV)
+    model, tokenizer, max_length, user_id_map, user_mapping = load_model(CHECKPOINT_PATH)
+    texts, dummy_valence, dummy_arousal, user_ids, df = load_test_data(TEST_CSV)
+
+    effective_ids = [user_mapping.get(uid, UNKNOWN_USER) for uid in user_ids]
 
     test_loader = DataLoader(
-        AffectDataset(texts, dummy_valence, dummy_arousal, tokenizer, max_length),
+        AffectDataset(texts, dummy_valence, dummy_arousal,
+                      tokenizer, max_length, effective_ids, user_id_map),
         batch_size=BATCH_SIZE,
         shuffle=False
     )

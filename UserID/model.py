@@ -25,6 +25,7 @@ class AffectDataset(Dataset):
             text, truncation=True, padding='max_length',
             max_length=self.max_length, return_tensors='pt'
         )
+        
         input_ids = encoding["input_ids"].squeeze(0)
         attention_mask = encoding["attention_mask"].squeeze(0)
 
