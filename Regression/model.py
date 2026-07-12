@@ -129,12 +129,16 @@ def set_seed(seed):
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark = False
 
+format = 'year: %Y month: %m day: %d'
 
 def load_data(csv_path):
     df = pd.read_csv(csv_path)
+
     df['timestamp'] = pd.to_datetime(df['timestamp'])
-    df['time_str'] = df['timestamp'].dt.strftime('year: %Y month: %m day: %d')
+    df['time_str'] = df['timestamp'].dt.strftime(format)
+    
     texts = (df['time_str'] + " " + df['text']).tolist()
+
     valence = df['valence'].astype(float).tolist()
     arousal = df['arousal'].astype(float).tolist()
     user_ids = df['user_id'].to_list()

@@ -32,7 +32,15 @@ def load_model(checkpoint_path):
 
 def load_test_data(csv_path):
     df = pd.read_csv(csv_path)
+
     texts = df['text'].tolist()
+
+    df['timestamp'] = pd.to_datetime(df['timestamp'])
+    from model import format
+    df['time_str'] = df['timestamp'].dt.strftime(format)
+
+    texts = (df['time_str'] + " " + df['text']).tolist()
+    
     user_ids = df['user_id'].tolist()
     dummy_labels = [0] * len(texts)
     return texts, dummy_labels, dummy_labels, user_ids, df
