@@ -92,7 +92,7 @@ NUM_AROUSAL_CLASSES = 3
 DATA_CSV          = "../data/train_subtask1.csv"
 VAL_SPLIT         = 0.2
 SEED              = 42
-SAVE_PATH         = "../models/dual_head_model.pt"
+SAVE_PATH         = "../models/dual_head_model_classification.pt"
 DEVICE            = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 import pandas as pd
