@@ -5,14 +5,12 @@ from transformers import AutoModel
 
 class AffectDataset(Dataset):
     def __init__(self, texts, valence_labels, arousal_labels, 
-                 tokenizer, max_length, user_ids=None, uid_map=None):
+                 tokenizer, max_length):
         self.texts = texts
         self.valence_labels = valence_labels
         self.arousal_labels = arousal_labels
         self.tokenizer = tokenizer
         self.max_length = max_length
-        self.user_ids = user_ids
-        self.uid_map = uid_map
 
     def __len__(self):
         return len(self.texts)
@@ -30,20 +28,12 @@ class AffectDataset(Dataset):
         input_ids = encoding["input_ids"].squeeze(0)
         attention_mask = encoding["attention_mask"].squeeze(0)
 
-        if self.uid_map is not None and self.user_ids is not None:
-            uid_tokens = self.uid_map[self.user_ids[idx]]
-            uid_tensor = torch.tensor(uid_tokens, dtype=torch.long)
-            input_ids = torch.cat([input_ids[:1], uid_tensor, input_ids[1:]])[:self.max_length]
-            uid_mask = torch.ones(len(uid_tokens), dtype=torch.long)
-            attention_mask = torch.cat([attention_mask[:1], uid_mask, attention_mask[1:]])[:self.max_length]
-
         return {
             "input_ids": input_ids,
             "attention_mask": attention_mask,
             "valence": torch.tensor(self.valence_labels[idx], dtype=torch.float),
             "arousal": torch.tensor(self.arousal_labels[idx], dtype=torch.float),
         }
-
 
 class RegressionHead(nn.Module):
     def __init__(self, input_dim, hidden_size=None, dropout=0.1):
@@ -92,7 +82,7 @@ class DualHead(nn.Module):
 
 
 # Konfiguration
-MODEL_NAME        = "cardiffnlp/twitter-roberta-base-emotion"
+MODEL_NAME        = "bert-base-uncased"
 MAX_LENGTH        = 128
 BATCH_SIZE        = 16
 DROPOUT           = 0.1
@@ -156,7 +146,6 @@ def run_epoch(model, loader, optimizer, scheduler, criterion, train=True):
             total_loss += loss.item()
     return total_loss / len(loader)
 
-#function to generate token-sequences for user IDs
 import random
 
 def main():

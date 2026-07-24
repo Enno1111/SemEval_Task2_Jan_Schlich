@@ -9,14 +9,14 @@ OUTPUT_CSV = "predictions.csv"
 BATCH_SIZE = 16
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+TEMPORAL_MODE = "none"
+
 def load_model(checkpoint_path):
-    checkpoint = torch.load(checkpoint_path, map_location=DEVICE, weights_only=True)
+    checkpoint = torch.load(checkpoint_path, map_location=DEVICE, weights_only=False)
     config = checkpoint["config"]
 
     model = DualHead(
         config["model_name"],
-        config["num_valence_classes"],
-        config["num_arousal_classes"],
         config["head_hidden_size"],
         config["dropout"],
         config["pooling_strategy"],
@@ -31,14 +31,26 @@ def load_model(checkpoint_path):
 def load_test_data(csv_path):
     df = pd.read_csv(csv_path)
 
-    texts = df['text'].tolist()
-
-    df['timestamp'] = pd.to_datetime(df['timestamp'])
-    from model import format
-    df['time_str'] = df['timestamp'].dt.strftime(format) #year_month_day
-
-    texts = (df['time_str'] + " [SEP] " + df['text']).tolist()
-
+    df["timestamp"] = pd.to_datetime(df["timestamp"])
+    
+    if TEMPORAL_MODE == "none":
+        prefix = ""
+    elif TEMPORAL_MODE == "wave":
+        prefix = "wave: " + df["collection_phase"].astype(str) + " "
+    elif TEMPORAL_MODE == "date":
+        prefix = df["timestamp"].dt.strftime("year: %Y month: %m day: %d") + " "
+    elif TEMPORAL_MODE == "hour":
+        prefix = "hour: " + df["timestamp"].dt.hour.astype(str) + " "
+    elif TEMPORAL_MODE == "full":
+        prefix = (
+            df["timestamp"].dt.strftime("year: %Y month: %m day: %d")
+            + " hour: " + df["timestamp"].dt.hour.astype(str) + " "
+        )
+    else:
+        raise ValueError(f"Unknown TEMPORAL_MODE: {TEMPORAL_MODE}")
+    
+    texts = (prefix + df["text"]).tolist()
+    
     dummy_labels = [0] * len(texts)
     return texts, dummy_labels, dummy_labels, df
 
@@ -53,8 +65,8 @@ def predict(model, loader):
 
             valence_logits, arousal_logits = model(input_ids, attention_mask)
 
-            valence_preds.extend(valence_logits.argmax(dim=-1).cpu().tolist())
-            arousal_preds.extend(arousal_logits.argmax(dim=-1).cpu().tolist())
+            valence_preds.extend(valence_logits.cpu().tolist())
+            arousal_preds.extend(arousal_logits.cpu().tolist())
 
     return valence_preds, arousal_preds
 
@@ -63,13 +75,13 @@ def main():
     texts, dummy_valence, dummy_arousal, df = load_test_data(TEST_CSV)
 
     test_loader = DataLoader(
-        AffectDataset(texts, dummy_valence, dummy_arousal, tokenizer, max_length),
+        AffectDataset(texts, dummy_valence, dummy_arousal,
+                      tokenizer, max_length),
         batch_size=BATCH_SIZE,
         shuffle=False
     )
 
     valence_preds, arousal_preds = predict(model, test_loader)
-    valence_preds = [v - 2 for v in valence_preds]
 
     df['valence_preds'] = valence_preds
     df['arousal_preds'] = arousal_preds
