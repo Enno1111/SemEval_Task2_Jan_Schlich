@@ -7,3 +7,5 @@
 Epoch 1: train=1.6061, val=1.2208
 Epoch 2: train=1.1674, val=1.1645
 Epoch 3: train=0.9555, val=1.1433
+Epoch 4: train=0.7917, val=1.1448
+Epoch 5: train=0.6877, val=1.1474
