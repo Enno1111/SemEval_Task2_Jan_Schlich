@@ -98,3 +98,18 @@ Epoch 2: train=1.1988, val=1.2959
 Epoch 3: train=0.9055, val=1.2259
 Epoch 4: train=0.6838, val=1.1888
 Epoch 5: train=0.4860, val=1.1931
+Epoch 1: train=2.0606, val=1.7663
+Epoch 2: train=1.4103, val=1.3221
+Epoch 3: train=1.0790, val=1.2548
+Epoch 4: train=0.8312, val=1.2457
+Epoch 5: train=0.6354, val=1.2564
+answerdotai/ModernBERT-base
+  r_composite: 0.566 ± 0.025
+  r_valence:   0.652 ± 0.013
+  r_arousal:   0.480 ± 0.040
+
+--- MODEL_NAME = microsoft/deberta-base-mnli (LR=2e-05) ---
+Epoch 1: train=1.6073, val=1.2798
+Epoch 2: train=1.1721, val=1.2360
+Epoch 3: train=0.9356, val=1.2537
+Epoch 4: train=0.7439, val=1.2877

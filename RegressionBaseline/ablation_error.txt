@@ -363,3 +363,35 @@ head.dense.weight | UNEXPECTED |  |
 
 Notes:
 - UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 5089.90it/s]
+[transformers] [1mModernBertModel LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     |  | 
+------------------+------------+--+-
+decoder.bias      | UNEXPECTED |  | 
+head.norm.weight  | UNEXPECTED |  | 
+head.dense.weight | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 5512.22it/s]
+[transformers] [1mModernBertModel LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     |  | 
+------------------+------------+--+-
+decoder.bias      | UNEXPECTED |  | 
+head.norm.weight  | UNEXPECTED |  | 
+head.dense.weight | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 22486.49it/s]
+[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
+Key                 | Status     |  | 
+--------------------+------------+--+-
+config              | UNEXPECTED |  | 
+pooler.dense.weight | UNEXPECTED |  | 
+classifier.weight   | UNEXPECTED |  | 
+classifier.bias     | UNEXPECTED |  | 
+pooler.dense.bias   | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
