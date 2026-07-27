@@ -82,14 +82,14 @@ class DualHead(nn.Module):
 
 
 # Konfiguration
-MODEL_NAME        = "bert-base-uncased"
+MODEL_NAME        = "microsoft/deberta-base-mnli"
 MAX_LENGTH        = 256
 BATCH_SIZE        = 16
 DROPOUT           = 0.1
 POOLING_STRATEGY  = "mean"
 NUM_EPOCHS        = 5
 LEARNING_RATE     = 2e-5
-HEAD_HIDDEN_SIZE  = 256
+HEAD_HIDDEN_SIZE  = None
 DATA_CSV          = "../data/train_subtask1.csv"
 VAL_SPLIT         = 0.2
 SEED              = 42
