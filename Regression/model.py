@@ -94,23 +94,23 @@ class DualHead(nn.Module):
 
 
 # Konfiguration
-MODEL_NAME        = "cardiffnlp/twitter-roberta-base-emotion"
+MODEL_NAME        = "microsoft/deberta-base-mnli"
 MAX_LENGTH        = 128
 BATCH_SIZE        = 16
 DROPOUT           = 0.1
-POOLING_STRATEGY  = "cls"
+POOLING_STRATEGY  = "mean"
 NUM_EPOCHS        = 5
 LEARNING_RATE     = 2e-5
-HEAD_HIDDEN_SIZE  = 256
+HEAD_HIDDEN_SIZE  = None
 DATA_CSV          = "../data/train_subtask1.csv"
 VAL_SPLIT         = 0.2
 SEED              = 42
-SAVE_PATH         = "../models/dual_head_model.pt"
+SAVE_PATH         = "../models/dual_head_model_all.pt"
 DEVICE            = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 #configuration for user ID handling
-MIN_USER_TEXTS = 15
+MIN_USER_TEXTS = 5
 UNKNOWN_USER = "UNKNOWN"
-USER_ID_LENGTH = 3      #L in paper
+USER_ID_LENGTH = 8      #L in paper
 
 
 import pandas as pd
