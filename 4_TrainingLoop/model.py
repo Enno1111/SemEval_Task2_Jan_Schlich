@@ -45,59 +45,30 @@ class AffectDataset(Dataset):
         }
 
 
-HEAD_ACTIVATIONS = {
-    "gelu": nn.GELU,
-    "relu": nn.ReLU,
-    "silu": nn.SiLU,
-    "tanh": nn.Tanh,
-}
-HEAD_NORMS = {
-    "layernorm": nn.LayerNorm,
-    "batchnorm": nn.BatchNorm1d,
-}
-
 class RegressionHead(nn.Module):
-    def __init__(self, input_dim, hidden_size=None, dropout=0.1,
-                 activation="gelu", norm_type="layernorm", norm_position="before_activation"):
+    def __init__(self, input_dim, hidden_size=None, dropout=0.1):
         super().__init__()
         if hidden_size is None:
             self.net = nn.Linear(input_dim, 1)
         else:
-            act_layer = HEAD_ACTIVATIONS[activation]()
-            norm_layer = HEAD_NORMS[norm_type](hidden_size) if norm_type != "none" else None
-
-            layers = [nn.Linear(input_dim, hidden_size)]
-            if norm_position == "before_activation":
-                if norm_layer is not None:
-                    layers.append(norm_layer)
-                layers.append(act_layer)
-            elif norm_position == "after_activation":
-                layers.append(act_layer)
-                if norm_layer is not None:
-                    layers.append(norm_layer)
-            else:
-                raise ValueError(f"Unbekannte norm_position: {norm_position}")
-            layers.append(nn.Dropout(dropout))
-            layers.append(nn.Linear(hidden_size, 1))
-            self.net = nn.Sequential(*layers)
+            self.net = nn.Sequential(
+                nn.Linear(input_dim, hidden_size),
+                nn.ReLU(),
+                nn.Linear(hidden_size, 1)
+            )
 
     def forward(self, x):
         return self.net(x).squeeze(-1)
 
 
 class DualHead(nn.Module):
-    def __init__(self, model_name, head_hidden_size, dropout, pooling_strategy,
-                 head_activation="gelu", head_norm_type="layernorm",
-                 head_norm_position="before_activation", head_dropout=None):
+    def __init__(self, model_name, head_hidden_size, dropout, pooling_strategy):
         super().__init__()
         self.encoder = AutoModel.from_pretrained(model_name)
         hidden_size = self.encoder.config.hidden_size
 
-        hd = head_dropout if head_dropout is not None else dropout
-        self.valence_head = RegressionHead(hidden_size, head_hidden_size, hd,
-                                            head_activation, head_norm_type, head_norm_position)
-        self.arousal_head = RegressionHead(hidden_size, head_hidden_size, hd,
-                                            head_activation, head_norm_type, head_norm_position)
+        self.valence_head = RegressionHead(hidden_size, head_hidden_size, dropout)
+        self.arousal_head = RegressionHead(hidden_size, head_hidden_size, dropout)
 
         self.pooling_strategy = pooling_strategy
         self.dropout = nn.Dropout(dropout)
@@ -128,29 +99,23 @@ DROPOUT           = 0.1
 POOLING_STRATEGY  = "mean"
 NUM_EPOCHS        = 5
 LEARNING_RATE     = 2e-5
-HEAD_HIDDEN_SIZE  = 256   # <- war None, jetzt gesetzt, sonst greift die Kopf-Architektur nicht
+HEAD_HIDDEN_SIZE  = None
 DATA_CSV          = "../data/train_subtask1.csv"
 VAL_SPLIT         = 0.2
 SEED              = 42
-SAVE_PATH         = "../models/dual_head_model_headarch.pt"   # <- eigener Pfad, kollidiert nicht mit anderen Verzeichnissen
+SAVE_PATH         = "../models/dual_head_model_head_parameters.pt"
 DEVICE            = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 #configuration for user ID handling
 MIN_USER_TEXTS = 15
 UNKNOWN_USER = "UNKNOWN"
 USER_ID_LENGTH = 2      #L in paper
 
-#configuration for training loop (Sieger aus der TRAINING_LOOP-Ablation)
-SCHEDULER_TYPE       = "cosine"
-WARMUP_RATIO         = 0.1
-GRAD_CLIP_NORM       = None
+#configuration for training loop ablation
+SCHEDULER_TYPE       = "linear"   # "linear" | "cosine" | "constant"
+WARMUP_RATIO         = 0.0        # Anteil der total_steps als Warmup
+GRAD_CLIP_NORM       = None       # None = kein Clipping, sonst z.B. 1.0
 VALENCE_LOSS_WEIGHT  = 1.0
 AROUSAL_LOSS_WEIGHT  = 1.0
-
-#configuration for head architecture
-HEAD_ACTIVATION     = "gelu"               # "gelu" | "relu" | "silu" | "tanh"
-HEAD_NORM_TYPE      = "layernorm"          # "layernorm" | "batchnorm" | "none"
-HEAD_NORM_POSITION  = "before_activation"  # "before_activation" | "after_activation"
-HEAD_DROPOUT        = 0.1                  # separat vom Encoder-DROPOUT regelbar
 
 
 import pandas as pd
@@ -280,8 +245,7 @@ def main():
     )
 
     model = DualHead(
-        MODEL_NAME, HEAD_HIDDEN_SIZE, DROPOUT, POOLING_STRATEGY,
-        HEAD_ACTIVATION, HEAD_NORM_TYPE, HEAD_NORM_POSITION, HEAD_DROPOUT
+        MODEL_NAME, HEAD_HIDDEN_SIZE, DROPOUT, POOLING_STRATEGY
     ).to(DEVICE)
 
     optimizer    = torch.optim.AdamW(model.parameters(), lr=LEARNING_RATE)
@@ -317,12 +281,8 @@ def main():
                     'head_hidden_size': HEAD_HIDDEN_SIZE,
                     'dropout': DROPOUT,
                     'pooling_strategy': POOLING_STRATEGY,
-                    'head_activation': HEAD_ACTIVATION,
-                    'head_norm_type': HEAD_NORM_TYPE,
-                    'head_norm_position': HEAD_NORM_POSITION,
-                    'head_dropout': HEAD_DROPOUT,
-                },
-            }, SAVE_PATH)
+    },
+}, SAVE_PATH)
 
 if __name__ == "__main__":
     main()

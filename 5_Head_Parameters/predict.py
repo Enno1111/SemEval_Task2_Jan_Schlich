@@ -3,7 +3,7 @@ import torch
 from transformers import AutoTokenizer
 from model import AffectDataset, DualHead
 
-CHECKPOINT_PATH = "../models/dual_head_model_all.pt"
+CHECKPOINT_PATH = "../models/dual_head_model_head_parameters.pt"
 TEST_CSV = "../data/test_labels_subtask1.csv"
 OUTPUT_CSV = "predictions.csv"
 BATCH_SIZE = 16

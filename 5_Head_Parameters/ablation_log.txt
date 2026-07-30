@@ -1,6 +1,6 @@
 
 ##################################################
-# Ablation: MODEL_NAME
+# Ablation: HEAD_ACTIVATION
 ##################################################
 
---- MODEL_NAME = bert-base-uncased (LR=2e-05) ---
+--- HEAD_ACTIVATION = gelu ---
