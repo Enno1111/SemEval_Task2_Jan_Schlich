@@ -53,9 +53,7 @@ class RegressionHead(nn.Module):
         else:
             self.net = nn.Sequential(
                 nn.Linear(input_dim, hidden_size),
-                nn.LayerNorm(hidden_size),
-                nn.GELU(),
-                nn.Dropout(dropout),
+                nn.ReLU(),
                 nn.Linear(hidden_size, 1)
             )
 

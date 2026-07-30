@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=run
+#SBATCH --job-name=ablation_regression
 #SBATCH --partition=gpu-vram-12gb
 #SBATCH --gres=gpu:1
 #SBATCH --time=11:00:00
@@ -9,4 +9,4 @@
 #SBATCH --error=ablation_error.txt
 
 source /home/jaschlic/venv/bin/activate
-python -u run.py
+python -u ablation.py

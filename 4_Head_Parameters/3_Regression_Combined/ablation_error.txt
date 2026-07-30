@@ -1,0 +1,16 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  17%|█▋        | 34/199 [00:00<00:00, 337.11it/s]Loading weights:  40%|████      | 80/199 [00:00<00:00, 386.07it/s]Loading weights:  62%|██████▏   | 124/199 [00:00<00:00, 385.00it/s]Loading weights:  82%|████████▏ | 164/199 [00:00<00:00, 385.60it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 411.82it/s]
+[transformers] [1mBertModel LOAD REPORT[0m from: bert-base-uncased
+Key                                        | Status     |  | 
+-------------------------------------------+------------+--+-
+cls.predictions.bias                       | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
+cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
+cls.seq_relationship.weight                | UNEXPECTED |  | 
+cls.seq_relationship.bias                  | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+[2026-07-30T12:43:38.572] error: *** JOB 308496 ON dws-06 CANCELLED AT 2026-07-30T12:43:38 DUE to SIGNAL Terminated ***
