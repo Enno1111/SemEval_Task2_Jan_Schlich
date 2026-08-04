@@ -7,7 +7,7 @@ from model import UserSequenceDataset, DualHead, build_user_chunks, DATA_CSV
 CHECKPOINT_PATH = "../models/dual_head_model_seq2seq.pt"
 TEST_CSV = "../data/test_labels_subtask1.csv"
 OUTPUT_CSV = "predictions.csv"
-BATCH_SIZE = 16
+BATCH_SIZE = 8
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 UNK_SHUFFLE_SEED = 0
 

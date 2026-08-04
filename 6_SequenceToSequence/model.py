@@ -143,6 +143,7 @@ class DualHead(nn.Module):
     def __init__(self, model_name, head_hidden_size, dropout):
         super().__init__()
         self.encoder = AutoModel.from_pretrained(model_name)
+        self.encoder.gradient_checkpointing_enable()
         hidden_size = self.encoder.config.hidden_size
 
         self.valence_head = RegressionHead(hidden_size, head_hidden_size, dropout)
@@ -166,7 +167,7 @@ class DualHead(nn.Module):
 
 # Konfiguration
 MODEL_NAME        = "microsoft/deberta-base-mnli"
-BATCH_SIZE        = 16
+BATCH_SIZE        = 4
 DROPOUT           = 0.1
 NUM_EPOCHS        = 5
 LEARNING_RATE     = 2e-5
