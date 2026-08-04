@@ -2,7 +2,7 @@ import pandas as pd
 import torch
 from torch.utils.data import DataLoader
 from transformers import AutoTokenizer
-from model import UserSequenceDataset, DualHead, build_user_chunks, DATA_CSV
+from model import UserSequenceDataset, DualHead, build_user_chunks, DATA_CSV, UNKNOWN_USER
 
 CHECKPOINT_PATH = "../models/dual_head_model_seq2seq.pt"
 TEST_CSV = "../data/test_labels_subtask1.csv"
@@ -15,17 +15,18 @@ UNK_SHUFFLE_SEED = 0
 def load_model(checkpoint_path):
     checkpoint = torch.load(checkpoint_path, map_location=DEVICE, weights_only=False)
     config = checkpoint["config"]
+    user_id_map = checkpoint["user_id_map"]
 
     model = DualHead(config["model_name"], config["head_hidden_size"], config["dropout"]).to(DEVICE)
     model.load_state_dict(checkpoint["model_state_dict"])
     model.eval()
 
     tokenizer = AutoTokenizer.from_pretrained(config["model_name"])
-    return model, tokenizer, config["max_length"], config["chunk_size"], config["min_user_texts"]
+    return model, tokenizer, config, user_id_map
 
 
 def main():
-    model, tokenizer, max_length, chunk_size, min_user_texts = load_model(CHECKPOINT_PATH)
+    model, tokenizer, config, user_id_map = load_model(CHECKPOINT_PATH)
 
     df = pd.read_csv(TEST_CSV)
     df["timestamp"] = pd.to_datetime(df["timestamp"])
@@ -36,9 +37,16 @@ def main():
     train_user_ids = set(pd.read_csv(DATA_CSV)["user_id"].unique())
     df["seen"] = df["user_id"].isin(train_user_ids)
 
-    chunks = build_user_chunks(df, chunk_size, min_user_texts, seed=UNK_SHUFFLE_SEED)
+    chunks = build_user_chunks(df, config["chunk_size"], config["min_user_texts"],
+                                seed=UNK_SHUFFLE_SEED, assign_real_ids=True)
+    # Nur User, deren Pseudo-ID tatsaechlich beim Training gelernt wurde, behalten
+    # ihre eigene ID -- alle anderen (inkl. komplett neuer Test-User) fallen auf
+    # die gemeinsame UNKNOWN_USER-ID zurueck.
+    chunks = [(uid if uid in user_id_map else UNKNOWN_USER, rows) for uid, rows in chunks]
+
     loader = DataLoader(
-        UserSequenceDataset(chunks, tokenizer, max_length, chunk_size),
+        UserSequenceDataset(chunks, tokenizer, config["max_length"], config["chunk_size"],
+                             user_id_map, config["user_id_length"], config["timestamp_format"]),
         batch_size=BATCH_SIZE, shuffle=False
     )
 

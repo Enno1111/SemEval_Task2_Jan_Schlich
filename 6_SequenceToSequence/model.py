@@ -4,36 +4,48 @@ from torch.utils.data import Dataset
 from transformers import AutoModel
 
 CHUNK_SIZE = 5          # Texte pro User-Sequenz
-MAX_LENGTH = 512        # Gesamtlänge der Sequenz (mehrere Texte + Marker)
+MAX_LENGTH = 512        # Gesamtlänge der Sequenz (User-ID-Tokens + mehrere Texte + Marker)
 MIN_USER_TEXTS = CHUNK_SIZE   # User mit weniger Texten landen im gemeinsamen UNK-Pool
+
+#configuration for user ID handling
+UNKNOWN_USER = "UNKNOWN"
+USER_ID_LENGTH = 3      # L in paper
+
+TIMESTAMP_FORMAT = 'year: %Y month: %m day: %d'
 
 
 class UserSequenceDataset(Dataset):
     """
     Ein Sample = eine Sequenz aus bis zu CHUNK_SIZE Texten (desselben Users,
-    oder aus dem UNK-Pool), als [CLS] text [SEP] [CLS] text [SEP] ...
-    aneinandergereiht (BERTSUM-Stil). Die Vorhersage fuer Text i wird am
-    Hidden State der i-ten [CLS]-Position abgegriffen.
+    oder aus dem UNK-Pool), der Sequenz vorangestellt die Pseudo-ID-Tokens
+    des Users (oder von UNKNOWN_USER). Pro Text: [CLS] Timestamp Text [SEP].
+    Die Vorhersage fuer Text i wird am Hidden State der i-ten [CLS]-Position
+    abgegriffen (BERTSUM-Stil).
     """
-    def __init__(self, chunks, tokenizer, max_length, chunk_size):
-        self.chunks = chunks   # Liste von Chunks; Chunk = Liste von (text, valence, arousal, text_id)
+    def __init__(self, chunks, tokenizer, max_length, chunk_size, user_id_map, id_length, ts_format):
+        self.chunks = chunks   # Liste von (identity_id, rows); rows = (text, valence, arousal, text_id, timestamp)
         self.tokenizer = tokenizer
         self.max_length = max_length
         self.chunk_size = chunk_size
+        self.user_id_map = user_id_map
+        self.id_length = id_length
+        self.ts_format = ts_format
 
         self.cls_id = tokenizer.cls_token_id
         self.sep_id = tokenizer.sep_token_id
         self.pad_id = tokenizer.pad_token_id
 
-        self.per_text_budget = max(1, max_length // chunk_size - 2)
+        self.per_text_budget = max(1, (max_length - id_length) // chunk_size - 2)
 
     def __len__(self):
         return len(self.chunks)
 
     def __getitem__(self, idx):
-        chunk = self.chunks[idx]
+        identity_id, chunk = self.chunks[idx]
 
-        input_ids = []
+        id_tokens = self.user_id_map[identity_id]
+        input_ids = list(id_tokens)   # User-ID-Tokens stehen am Sequenzanfang
+
         cls_positions = []
         valid_mask = []
         valence_labels = []
@@ -42,10 +54,12 @@ class UserSequenceDataset(Dataset):
 
         for slot in range(self.chunk_size):
             if slot < len(chunk):
-                text, valence, arousal, text_id = chunk[slot]
+                text, valence, arousal, text_id, timestamp = chunk[slot]
+                ts_str = timestamp.strftime(self.ts_format)
+                body_text = f"{ts_str} {text}"
 
                 body_ids = self.tokenizer(
-                    text, truncation=True, max_length=self.per_text_budget,
+                    body_text, truncation=True, max_length=self.per_text_budget,
                     add_special_tokens=False,
                 )["input_ids"]
 
@@ -91,36 +105,55 @@ class UserSequenceDataset(Dataset):
 import random
 
 
-def build_user_chunks(df, chunk_size, min_user_texts=1, seed=0):
+def build_user_chunks(df, chunk_size, min_user_texts=1, seed=0, assign_real_ids=True):
     """
     User mit >= min_user_texts Texten bekommen eigene, chronologisch
     sortierte Chunks. User darunter landen gemeinsam in einem gemischten
     UNK-Pool, der genauso in chunk_size-Gruppen aufgeteilt wird (kein
     personalisierter Kontext, aber auch kein verschwendetes Padding).
+
+    assign_real_ids=False erzwingt fuer ALLE Chunks (auch von Usern mit
+    genug eigenen Texten) die gemeinsame UNKNOWN_USER-Identitaet -- genutzt
+    fuer den Val-Split, dessen User beim Training nie gesehen werden und
+    denen deshalb keine trainierte Pseudo-ID zugeordnet werden kann. Der
+    inhaltliche Kontext (eigene Text-Chunks) bleibt davon unberuehrt.
     """
     counts = df.groupby("user_id").size()
     known_users = counts[counts >= min_user_texts].index
     unk_users = counts[counts < min_user_texts].index
 
-    chunks = []
+    chunks = []   # Liste von (identity_id, rows)
 
     for user_id in known_users:
         group = df[df["user_id"] == user_id].sort_values("timestamp")
         rows = list(zip(group["text"], group["valence"].astype(float),
-                         group["arousal"].astype(float), group["text_id"]))
+                         group["arousal"].astype(float), group["text_id"],
+                         group["timestamp"]))
+        identity_id = user_id if assign_real_ids else UNKNOWN_USER
         for i in range(0, len(rows), chunk_size):
-            chunks.append(rows[i:i + chunk_size])
+            chunks.append((identity_id, rows[i:i + chunk_size]))
 
     if len(unk_users) > 0:
         unk_df = df[df["user_id"].isin(unk_users)]
         unk_rows = list(zip(unk_df["text"], unk_df["valence"].astype(float),
-                             unk_df["arousal"].astype(float), unk_df["text_id"]))
+                             unk_df["arousal"].astype(float), unk_df["text_id"],
+                             unk_df["timestamp"]))
         rng = random.Random(seed)
         rng.shuffle(unk_rows)
         for i in range(0, len(unk_rows), chunk_size):
-            chunks.append(unk_rows[i:i + chunk_size])
+            chunks.append((UNKNOWN_USER, unk_rows[i:i + chunk_size]))
 
     return chunks
+
+
+def generate_user_identifiers(identity_ids, tokenizer, length, seed):
+    rng = random.Random(seed)
+    vocab_size = tokenizer.vocab_size
+
+    effective_ids = set(identity_ids)
+    effective_ids.add(UNKNOWN_USER)
+
+    return {eid: rng.sample(range(vocab_size), length) for eid in effective_ids}
 
 
 class RegressionHead(nn.Module):
@@ -242,15 +275,23 @@ def main():
     train_df = df[df["user_id"].isin(train_users)]
     val_df   = df[df["user_id"].isin(val_users)]
 
-    train_chunks = build_user_chunks(train_df, CHUNK_SIZE, MIN_USER_TEXTS, seed=SEED)
-    val_chunks   = build_user_chunks(val_df,   CHUNK_SIZE, MIN_USER_TEXTS, seed=SEED)
+    train_chunks = build_user_chunks(train_df, CHUNK_SIZE, MIN_USER_TEXTS, seed=SEED, assign_real_ids=True)
+    val_chunks   = build_user_chunks(val_df,   CHUNK_SIZE, MIN_USER_TEXTS, seed=SEED, assign_real_ids=False)
+
+    # Pseudo-IDs nur fuer Identitaeten, die im Train-Split tatsaechlich vorkommen
+    # (+ UNKNOWN_USER) -- Val-User sind darin bewusst nicht enthalten, siehe
+    # assign_real_ids=False oben.
+    identity_ids_used = [cid for cid, _ in train_chunks]
+    user_id_map = generate_user_identifiers(identity_ids_used, tokenizer, USER_ID_LENGTH, SEED)
 
     train_loader = DataLoader(
-        UserSequenceDataset(train_chunks, tokenizer, MAX_LENGTH, CHUNK_SIZE),
+        UserSequenceDataset(train_chunks, tokenizer, MAX_LENGTH, CHUNK_SIZE,
+                             user_id_map, USER_ID_LENGTH, TIMESTAMP_FORMAT),
         batch_size=BATCH_SIZE, shuffle=True
     )
     val_loader = DataLoader(
-        UserSequenceDataset(val_chunks, tokenizer, MAX_LENGTH, CHUNK_SIZE),
+        UserSequenceDataset(val_chunks, tokenizer, MAX_LENGTH, CHUNK_SIZE,
+                             user_id_map, USER_ID_LENGTH, TIMESTAMP_FORMAT),
         batch_size=BATCH_SIZE, shuffle=False
     )
 
@@ -271,6 +312,7 @@ def main():
             best_val_loss = val_loss
             torch.save({
                 'model_state_dict': model.state_dict(),
+                'user_id_map': user_id_map,
                 'config': {
                     'model_name': MODEL_NAME,
                     'head_hidden_size': HEAD_HIDDEN_SIZE,
@@ -278,6 +320,8 @@ def main():
                     'max_length': MAX_LENGTH,
                     'chunk_size': CHUNK_SIZE,
                     'min_user_texts': MIN_USER_TEXTS,
+                    'user_id_length': USER_ID_LENGTH,
+                    'timestamp_format': TIMESTAMP_FORMAT,
                 },
             }, SAVE_PATH)
 
