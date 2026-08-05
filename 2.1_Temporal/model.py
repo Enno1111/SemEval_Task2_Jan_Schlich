@@ -83,7 +83,7 @@ class DualHead(nn.Module):
 
 # Konfiguration
 MODEL_NAME        = "microsoft/deberta-base-mnli"
-MAX_LENGTH        = 256
+MAX_LENGTH        = 128
 BATCH_SIZE        = 16
 DROPOUT           = 0.1
 POOLING_STRATEGY  = "mean"

@@ -4,3 +4,282 @@
 ##################################################
 
 --- MODEL_NAME = bert-base-uncased (LR=2e-05) ---
+Epoch 1: train=1.6065, val=1.2919
+Epoch 2: train=1.0747, val=1.0523
+Epoch 3: train=0.8753, val=1.0306
+Epoch 4: train=0.7156, val=1.0295
+Epoch 5: train=0.6096, val=1.0469
+Epoch 1: train=1.5257, val=1.2827
+Epoch 2: train=1.0631, val=1.1937
+Epoch 3: train=0.8409, val=1.1518
+Epoch 4: train=0.6843, val=1.1053
+Epoch 5: train=0.5959, val=1.1400
+Epoch 1: train=1.5880, val=1.3378
+Epoch 2: train=1.0979, val=1.1424
+Epoch 3: train=0.8904, val=1.1090
+Epoch 4: train=0.7234, val=1.1272
+Epoch 5: train=0.6395, val=1.0908
+bert-base-uncased
+  r_composite: 0.598 ± 0.011
+  r_valence:   0.689 ± 0.009
+  r_arousal:   0.508 ± 0.015
+
+--- MODEL_NAME = roberta-base (LR=2e-05) ---
+Epoch 1: train=1.6565, val=1.1656
+Epoch 2: train=1.1459, val=1.1701
+Epoch 3: train=0.9684, val=1.1132
+Epoch 4: train=0.8393, val=1.0867
+Epoch 5: train=0.7179, val=1.1392
+Epoch 1: train=1.6893, val=1.3362
+Epoch 2: train=1.2021, val=1.2105
+Epoch 3: train=0.9919, val=1.1781
+Epoch 4: train=0.8618, val=1.2315
+Epoch 5: train=0.7726, val=1.1748
+Epoch 1: train=1.6773, val=1.2277
+Epoch 2: train=1.1825, val=1.2861
+Epoch 3: train=0.9811, val=1.1913
+Epoch 4: train=0.8407, val=1.1556
+Epoch 5: train=0.7333, val=1.1572
+roberta-base
+  r_composite: 0.589 ± 0.008
+  r_valence:   0.672 ± 0.007
+  r_arousal:   0.506 ± 0.010
+
+--- MODEL_NAME = cardiffnlp/twitter-roberta-base-sentiment-latest (LR=2e-05) ---
+Epoch 1: train=1.5030, val=1.1863
+Epoch 2: train=1.1269, val=1.0814
+Epoch 3: train=0.9345, val=1.1161
+Epoch 4: train=0.8044, val=1.0838
+Epoch 5: train=0.7068, val=1.0809
+Epoch 1: train=1.5191, val=1.3029
+Epoch 2: train=1.1106, val=1.2352
+Epoch 3: train=0.9529, val=1.1101
+Epoch 4: train=0.8152, val=1.1071
+Epoch 5: train=0.7260, val=1.1147
+Epoch 1: train=1.5049, val=1.3199
+Epoch 2: train=1.1041, val=1.1945
+Epoch 3: train=0.9350, val=1.1189
+Epoch 4: train=0.7958, val=1.1584
+Epoch 5: train=0.7005, val=1.1235
+cardiffnlp/twitter-roberta-base-sentiment-latest
+  r_composite: 0.598 ± 0.011
+  r_valence:   0.700 ± 0.009
+  r_arousal:   0.496 ± 0.017
+
+--- MODEL_NAME = cardiffnlp/twitter-roberta-base-emotion (LR=2e-05) ---
+Epoch 1: train=1.5047, val=1.1869
+Epoch 2: train=1.1513, val=1.1371
+Epoch 3: train=0.9819, val=1.0701
+Epoch 4: train=0.8452, val=1.1134
+Epoch 5: train=0.7372, val=1.1171
+Epoch 1: train=1.4591, val=1.3374
+Epoch 2: train=1.1357, val=1.2505
+Epoch 3: train=0.9500, val=1.2023
+Epoch 4: train=0.7983, val=1.2300
+Epoch 5: train=0.7247, val=1.1747
+Epoch 1: train=1.4672, val=1.2161
+Epoch 2: train=1.1321, val=1.3248
+Epoch 3: train=0.9315, val=1.1846
+Epoch 4: train=0.7959, val=1.1699
+Epoch 5: train=0.6992, val=1.1898
+cardiffnlp/twitter-roberta-base-emotion
+  r_composite: 0.589 ± 0.019
+  r_valence:   0.697 ± 0.006
+  r_arousal:   0.481 ± 0.033
+
+--- MODEL_NAME = answerdotai/ModernBERT-base (LR=2e-05) ---
+Epoch 1: train=1.7781, val=1.2862
+Epoch 2: train=1.2621, val=1.1277
+Epoch 3: train=0.9920, val=1.1132
+Epoch 4: train=0.8052, val=1.1052
+Epoch 5: train=0.7549, val=1.1348
+Epoch 1: train=1.7778, val=1.3488
+Epoch 2: train=1.2213, val=1.2257
+Epoch 3: train=0.9773, val=1.2129
+Epoch 4: train=0.7687, val=1.1449
+Epoch 5: train=0.6120, val=1.1628
+Epoch 1: train=1.7844, val=1.3940
+Epoch 2: train=1.2301, val=1.2408
+Epoch 3: train=0.9588, val=1.1760
+Epoch 4: train=0.7365, val=1.1852
+Epoch 5: train=0.5958, val=1.1626
+answerdotai/ModernBERT-base
+  r_composite: 0.577 ± 0.002
+  r_valence:   0.659 ± 0.012
+  r_arousal:   0.494 ± 0.015
+
+--- MODEL_NAME = microsoft/deberta-base-mnli (LR=2e-05) ---
+Epoch 1: train=1.5643, val=1.1776
+Epoch 2: train=1.1089, val=1.0771
+Epoch 3: train=0.9032, val=1.1062
+Epoch 4: train=0.7217, val=1.0904
+Epoch 5: train=0.6330, val=1.0822
+Epoch 1: train=1.6082, val=1.3471
+Epoch 2: train=1.1335, val=1.3182
+Epoch 3: train=0.9103, val=1.2714
+Epoch 4: train=0.7550, val=1.2598
+Epoch 5: train=0.6497, val=1.2857
+Epoch 1: train=1.5943, val=1.3515
+Epoch 2: train=1.1231, val=1.2596
+Epoch 3: train=0.9084, val=1.2173
+Epoch 4: train=0.7570, val=1.2137
+Epoch 5: train=0.6703, val=1.1845
+microsoft/deberta-base-mnli
+  r_composite: 0.594 ± 0.003
+  r_valence:   0.672 ± 0.005
+  r_arousal:   0.516 ± 0.011
+
+--- MODEL_NAME = distilroberta-base (LR=1e-05) ---
+Epoch 1: train=1.9034, val=1.3932
+Epoch 2: train=1.3645, val=1.2211
+Epoch 3: train=1.1860, val=1.1336
+Epoch 4: train=1.0746, val=1.0745
+Epoch 5: train=1.0160, val=1.0557
+Epoch 1: train=1.8563, val=1.4183
+Epoch 2: train=1.3237, val=1.3505
+Epoch 3: train=1.1745, val=1.2122
+Epoch 4: train=1.0588, val=1.2424
+Epoch 5: train=1.0060, val=1.2047
+Epoch 1: train=1.8184, val=1.4406
+Epoch 2: train=1.3045, val=1.3080
+Epoch 3: train=1.1364, val=1.2545
+Epoch 4: train=1.0381, val=1.2191
+Epoch 5: train=0.9838, val=1.2176
+distilroberta-base
+  r_composite: 0.564 ± 0.012
+  r_valence:   0.658 ± 0.009
+  r_arousal:   0.469 ± 0.015
+
+--- MODEL_NAME = SamLowe/roberta-base-go_emotions (LR=1e-05) ---
+Epoch 1: train=1.5825, val=1.2571
+Epoch 2: train=1.2876, val=1.1780
+Epoch 3: train=1.1688, val=1.1176
+Epoch 4: train=1.0849, val=1.1284
+Epoch 5: train=1.0118, val=1.1358
+Epoch 1: train=1.5903, val=1.3609
+Epoch 2: train=1.2775, val=1.2987
+Epoch 3: train=1.1265, val=1.2629
+Epoch 4: train=1.0501, val=1.2725
+Epoch 5: train=1.0051, val=1.2416
+Epoch 1: train=1.5732, val=1.3451
+Epoch 2: train=1.2776, val=1.3233
+Epoch 3: train=1.1347, val=1.2718
+Epoch 4: train=1.0642, val=1.2417
+Epoch 5: train=0.9875, val=1.2427
+SamLowe/roberta-base-go_emotions
+  r_composite: 0.549 ± 0.009
+  r_valence:   0.646 ± 0.004
+  r_arousal:   0.452 ± 0.018
+
+--- MODEL_NAME = RobroKools/vad-bert (LR=1e-05) ---
+Epoch 1: train=1.5745, val=1.2382
+Epoch 2: train=1.1578, val=1.1286
+Epoch 3: train=0.9671, val=1.0714
+Epoch 4: train=0.8560, val=1.0909
+Epoch 5: train=0.8073, val=1.0958
+Epoch 1: train=1.5924, val=1.3037
+Epoch 2: train=1.1444, val=1.2106
+Epoch 3: train=0.9686, val=1.1646
+Epoch 4: train=0.8666, val=1.1529
+Epoch 5: train=0.7955, val=1.1807
+Epoch 1: train=1.5409, val=1.2751
+Epoch 2: train=1.1289, val=1.1436
+Epoch 3: train=0.9737, val=1.0816
+Epoch 4: train=0.8815, val=1.0984
+Epoch 5: train=0.8187, val=1.0840
+RobroKools/vad-bert
+  r_composite: 0.590 ± 0.007
+  r_valence:   0.698 ± 0.014
+  r_arousal:   0.481 ± 0.013
+
+>>> Bestes Modell: bert-base-uncased
+Bestes Modell
+  r_composite: 0.598 ± 0.011
+  r_valence:   0.689 ± 0.009
+  r_arousal:   0.508 ± 0.015
+
+##################################################
+# Ablation: POOLING_STRATEGY
+##################################################
+
+--- POOLING_STRATEGY = cls ---
+Epoch 1: train=1.6422, val=1.1819
+Epoch 2: train=1.0644, val=1.0553
+Epoch 3: train=0.8699, val=1.0348
+Epoch 4: train=0.7285, val=1.0385
+Epoch 5: train=0.6329, val=1.0633
+Epoch 1: train=1.5215, val=1.2450
+Epoch 2: train=1.0748, val=1.1599
+Epoch 3: train=0.8796, val=1.1145
+Epoch 4: train=0.7461, val=1.0779
+Epoch 5: train=0.6552, val=1.1143
+Epoch 1: train=1.6411, val=1.3064
+Epoch 2: train=1.1002, val=1.1616
+Epoch 3: train=0.8775, val=1.1218
+Epoch 4: train=0.7204, val=1.1602
+Epoch 5: train=0.6377, val=1.1283
+POOLING_STRATEGY=cls
+  r_composite: 0.605 ± 0.008
+  r_valence:   0.690 ± 0.003
+  r_arousal:   0.520 ± 0.020
+
+--- POOLING_STRATEGY = mean ---
+Epoch 1: train=1.6065, val=1.2919
+Epoch 2: train=1.0747, val=1.0523
+Epoch 3: train=0.8753, val=1.0306
+Epoch 4: train=0.7156, val=1.0295
+Epoch 5: train=0.6096, val=1.0469
+Epoch 1: train=1.5257, val=1.2827
+Epoch 2: train=1.0631, val=1.1937
+Epoch 3: train=0.8409, val=1.1518
+Epoch 4: train=0.6843, val=1.1053
+Epoch 5: train=0.5959, val=1.1400
+Epoch 1: train=1.5880, val=1.3378
+Epoch 2: train=1.0979, val=1.1424
+Epoch 3: train=0.8904, val=1.1090
+Epoch 4: train=0.7234, val=1.1272
+Epoch 5: train=0.6395, val=1.0908
+POOLING_STRATEGY=mean
+  r_composite: 0.598 ± 0.011
+  r_valence:   0.689 ± 0.009
+  r_arousal:   0.508 ± 0.015
+
+>>> Bester Wert für POOLING_STRATEGY: cls
+Sieger POOLING_STRATEGY
+  r_composite: 0.605 ± 0.008
+  r_valence:   0.690 ± 0.003
+  r_arousal:   0.520 ± 0.020
+
+##################################################
+# Ablation: HEAD_HIDDEN_SIZE
+##################################################
+
+--- HEAD_HIDDEN_SIZE = None ---
+Epoch 1: train=1.6422, val=1.1819
+Epoch 2: train=1.0644, val=1.0553
+Epoch 3: train=0.8699, val=1.0348
+Epoch 4: train=0.7285, val=1.0385
+Epoch 5: train=0.6329, val=1.0633
+Epoch 1: train=1.5215, val=1.2450
+Epoch 2: train=1.0748, val=1.1599
+Epoch 3: train=0.8796, val=1.1145
+Epoch 4: train=0.7461, val=1.0779
+Epoch 5: train=0.6552, val=1.1143
+Epoch 1: train=1.6411, val=1.3064
+Epoch 2: train=1.1002, val=1.1616
+Epoch 3: train=0.8775, val=1.1218
+Epoch 4: train=0.7204, val=1.1602
+Epoch 5: train=0.6377, val=1.1283
+HEAD_HIDDEN_SIZE=None
+  r_composite: 0.605 ± 0.008
+  r_valence:   0.690 ± 0.003
+  r_arousal:   0.520 ± 0.020
+
+--- HEAD_HIDDEN_SIZE = 128 ---
+Epoch 1: train=1.6075, val=1.2323
+Epoch 2: train=1.0955, val=1.1139
+Epoch 3: train=0.8776, val=1.0224
+Epoch 4: train=0.7398, val=1.0224
+Epoch 5: train=0.6473, val=1.0484
+Epoch 1: train=1.5219, val=1.1799
+Epoch 2: train=1.0585, val=1.1182

@@ -3,7 +3,7 @@ import torch.nn as nn
 from torch.utils.data import Dataset
 from transformers import AutoModel
 
-CHUNK_SIZE = 5          # Texte pro User-Sequenz
+CHUNK_SIZE = 3          # Texte pro User-Sequenz
 MAX_LENGTH = 512        # Gesamtlänge der Sequenz (User-ID-Tokens + mehrere Texte + Marker)
 MIN_USER_TEXTS = CHUNK_SIZE   # User mit weniger Texten landen im gemeinsamen UNK-Pool
 
