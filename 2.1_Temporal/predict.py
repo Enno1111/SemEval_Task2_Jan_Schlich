@@ -9,7 +9,7 @@ OUTPUT_CSV = "predictions.csv"
 BATCH_SIZE = 16
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-TEMPORAL_MODE = "none"
+TEMPORAL_MODE = "date"
 
 def load_model(checkpoint_path):
     checkpoint = torch.load(checkpoint_path, map_location=DEVICE, weights_only=False)

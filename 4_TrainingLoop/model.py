@@ -103,7 +103,7 @@ HEAD_HIDDEN_SIZE  = None
 DATA_CSV          = "../data/train_subtask1.csv"
 VAL_SPLIT         = 0.2
 SEED              = 42
-SAVE_PATH         = "../models/dual_head_model_head_parameters.pt"
+SAVE_PATH         = "../models/dual_head_model_training_loop.pt"
 DEVICE            = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 #configuration for user ID handling
 MIN_USER_TEXTS = 15

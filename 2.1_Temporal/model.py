@@ -96,7 +96,7 @@ SEED              = 42
 SAVE_PATH         = "../models/dual_head_model_Temporal.pt"
 DEVICE            = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-TEMPORAL_MODE = "none"
+TEMPORAL_MODE = "date"
 
 
 import pandas as pd
