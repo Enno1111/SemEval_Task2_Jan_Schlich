@@ -1,3 +1,9 @@
+import os
+
+# Deterministische cuBLAS-Reduktionen erzwingen. Muss gesetzt sein, bevor der
+# CUDA-Kontext entsteht, deshalb vor dem torch-Import.
+os.environ.setdefault("CUBLAS_WORKSPACE_CONFIG", ":4096:8")
+
 import torch
 import torch.nn as nn
 from torch.utils.data import Dataset
@@ -226,6 +232,7 @@ def set_seed(seed):
     torch.cuda.manual_seed_all(seed)
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark = False
+    torch.use_deterministic_algorithms(True, warn_only=True)
 
 
 def load_data(csv_path):
@@ -284,10 +291,13 @@ def main():
     identity_ids_used = [cid for cid, _ in train_chunks]
     user_id_map = generate_user_identifiers(identity_ids_used, tokenizer, USER_ID_LENGTH, SEED)
 
+    generator = torch.Generator()
+    generator.manual_seed(SEED)
+
     train_loader = DataLoader(
         UserSequenceDataset(train_chunks, tokenizer, MAX_LENGTH, CHUNK_SIZE,
                              user_id_map, USER_ID_LENGTH, TIMESTAMP_FORMAT),
-        batch_size=BATCH_SIZE, shuffle=True
+        batch_size=BATCH_SIZE, shuffle=True, generator=generator
     )
     val_loader = DataLoader(
         UserSequenceDataset(val_chunks, tokenizer, MAX_LENGTH, CHUNK_SIZE,

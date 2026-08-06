@@ -1,3 +1,9 @@
+import os
+
+# Deterministische cuBLAS-Reduktionen erzwingen. Muss gesetzt sein, bevor der
+# CUDA-Kontext entsteht, deshalb vor dem torch-Import.
+os.environ.setdefault("CUBLAS_WORKSPACE_CONFIG", ":4096:8")
+
 import torch
 import torch.nn as nn
 from torch.utils.data import Dataset
@@ -110,6 +116,7 @@ def set_seed(seed):
     torch.cuda.manual_seed_all(seed)
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark = False
+    torch.use_deterministic_algorithms(True, warn_only=True)
 
 
 def load_data(csv_path):
