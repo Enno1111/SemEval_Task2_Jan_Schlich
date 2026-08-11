@@ -7,18 +7,18 @@ Du musst sie nicht mehr anpassen, nur pushen und auf dem Cluster starten.
 
 ```bash
 cd "/Users/janschlich/Desktop/Uni/6. Semester/Bachelor Thesis/Abgabe/SemEval_Task2_Jan_Schlich"
-git add 1.2_RegressionBaseline/group_error_analysis.py \
-        2.1_Temporal/group_error_analysis.py \
-        2.1_Temporal/counterfactual_ablation.py \
-        2.1_Temporal/attention_analysis.py \
-        2.2_UserID/group_error_analysis.py \
-        2.2_UserID/counterfactual_ablation.py \
-        2.2_UserID/attention_analysis.py \
-        3_Regression_Combined/group_error_analysis.py \
-        3_Regression_Combined/counterfactual_ablation.py \
-        3_Regression_Combined/attention_analysis.py \
+git add 1.2_RegressionBaseline/group_error_analysis.py 1.2_RegressionBaseline/group_error_analysis.sh \
+        2.1_Temporal/group_error_analysis.py 2.1_Temporal/group_error_analysis.sh \
+        2.1_Temporal/counterfactual_ablation.py 2.1_Temporal/counterfactual_ablation.sh \
+        2.1_Temporal/attention_analysis.py 2.1_Temporal/attention_analysis.sh \
+        2.2_UserID/group_error_analysis.py 2.2_UserID/group_error_analysis.sh \
+        2.2_UserID/counterfactual_ablation.py 2.2_UserID/counterfactual_ablation.sh \
+        2.2_UserID/attention_analysis.py 2.2_UserID/attention_analysis.sh \
+        3_Regression_Combined/group_error_analysis.py 3_Regression_Combined/group_error_analysis.sh \
+        3_Regression_Combined/counterfactual_ablation.py 3_Regression_Combined/counterfactual_ablation.sh \
+        3_Regression_Combined/attention_analysis.py 3_Regression_Combined/attention_analysis.sh \
         XAI_ANLEITUNG.md
-git commit -m "add: explainability scripts (group error, counterfactual ablation, attention)"
+git commit -m "add: explainability scripts + sbatch jobs (group error, counterfactual ablation, attention)"
 git push
 ```
 
@@ -26,44 +26,53 @@ git push
 
 ```bash
 git pull
-source .venv/bin/activate   # oder wie euer venv dort heisst
+source /home/jaschlic/venv/bin/activate
 pip install matplotlib --upgrade   # falls noch nicht installiert
 ```
 
 ## 3. Reihenfolge pro Ordner
 
-Für jeden Ordner gilt: erst `group_error_analysis.py` (braucht nur `predictions.csv`,
-läuft sofort, kein GPU nötig), dann `counterfactual_ablation.py` und
-`attention_analysis.py` (beide brauchen den trainierten Checkpoint in `../models/`,
-laufen am besten mit GPU).
+Für jeden Ordner gilt: erst `group_error_analysis.sh` (braucht nur `predictions.csv`,
+läuft schnell durch), dann `counterfactual_ablation.sh` und `attention_analysis.sh`
+(beide brauchen den trainierten Checkpoint in `../models/` und laufen mit GPU, deshalb
+`sbatch` statt direkt `python`, genau wie bei `run.sh`/`run_ablation.sh`).
 
 ```bash
 # 1.2 — nur Kontrollgruppen-Analyse (kein Temporal-/User-ID-Mechanismus vorhanden)
 cd 1.2_RegressionBaseline
-python group_error_analysis.py
+sbatch group_error_analysis.sh
 cd ..
 
 # 2.1 — Temporal-Modell
 cd 2.1_Temporal
-python group_error_analysis.py
-python counterfactual_ablation.py
-python attention_analysis.py
+sbatch group_error_analysis.sh
+sbatch counterfactual_ablation.sh
+sbatch attention_analysis.sh
 cd ..
 
 # 2.2 — User-ID-Modell
 cd 2.2_UserID
-python group_error_analysis.py
-python counterfactual_ablation.py
-python attention_analysis.py
+sbatch group_error_analysis.sh
+sbatch counterfactual_ablation.sh
+sbatch attention_analysis.sh
 cd ..
 
 # 3 — kombiniertes Modell (Temporal + User-ID)
 cd 3_Regression_Combined
-python group_error_analysis.py
-python counterfactual_ablation.py
-python attention_analysis.py
+sbatch group_error_analysis.sh
+sbatch counterfactual_ablation.sh
+sbatch attention_analysis.sh
 cd ..
 ```
+
+Mit `squeue -u jaschlic` (oder euren Username) siehst du den Job-Status. Jeder Job
+schreibt sein eigenes Log (`group_error_log.txt`/`_error.txt`,
+`counterfactual_log.txt`/`_error.txt`, `attention_log.txt`/`_error.txt`) im jeweiligen
+Ordner — kollidiert nicht mit den bestehenden `run_log.txt`/`ablation_log.txt`.
+
+`counterfactual_ablation.sh` und `attention_analysis.sh` können unabhängig voneinander
+und parallel zu `group_error_analysis.sh` laufen; nur muss `run.py` für den jeweiligen
+Ordner vorher durchgelaufen sein (Checkpoint + `predictions.csv` müssen existieren).
 
 Jedes Skript schreibt seine Ergebnisse in einen neuen Unterordner
 `<Experiment>/explainability_out/`:
