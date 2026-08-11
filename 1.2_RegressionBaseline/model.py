@@ -101,6 +101,10 @@ VAL_SPLIT         = 0.2
 SEED              = 42
 SAVE_PATH         = "../models/dual_head_model_regression.pt"
 DEVICE            = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+# Nur fuer run.py's Gruppen-Auswertung (seen_own_id/seen_unknown) -- dieses Modell
+# hat kein User-ID-Feature, muss aber denselben Schwellenwert wie 2.2/3 verwenden,
+# damit die Gruppen ueber alle Experimente hinweg vergleichbar sind.
+MIN_USER_TEXTS    = 20
 
 
 import pandas as pd
