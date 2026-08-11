@@ -112,9 +112,9 @@ SEED              = 42
 SAVE_PATH         = "../models/dual_head_model_all.pt"
 DEVICE            = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 #configuration for user ID handling
-MIN_USER_TEXTS = 15
+MIN_USER_TEXTS = 20
 UNKNOWN_USER = "UNKNOWN"
-USER_ID_LENGTH = 2      #L in paper
+USER_ID_LENGTH = 5      #L in paper
 
 
 import pandas as pd

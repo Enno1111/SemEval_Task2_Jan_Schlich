@@ -9,4 +9,4 @@
 #SBATCH --error=run_error.txt
 
 source /home/jaschlic/venv/bin/activate
-python -u run.py
+python -u group_error_analysis.py
