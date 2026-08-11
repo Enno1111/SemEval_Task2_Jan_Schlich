@@ -98,11 +98,11 @@ class DualHead(nn.Module):
 
 
 # Konfiguration
-MODEL_NAME        = "microsoft/deberta-base-mnli"
+MODEL_NAME        = "cardiffnlp/twitter-roberta-base-emotion"
 MAX_LENGTH        = 128
 BATCH_SIZE        = 16
 DROPOUT           = 0.1
-POOLING_STRATEGY  = "mean"
+POOLING_STRATEGY  = "cls"
 NUM_EPOCHS        = 5
 LEARNING_RATE     = 2e-5
 HEAD_HIDDEN_SIZE  = None

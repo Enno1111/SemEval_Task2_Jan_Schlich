@@ -99,7 +99,7 @@ class DualHead(nn.Module):
 
 #configuration class for the dual-head model
 
-MODEL_NAME = "microsoft/deberta-base-mnli"
+MODEL_NAME = "cardiffnlp/twitter-roberta-base-emotion"
 MAX_LENGTH = 128
 BATCH_SIZE = 16
 DROPOUT = 0.1
