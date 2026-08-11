@@ -9,4 +9,4 @@
 #SBATCH --error=attention_error.txt
 
 source /home/jaschlic/venv/bin/activate
-python -u attention_analysis.py
+/home/jaschlic/venv/bin/python -u attention_analysis.py

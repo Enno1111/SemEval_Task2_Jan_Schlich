@@ -9,4 +9,4 @@
 #SBATCH --error=counterfactual_error.txt
 
 source /home/jaschlic/venv/bin/activate
-python -u counterfactual_ablation.py
+/home/jaschlic/venv/bin/python -u counterfactual_ablation.py
