@@ -1,4 +1,3 @@
-Traceback (most recent call last):
-  File "/home/jaschlic/SemEval_Task2_Jan_Schlich/3_Regression_Combined/attention_analysis.py", line 10, in <module>
-    import pandas as pd
-ModuleNotFoundError: No module named 'pandas'
+Some weights of RobertaModel were not initialized from the model checkpoint at cardiffnlp/twitter-roberta-base-emotion and are newly initialized: ['pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+RobertaSdpaSelfAttention is used but `torch.nn.functional.scaled_dot_product_attention` does not support non-absolute `position_embedding_type` or `output_attentions=True` or `head_mask`. Falling back to the manual attention implementation, but specifying the manual implementation will be required from Transformers version v5.0.0 onwards. This warning can be removed using the argument `attn_implementation="eager"` when loading the model.

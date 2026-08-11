@@ -1,0 +1,29 @@
+       group  target    n      bias      mae     rmse      std
+        seen valence  692 -0.037812 0.727938 0.946930 0.946859
+        seen arousal  692  0.046041 0.476893 0.604730 0.603411
+      unseen valence 1045  0.064777 0.718375 0.903492 0.901599
+      unseen arousal 1045 -0.068698 0.498782 0.620376 0.616855
+ seen_own_id valence  331 -0.011084 0.739731 0.974234 0.975646
+ seen_own_id arousal  331  0.042708 0.440698 0.567750 0.566998
+seen_unknown valence  361 -0.062318 0.717125 0.921183 0.920348
+seen_unknown arousal  361  0.049098 0.510081 0.636752 0.635738
+    is_words valence  930  0.036782 0.690126 0.869632 0.869322
+    is_words arousal  930  0.015989 0.468360 0.579077 0.579168
+not_is_words valence  807  0.009069 0.759130 0.976939 0.977503
+not_is_words arousal  807 -0.067905 0.515071 0.652315 0.649174
+
+Bias von valence nach Extremitaet des Gold-Labels:
+valence
+low     0.245933
+mid    -0.025374
+high   -0.163529
+dtype: float64
+
+Bias von arousal nach Extremitaet des Gold-Labels:
+arousal
+low     0.472976
+mid    -0.198464
+high   -0.786594
+dtype: float64
+
+Plots und Summary in explainability_out/ gespeichert.

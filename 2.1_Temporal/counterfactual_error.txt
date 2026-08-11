@@ -1,4 +1,2 @@
-Traceback (most recent call last):
-  File "/home/jaschlic/SemEval_Task2_Jan_Schlich/2.1_Temporal/counterfactual_ablation.py", line 12, in <module>
-    import pandas as pd
-ModuleNotFoundError: No module named 'pandas'
+Some weights of RobertaModel were not initialized from the model checkpoint at cardiffnlp/twitter-roberta-base-emotion and are newly initialized: ['pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.

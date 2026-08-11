@@ -1,0 +1,6 @@
+seen           n= 200  mass_uid=0.1194  mass_content=0.8806
+unseen         n= 200  mass_uid=0.1325  mass_content=0.8675
+seen_own_id    n= 200  mass_uid=0.1093  mass_content=0.8907
+seen_unknown   n= 200  mass_uid=0.1268  mass_content=0.8732
+is_words       n= 200  mass_uid=0.1759  mass_content=0.8241
+not_is_words   n= 200  mass_uid=0.0666  mass_content=0.9334
