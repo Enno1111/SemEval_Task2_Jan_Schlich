@@ -8,6 +8,22 @@
 #SBATCH --output=debug_env_log.txt
 #SBATCH --error=debug_env_error.txt
 
+echo "=== Hostname / Node ==="
+hostname
+
+echo "=== pyvenv.cfg (zeigt urspruengliches Python) ==="
+cat /home/jaschlic/venv/pyvenv.cfg
+
+echo "=== venv/bin/python Symlink-Ziel ==="
+ls -la /home/jaschlic/venv/bin/python
+readlink -f /home/jaschlic/venv/bin/python
+
+echo "=== was existiert auf DIESEM Node unter /usr/bin/python* ==="
+ls -la /usr/bin/python* 2>&1
+
+echo "=== module system? ==="
+module avail python 2>&1
+
 echo "=== vor source activate ==="
 which python
 which pip
