@@ -1,0 +1,8 @@
+Ablation: Datums-Prefix entfernt ...
+       group    n  mean_|delta_date|_valence  mean_|delta_date|_arousal
+        seen  692                   0.212793                   0.160624
+      unseen 1045                   0.209495                   0.169779
+ seen_own_id  446                   0.220247                   0.170403
+seen_unknown  246                   0.199279                   0.142896
+    is_words  930                   0.285507                   0.229851
+not_is_words  807                   0.124726                   0.092700

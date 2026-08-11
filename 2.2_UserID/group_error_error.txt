@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/home/jaschlic/SemEval_Task2_Jan_Schlich/2.2_UserID/group_error_analysis.py", line 12, in <module>
+    import matplotlib.pyplot as plt
+ModuleNotFoundError: No module named 'matplotlib'
