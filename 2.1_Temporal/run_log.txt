@@ -12,8 +12,8 @@ Predicting...
 Evaluating...
   seen: r_composite=0.581 r_valence=0.692 r_arousal=0.470
   unseen: r_composite=0.635 r_valence=0.686 r_arousal=0.583
-  seen_own_id: r_composite=0.700 r_valence=0.851 r_arousal=0.549
-  seen_unknown: r_composite=0.533 r_valence=0.636 r_arousal=0.431
+  seen_own_id: r_composite=0.465 r_valence=0.867 r_arousal=0.062
+  seen_unknown: r_composite=0.574 r_valence=0.669 r_arousal=0.479
   is_words: r_composite=0.646 r_valence=0.684 r_arousal=0.607
   not_is_words: r_composite=0.530 r_valence=0.660 r_arousal=0.401
 
@@ -30,8 +30,8 @@ Predicting...
 Evaluating...
   seen: r_composite=0.559 r_valence=0.691 r_arousal=0.427
   unseen: r_composite=0.631 r_valence=0.674 r_arousal=0.588
-  seen_own_id: r_composite=0.683 r_valence=0.844 r_arousal=0.521
-  seen_unknown: r_composite=0.511 r_valence=0.642 r_arousal=0.379
+  seen_own_id: r_composite=0.421 r_valence=0.842 r_arousal=0.000
+  seen_unknown: r_composite=0.554 r_valence=0.673 r_arousal=0.436
   is_words: r_composite=0.656 r_valence=0.679 r_arousal=0.634
   not_is_words: r_composite=0.524 r_valence=0.667 r_arousal=0.382
 
@@ -48,18 +48,18 @@ Predicting...
 Evaluating...
   seen: r_composite=0.538 r_valence=0.700 r_arousal=0.376
   unseen: r_composite=0.639 r_valence=0.672 r_arousal=0.606
-  seen_own_id: r_composite=0.681 r_valence=0.851 r_arousal=0.511
-  seen_unknown: r_composite=0.483 r_valence=0.648 r_arousal=0.318
+  seen_own_id: r_composite=0.425 r_valence=0.874 r_arousal=-0.025
+  seen_unknown: r_composite=0.528 r_valence=0.680 r_arousal=0.376
   is_words: r_composite=0.622 r_valence=0.684 r_arousal=0.560
   not_is_words: r_composite=0.518 r_valence=0.659 r_arousal=0.377
 
 ========================================
-Gruppen (MIN_USER_TEXTS = 15)
+Gruppen (MIN_USER_TEXTS = 20)
 ========================================
   seen             692 texte,  46 user
   unseen          1045 texte,  45 user
-  seen_own_id      446 texte,  14 user
-  seen_unknown     246 texte,  32 user
+  seen_own_id      331 texte,   7 user
+  seen_unknown     361 texte,  39 user
   is_words         930 texte,  77 user
   not_is_words     807 texte,  80 user
 
@@ -78,14 +78,14 @@ unseen:
   r_arousal: 0.592 ± 0.010
 
 seen_own_id:
-  r_composite: 0.688 ± 0.009
-  r_valence: 0.849 ± 0.003
-  r_arousal: 0.527 ± 0.016
+  r_composite: 0.437 ± 0.020
+  r_valence: 0.861 ± 0.014
+  r_arousal: 0.012 ± 0.037
 
 seen_unknown:
-  r_composite: 0.509 ± 0.021
-  r_valence: 0.642 ± 0.005
-  r_arousal: 0.376 ± 0.046
+  r_composite: 0.552 ± 0.019
+  r_valence: 0.674 ± 0.005
+  r_arousal: 0.430 ± 0.042
 
 is_words:
   r_composite: 0.641 ± 0.014
