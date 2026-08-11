@@ -1,26 +1,4 @@
-Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 21340.92it/s]
-[transformers] [1mRobertaModel LOAD REPORT[0m from: cardiffnlp/twitter-roberta-base-emotion
-Key                        | Status     | 
----------------------------+------------+-
-classifier.out_proj.bias   | UNEXPECTED | 
-classifier.dense.weight    | UNEXPECTED | 
-classifier.out_proj.weight | UNEXPECTED | 
-classifier.dense.bias      | UNEXPECTED | 
-pooler.dense.weight        | MISSING    | 
-pooler.dense.bias          | MISSING    | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
-Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-[transformers] `sdpa` attention does not support `output_attentions=True`. Please set your attention to `eager` if you want any of these features.
 Traceback (most recent call last):
-  File "/home/jaschlic/SemEval_Task2_Jan_Schlich/3_Regression_Combined/attention_analysis.py", line 105, in <module>
-    main()
-  File "/home/jaschlic/SemEval_Task2_Jan_Schlich/3_Regression_Combined/attention_analysis.py", line 86, in main
-    masses = token_group_masses(
-             ^^^^^^^^^^^^^^^^^^^
-  File "/home/jaschlic/SemEval_Task2_Jan_Schlich/3_Regression_Combined/attention_analysis.py", line 48, in token_group_masses
-    attn = out.attentions[-1][0].mean(dim=0)   # [seq, seq], letzter Layer, ueber Heads gemittelt
-           ~~~~~~~~~~~~~~^^^^
-IndexError: tuple index out of range
+  File "/home/jaschlic/SemEval_Task2_Jan_Schlich/3_Regression_Combined/attention_analysis.py", line 10, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'
