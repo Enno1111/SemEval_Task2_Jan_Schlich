@@ -100,6 +100,7 @@ VAL_SPLIT         = 0.2
 SEED              = 42
 SAVE_PATH         = "../models/dual_head_model_classification.pt"
 DEVICE            = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+MIN_USER_TEXTS    = 20
 
 import pandas as pd
 import random
