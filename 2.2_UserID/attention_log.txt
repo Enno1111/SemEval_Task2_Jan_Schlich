@@ -1,6 +1,8 @@
-seen           n= 200  mass_uid=0.1194  mass_content=0.8806
-unseen         n= 200  mass_uid=0.1325  mass_content=0.8675
-seen_own_id    n= 200  mass_uid=0.1093  mass_content=0.8907
-seen_unknown   n= 200  mass_uid=0.1268  mass_content=0.8732
-is_words       n= 200  mass_uid=0.1759  mass_content=0.8241
-not_is_words   n= 200  mass_uid=0.0666  mass_content=0.9334
+seen           n=  692  mass_uid=0.1202  enrich_uid=0.775  mass_cls=0.1509  mass_content=0.7289  enrich_content=0.917  mean_seq_len=45.0
+unseen         n= 1045  mass_uid=0.1330  enrich_uid=0.752  mass_cls=0.1647  mass_content=0.7024  enrich_content=0.930  mean_seq_len=41.1
+seen_own_id    n=  331  mass_uid=0.1143  enrich_uid=0.773  mass_cls=0.1399  mass_content=0.7458  enrich_content=0.929  mean_seq_len=46.6
+seen_unknown   n=  361  mass_uid=0.1256  enrich_uid=0.778  mass_cls=0.1611  mass_content=0.7134  enrich_content=0.906  mean_seq_len=43.5
+is_words       n=  930  mass_uid=0.1809  enrich_uid=0.667  mass_cls=0.1665  mass_content=0.6525  enrich_content=0.981  mean_seq_len=18.6
+not_is_words   n=  807  mass_uid=0.0667  enrich_uid=0.870  mass_cls=0.1507  mass_content=0.7825  enrich_content=0.860  mean_seq_len=70.3
+
+Ergebnisse in explainability_out/ gespeichert.
