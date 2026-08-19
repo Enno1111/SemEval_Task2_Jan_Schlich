@@ -1,8 +1,13 @@
 """
 attention_analysis.py
 Baustein 3: Attention-Masse auf den User-ID-Tokens vs. restlichem Content
-(letzter Encoder-Layer, ueber alle Heads gemittelt). Grober Proxy -- fuer
-praezisere Attribution waere Integrated Gradients vorzuziehen.
+(letzter Encoder-Layer, ueber alle Heads gemittelt).
+
+Zusaetzlich zur rohen Masse wird ein laengennormalisierter Enrichment-Wert
+berichtet: das Verhaeltnis der beobachteten Masse zu der Masse, die die
+Tokens unter uniformer Attention allein aufgrund ihrer Anzahl erhalten
+wuerden (n_tokens / seq_len). Ein Wert von 1.0 bedeutet "genau wie durch
+Zufall zu erwarten", Werte > 1 bedeuten ueberproportionale Beachtung.
 
 Ausfuehren im Ordner 2.2_UserID: python attention_analysis.py
 """
@@ -15,7 +20,13 @@ from run import GROUPS
 
 OUT_DIR = "explainability_out"
 os.makedirs(OUT_DIR, exist_ok=True)
-N_SAMPLES_PER_GROUP = 200
+N_SAMPLES_PER_GROUP = None  # None = alle Texte der Gruppe verwenden
+
+COLUMNS = [
+    "mass_uid_tokens", "mass_cls", "mass_content",
+    "enrichment_uid", "enrichment_content",
+    "n_uid_tokens", "seq_len",
+]
 
 
 def token_group_masses(model, tokenizer, texts, effective_ids, user_id_map, max_length, uid_len):
@@ -45,11 +56,27 @@ def token_group_masses(model, tokenizer, texts, effective_ids, user_id_map, max_
             attn_received = (attn * valid.unsqueeze(0)).sum(dim=0)
             attn_received = attn_received / attn_received.sum().clamp(min=1e-9)
 
-            uid_start, uid_end = 1, 1 + uid_len   # Position 0 = CLS, direkt danach der User-ID-Block
-            mass_uid = attn_received[uid_start:uid_end].sum().item()
-            mass_content = 1.0 - mass_uid
+            seq_len = int(valid.sum().item())
+            uid_start, uid_end = 1, min(1 + uid_len, seq_len)   # Position 0 = CLS
+            n_uid = max(uid_end - uid_start, 0)
+            n_content = seq_len - n_uid - 1
 
-            results.append({"mass_uid_tokens": mass_uid, "mass_content": mass_content})
+            mass_uid = attn_received[uid_start:uid_end].sum().item()
+            mass_cls = attn_received[0].item()
+            mass_content = max(1.0 - mass_uid - mass_cls, 0.0)
+
+            exp_uid = n_uid / seq_len if seq_len > 0 else float("nan")
+            exp_content = n_content / seq_len if seq_len > 0 else float("nan")
+
+            results.append({
+                "mass_uid_tokens": mass_uid,
+                "mass_cls": mass_cls,
+                "mass_content": mass_content,
+                "enrichment_uid": mass_uid / exp_uid if exp_uid and exp_uid > 0 else float("nan"),
+                "enrichment_content": mass_content / exp_content if exp_content and exp_content > 0 else float("nan"),
+                "n_uid_tokens": n_uid,
+                "seq_len": seq_len,
+            })
 
     return pd.DataFrame(results)
 
@@ -67,22 +94,28 @@ def main():
         sub = df[mask_fn(df)]
         if len(sub) == 0:
             continue
-        sample = sub.sample(n=min(N_SAMPLES_PER_GROUP, len(sub)), random_state=42)
+        if N_SAMPLES_PER_GROUP is not None and len(sub) > N_SAMPLES_PER_GROUP:
+            sub = sub.sample(n=N_SAMPLES_PER_GROUP, random_state=42)
 
         masses = token_group_masses(
-            model, tokenizer, sample["text"].tolist(),
-            sample["effective_id"].tolist(), user_id_map, max_length, uid_len,
+            model, tokenizer, sub["text"].tolist(),
+            sub["effective_id"].tolist(), user_id_map, max_length, uid_len,
         )
         masses["group"] = name
         all_rows.append(masses)
-        print(f"{name:<14} n={len(sample):>4}  "
+        print(f"{name:<14} n={len(sub):>5}  "
               f"mass_uid={masses['mass_uid_tokens'].mean():.4f}  "
-              f"mass_content={masses['mass_content'].mean():.4f}")
+              f"enrich_uid={masses['enrichment_uid'].mean():.3f}  "
+              f"mass_cls={masses['mass_cls'].mean():.4f}  "
+              f"mass_content={masses['mass_content'].mean():.4f}  "
+              f"enrich_content={masses['enrichment_content'].mean():.3f}  "
+              f"mean_seq_len={masses['seq_len'].mean():.1f}")
 
     result = pd.concat(all_rows, ignore_index=True)
     result.to_csv(os.path.join(OUT_DIR, "attention_mass_by_group.csv"), index=False)
-    result.groupby("group")[["mass_uid_tokens", "mass_content"]].mean() \
+    result.groupby("group")[COLUMNS].mean() \
         .to_csv(os.path.join(OUT_DIR, "attention_mass_summary.csv"))
+    print(f"\nErgebnisse in {OUT_DIR}/ gespeichert.")
 
 
 if __name__ == "__main__":
