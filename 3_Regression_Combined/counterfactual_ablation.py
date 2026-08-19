@@ -25,6 +25,12 @@ OUT_DIR = "explainability_out"
 os.makedirs(OUT_DIR, exist_ok=True)
 ORIGINAL_PREDICTIONS_CSV = "predictions.csv"
 
+# Statt den Prefix ersatzlos zu loeschen, wird ein struktur-identischer
+# Platzhalter eingesetzt: gleiche Form, gleiche Tokenanzahl, aber ohne
+# Datumsinformation. Das haelt die Sequenzlaenge konstant und vermeidet einen
+# Input, den das Modell im Training nie gesehen hat -- analog zu UNKNOWN_USER.
+PLACEHOLDER_PREFIX = "year: 0000 month: 00 day: 00"
+
 
 def build_loader(texts, effective_ids, user_id_map, tokenizer, max_length):
     dummy = [0] * len(texts)
@@ -40,7 +46,7 @@ def main():
     df["time_str"] = df["timestamp"].dt.strftime(date_format)
 
     texts_full    = (df["time_str"] + " " + df["text"]).tolist()
-    texts_no_date = df["text"].tolist()
+    texts_no_date = (PLACEHOLDER_PREFIX + " " + df["text"]).tolist()
 
     user_ids = df["user_id"].tolist()
     effective_ids_real    = [user_mapping.get(uid, UNKNOWN_USER) for uid in user_ids]
@@ -52,7 +58,7 @@ def main():
     print("Ablation (a): User-ID -> UNKNOWN ...")
     v_user, a_user = predict(model, build_loader(texts_full, effective_ids_unknown, user_id_map, tokenizer, max_length))
 
-    print("Ablation (b): Datums-Prefix entfernt ...")
+    print(f"Ablation (b): Datums-Prefix -> {PLACEHOLDER_PREFIX!r} ...")
     v_date, a_date = predict(model, build_loader(texts_no_date, effective_ids_real, user_id_map, tokenizer, max_length))
 
     df["valence_preds_user_ablated"] = v_user
