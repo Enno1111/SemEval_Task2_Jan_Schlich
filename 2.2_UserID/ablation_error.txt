@@ -1,722 +1,36 @@
-Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 21203.02it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 21446.96it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 19260.66it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-[transformers] Error during conversion: ReadTimeout('The read operation timed out')
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 21256.20it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 21125.11it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 21570.20it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 17459.56it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 21539.68it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 21300.26it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 21575.86it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 19114.67it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 17854.30it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 19045.14it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 20844.43it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 21425.17it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 19087.59it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 21445.29it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 21375.03it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 18986.20it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 21493.51it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 18966.05it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 21601.38it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 21308.54it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 12538.26it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 19066.79it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 21785.13it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 17389.03it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 18960.37it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 17381.31it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 21752.85it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 21676.56it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 22169.94it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 16569.92it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 21866.83it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 17737.20it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 22175.32it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 20024.93it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 20859.77it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 21920.48it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 21823.88it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 16341.34it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 22134.13it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 16438.38it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 18941.58it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 20864.01it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 21970.86it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 21678.28it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 21932.76it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 21930.42it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 22267.83it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 22137.70it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 21738.47it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 19431.38it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 21805.93it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 20615.48it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 22104.37it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 16429.51it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 20338.53it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 14861.59it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 21131.62it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-config              | UNEXPECTED |  | 
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+Some weights of RobertaModel were not initialized from the model checkpoint at cardiffnlp/twitter-roberta-base-emotion and are newly initialized: ['pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/home/jaschlic/venv/lib/python3.9/site-packages/torch/autograd/graph.py:823: UserWarning: Memory Efficient attention defaults to a non-deterministic algorithm. To explicitly enable determinism call torch.use_deterministic_algorithms(True, warn_only=False). (Triggered internally at /pytorch/aten/src/ATen/native/transformers/cuda/attention_backward.cu:683.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+Some weights of RobertaModel were not initialized from the model checkpoint at cardiffnlp/twitter-roberta-base-emotion and are newly initialized: ['pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Some weights of RobertaModel were not initialized from the model checkpoint at cardiffnlp/twitter-roberta-base-emotion and are newly initialized: ['pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Some weights of RobertaModel were not initialized from the model checkpoint at cardiffnlp/twitter-roberta-base-emotion and are newly initialized: ['pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Some weights of RobertaModel were not initialized from the model checkpoint at cardiffnlp/twitter-roberta-base-emotion and are newly initialized: ['pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Some weights of RobertaModel were not initialized from the model checkpoint at cardiffnlp/twitter-roberta-base-emotion and are newly initialized: ['pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Some weights of RobertaModel were not initialized from the model checkpoint at cardiffnlp/twitter-roberta-base-emotion and are newly initialized: ['pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Some weights of RobertaModel were not initialized from the model checkpoint at cardiffnlp/twitter-roberta-base-emotion and are newly initialized: ['pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Some weights of RobertaModel were not initialized from the model checkpoint at cardiffnlp/twitter-roberta-base-emotion and are newly initialized: ['pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Some weights of RobertaModel were not initialized from the model checkpoint at cardiffnlp/twitter-roberta-base-emotion and are newly initialized: ['pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Some weights of RobertaModel were not initialized from the model checkpoint at cardiffnlp/twitter-roberta-base-emotion and are newly initialized: ['pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Some weights of RobertaModel were not initialized from the model checkpoint at cardiffnlp/twitter-roberta-base-emotion and are newly initialized: ['pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Some weights of RobertaModel were not initialized from the model checkpoint at cardiffnlp/twitter-roberta-base-emotion and are newly initialized: ['pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Some weights of RobertaModel were not initialized from the model checkpoint at cardiffnlp/twitter-roberta-base-emotion and are newly initialized: ['pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Some weights of RobertaModel were not initialized from the model checkpoint at cardiffnlp/twitter-roberta-base-emotion and are newly initialized: ['pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Some weights of RobertaModel were not initialized from the model checkpoint at cardiffnlp/twitter-roberta-base-emotion and are newly initialized: ['pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Some weights of RobertaModel were not initialized from the model checkpoint at cardiffnlp/twitter-roberta-base-emotion and are newly initialized: ['pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.

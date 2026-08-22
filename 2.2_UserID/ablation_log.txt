@@ -4,247 +4,57 @@
 ##################################################
 
 --- MIN_USER_TEXTS = 5 ---
-Epoch 1: train=1.5780, val=1.3801
-Epoch 2: train=1.1499, val=1.1429
-Epoch 3: train=0.9125, val=1.1902
-Epoch 4: train=0.7334, val=1.1468
-Epoch 5: train=0.6380, val=1.1761
-Epoch 1: train=1.6353, val=1.2669
-Epoch 2: train=1.1379, val=1.2824
-Epoch 3: train=0.9047, val=1.3380
-Epoch 4: train=0.7395, val=1.2588
-Epoch 5: train=0.6253, val=1.2637
-Epoch 1: train=1.5680, val=1.3839
-Epoch 2: train=1.0859, val=1.1818
-Epoch 3: train=0.8822, val=1.1566
-Epoch 4: train=0.7062, val=1.1627
-Epoch 5: train=0.6178, val=1.1473
+Epoch 1: train=1.5464, val=1.2253
+Epoch 2: train=1.1057, val=1.0730
+Epoch 3: train=0.8825, val=1.0794
+Epoch 4: train=0.7386, val=1.0883
+Epoch 5: train=0.6641, val=1.1143
+Epoch 1: train=1.4330, val=1.1924
+Epoch 2: train=1.0717, val=1.0852
+Epoch 3: train=0.8706, val=1.1566
+Epoch 4: train=0.7323, val=1.0899
+Epoch 5: train=0.6487, val=1.1253
+Epoch 1: train=1.4821, val=1.3853
+Epoch 2: train=1.0782, val=1.1637
+Epoch 3: train=0.8830, val=1.0912
+Epoch 4: train=0.7380, val=1.1135
+Epoch 5: train=0.6363, val=1.1108
 MIN_USER_TEXTS=5
-  r_composite: 0.584 ± 0.010
-  r_valence:   0.658 ± 0.005
-  r_arousal:   0.510 ± 0.020
+  r_composite: 0.588 ± 0.005
+  r_valence:   0.688 ± 0.007
+  r_arousal:   0.489 ± 0.004
 
 --- MIN_USER_TEXTS = 10 ---
-Epoch 1: train=1.5888, val=1.3416
-Epoch 2: train=1.1337, val=1.1325
-Epoch 3: train=0.9052, val=1.2444
-Epoch 4: train=0.7435, val=1.1534
-Epoch 5: train=0.6363, val=1.1907
-Epoch 1: train=1.6102, val=1.2288
-Epoch 2: train=1.1271, val=1.2641
-Epoch 3: train=0.9009, val=1.2517
-Epoch 4: train=0.7385, val=1.2210
-Epoch 5: train=0.6303, val=1.2547
-Epoch 1: train=1.5552, val=1.3513
-Epoch 2: train=1.0840, val=1.2218
-Epoch 3: train=0.8752, val=1.2031
-Epoch 4: train=0.7111, val=1.1852
-Epoch 5: train=0.6046, val=1.1781
+Epoch 1: train=1.5151, val=1.2340
+Epoch 2: train=1.0874, val=1.0703
+Epoch 3: train=0.8764, val=1.0721
+Epoch 4: train=0.7700, val=1.0701
+Epoch 5: train=0.6739, val=1.0864
+Epoch 1: train=1.4338, val=1.2231
+Epoch 2: train=1.0699, val=1.1117
+Epoch 3: train=0.8734, val=1.1833
+Epoch 4: train=0.7297, val=1.0813
+Epoch 5: train=0.6430, val=1.1180
+Epoch 1: train=1.4388, val=1.3475
+Epoch 2: train=1.0400, val=1.1066
+Epoch 3: train=0.8469, val=1.0727
+Epoch 4: train=0.7220, val=1.1051
+Epoch 5: train=0.6357, val=1.0809
 MIN_USER_TEXTS=10
-  r_composite: 0.576 ± 0.009
-  r_valence:   0.658 ± 0.013
-  r_arousal:   0.495 ± 0.010
+  r_composite: 0.609 ± 0.006
+  r_valence:   0.704 ± 0.005
+  r_arousal:   0.514 ± 0.007
 
 --- MIN_USER_TEXTS = 15 ---
-Epoch 1: train=1.5776, val=1.3031
-Epoch 2: train=1.1217, val=1.1248
-Epoch 3: train=0.8755, val=1.1726
-Epoch 4: train=0.7131, val=1.1064
-Epoch 5: train=0.6135, val=1.1309
-Epoch 1: train=1.6211, val=1.2661
-Epoch 2: train=1.1147, val=1.3123
-Epoch 3: train=0.8824, val=1.3234
-Epoch 4: train=0.7032, val=1.2535
-Epoch 5: train=0.5872, val=1.2693
-Epoch 1: train=1.5502, val=1.3991
-Epoch 2: train=1.0752, val=1.2114
-Epoch 3: train=0.8753, val=1.2165
-Epoch 4: train=0.7580, val=1.2271
-Epoch 5: train=0.6670, val=1.2165
-MIN_USER_TEXTS=15
-  r_composite: 0.585 ± 0.006
-  r_valence:   0.666 ± 0.004
-  r_arousal:   0.503 ± 0.015
-
---- MIN_USER_TEXTS = 20 ---
-Epoch 1: train=1.5598, val=1.4074
-Epoch 2: train=1.1574, val=1.1534
-Epoch 3: train=0.9494, val=1.1856
-Epoch 4: train=0.8180, val=1.1273
-Epoch 5: train=0.7273, val=1.1448
-Epoch 1: train=1.6194, val=1.2460
-Epoch 2: train=1.1164, val=1.2327
-Epoch 3: train=0.9167, val=1.3038
-Epoch 4: train=0.7474, val=1.2061
-Epoch 5: train=0.6401, val=1.2206
-Epoch 1: train=1.5405, val=1.3411
-Epoch 2: train=1.0837, val=1.1731
-Epoch 3: train=0.8806, val=1.1670
-Epoch 4: train=0.7197, val=1.1800
-Epoch 5: train=0.6207, val=1.1615
-MIN_USER_TEXTS=20
-  r_composite: 0.588 ± 0.003
-  r_valence:   0.663 ± 0.011
-  r_arousal:   0.513 ± 0.005
-
---- MIN_USER_TEXTS = 30 ---
-Epoch 1: train=1.6129, val=1.3689
-Epoch 2: train=1.1460, val=1.1565
-Epoch 3: train=0.9112, val=1.2004
-Epoch 4: train=0.7623, val=1.1367
-Epoch 5: train=0.6458, val=1.1542
-Epoch 1: train=1.6123, val=1.2676
-Epoch 2: train=1.1327, val=1.2509
-Epoch 3: train=0.9248, val=1.2810
-Epoch 4: train=0.7596, val=1.2303
-Epoch 5: train=0.6517, val=1.2177
-Epoch 1: train=1.5599, val=1.4002
-Epoch 2: train=1.1116, val=1.2386
-Epoch 3: train=0.9237, val=1.2217
-Epoch 4: train=0.7745, val=1.2126
-Epoch 5: train=0.6733, val=1.1847
-MIN_USER_TEXTS=30
-  r_composite: 0.583 ± 0.007
-  r_valence:   0.656 ± 0.010
-  r_arousal:   0.509 ± 0.004
-
->>> Bester Wert für MIN_USER_TEXTS: 20
-Sieger MIN_USER_TEXTS
-  r_composite: 0.588 ± 0.003
-  r_valence:   0.663 ± 0.011
-  r_arousal:   0.513 ± 0.005
-
-##################################################
-# Ablation: USER_ID_LENGTH
-##################################################
-
---- USER_ID_LENGTH = 1 ---
-Epoch 1: train=1.6101, val=1.3405
-Epoch 2: train=1.1578, val=1.1780
-Epoch 3: train=0.9170, val=1.2964
-Epoch 4: train=0.7663, val=1.1760
-Epoch 5: train=0.6635, val=1.2119
-Epoch 1: train=1.6137, val=1.3200
-Epoch 2: train=1.1761, val=1.2777
-Epoch 3: train=0.9355, val=1.3185
-Epoch 4: train=0.7590, val=1.2611
-Epoch 5: train=0.6394, val=1.2587
-Epoch 1: train=1.5795, val=1.4105
-Epoch 2: train=1.1204, val=1.3582
-Epoch 3: train=0.9168, val=1.2435
-Epoch 4: train=0.7401, val=1.2420
-Epoch 5: train=0.6410, val=1.2701
-USER_ID_LENGTH=1
-  r_composite: 0.586 ± 0.002
-  r_valence:   0.659 ± 0.010
-  r_arousal:   0.513 ± 0.011
-
---- USER_ID_LENGTH = 2 ---
-Epoch 1: train=1.5808, val=1.4230
-Epoch 2: train=1.1546, val=1.1744
-Epoch 3: train=0.9241, val=1.1962
-Epoch 4: train=0.7667, val=1.1387
-Epoch 5: train=0.6581, val=1.1705
-Epoch 1: train=1.6361, val=1.2684
-Epoch 2: train=1.1709, val=1.2318
-Epoch 3: train=0.9526, val=1.2750
-Epoch 4: train=0.7753, val=1.1973
-Epoch 5: train=0.6601, val=1.2196
-Epoch 1: train=1.5626, val=1.3720
-Epoch 2: train=1.1270, val=1.2740
-Epoch 3: train=0.9346, val=1.2255
-Epoch 4: train=0.7709, val=1.2086
-Epoch 5: train=0.6592, val=1.1963
-USER_ID_LENGTH=2
-  r_composite: 0.578 ± 0.002
-  r_valence:   0.649 ± 0.012
-  r_arousal:   0.507 ± 0.010
-
---- USER_ID_LENGTH = 3 ---
-Epoch 1: train=1.5598, val=1.4074
-Epoch 2: train=1.1574, val=1.1534
-Epoch 3: train=0.9494, val=1.1856
-Epoch 4: train=0.8180, val=1.1273
-Epoch 5: train=0.7273, val=1.1448
-Epoch 1: train=1.6194, val=1.2460
-Epoch 2: train=1.1164, val=1.2327
-Epoch 3: train=0.9167, val=1.3038
-Epoch 4: train=0.7474, val=1.2061
-Epoch 5: train=0.6401, val=1.2206
-Epoch 1: train=1.5405, val=1.3411
-Epoch 2: train=1.0837, val=1.1731
-Epoch 3: train=0.8806, val=1.1670
-Epoch 4: train=0.7197, val=1.1800
-Epoch 5: train=0.6207, val=1.1615
-USER_ID_LENGTH=3
-  r_composite: 0.588 ± 0.003
-  r_valence:   0.663 ± 0.011
-  r_arousal:   0.513 ± 0.005
-
---- USER_ID_LENGTH = 5 ---
-Epoch 1: train=1.6126, val=1.7185
-Epoch 2: train=1.2983, val=1.2157
-Epoch 3: train=1.0149, val=1.1809
-Epoch 4: train=0.8722, val=1.1322
-Epoch 5: train=0.7948, val=1.1432
-Epoch 1: train=1.6122, val=1.2791
-Epoch 2: train=1.1367, val=1.2023
-Epoch 3: train=0.8882, val=1.2858
-Epoch 4: train=0.7782, val=1.1962
-Epoch 5: train=0.6698, val=1.2160
-Epoch 1: train=1.5238, val=1.2989
-Epoch 2: train=1.0978, val=1.2322
-Epoch 3: train=0.9166, val=1.1658
-Epoch 4: train=0.7498, val=1.1593
-Epoch 5: train=0.6779, val=1.1702
-USER_ID_LENGTH=5
-  r_composite: 0.591 ± 0.013
-  r_valence:   0.672 ± 0.008
-  r_arousal:   0.510 ± 0.018
-
---- USER_ID_LENGTH = 8 ---
-Epoch 1: train=1.5993, val=1.3206
-Epoch 2: train=1.1226, val=1.1840
-Epoch 3: train=0.8770, val=1.1936
-Epoch 4: train=0.7565, val=1.1147
-Epoch 5: train=0.6539, val=1.1445
-Epoch 1: train=1.6195, val=1.2614
-Epoch 2: train=1.1540, val=1.1871
-Epoch 3: train=0.9123, val=1.2551
-Epoch 4: train=0.7594, val=1.2077
-Epoch 5: train=0.6505, val=1.2226
-Epoch 1: train=1.5655, val=1.3355
-Epoch 2: train=1.1070, val=1.2481
-Epoch 3: train=0.9066, val=1.1968
-Epoch 4: train=0.7443, val=1.1819
-Epoch 5: train=0.6451, val=1.1766
-USER_ID_LENGTH=8
-  r_composite: 0.570 ± 0.008
-  r_valence:   0.643 ± 0.007
-  r_arousal:   0.498 ± 0.010
-
->>> Bester Wert für USER_ID_LENGTH: 5
-Sieger USER_ID_LENGTH
-  r_composite: 0.591 ± 0.013
-  r_valence:   0.672 ± 0.008
-  r_arousal:   0.510 ± 0.018
-
-==================================================
-Finale beste Konfiguration
-==================================================
-MIN_USER_TEXTS: 20
-USER_ID_LENGTH: 5
-
-==================================================
-Sieger pro Parameter — alle Metriken
-==================================================
-
-MIN_USER_TEXTS = 20
-  r_composite: 0.588 ± 0.003
-  r_valence:   0.663 ± 0.011
-  r_arousal:   0.513 ± 0.005
-
-USER_ID_LENGTH = 5
-  r_composite: 0.591 ± 0.013
-  r_valence:   0.672 ± 0.008
-  r_arousal:   0.510 ± 0.018
+Epoch 1: train=1.4811, val=1.2453
+Epoch 2: train=1.0959, val=1.1065
+Epoch 3: train=0.8980, val=1.0801
+Epoch 4: train=0.7912, val=1.0877
+Epoch 5: train=0.7030, val=1.0901
+Epoch 1: train=1.4200, val=1.1833
+Epoch 2: train=1.0754, val=1.1026
+Epoch 3: train=0.8885, val=1.1228
+Epoch 4: train=0.7635, val=1.0761
+Epoch 5: train=0.6721, val=1.1091
+Epoch 1: train=1.4422, val=1.3973
+Epoch 2: train=1.0402, val=1.1290

@@ -4,141 +4,141 @@
 ##################################################
 
 --- TEMPORAL_MODE = none ---
-Epoch 1: train=1.5923, val=1.3023
-Epoch 2: train=1.1398, val=1.1553
-Epoch 3: train=0.9266, val=1.2180
-Epoch 4: train=0.7688, val=1.1330
-Epoch 5: train=0.6636, val=1.1747
-Epoch 1: train=1.6075, val=1.2803
-Epoch 2: train=1.1882, val=1.2886
-Epoch 3: train=0.9641, val=1.3170
-Epoch 4: train=0.7891, val=1.2826
-Epoch 5: train=0.6695, val=1.2925
-Epoch 1: train=1.5563, val=1.3801
-Epoch 2: train=1.1200, val=1.2789
-Epoch 3: train=0.9261, val=1.2815
-Epoch 4: train=0.7737, val=1.2272
-Epoch 5: train=0.6721, val=1.2495
+Epoch 1: train=1.4939, val=1.2370
+Epoch 2: train=1.1357, val=1.1243
+Epoch 3: train=0.9463, val=1.1277
+Epoch 4: train=0.8059, val=1.1211
+Epoch 5: train=0.7359, val=1.1435
+Epoch 1: train=1.4606, val=1.2356
+Epoch 2: train=1.1368, val=1.1949
+Epoch 3: train=0.9568, val=1.2556
+Epoch 4: train=0.8063, val=1.1936
+Epoch 5: train=0.7225, val=1.2202
+Epoch 1: train=1.4736, val=1.3598
+Epoch 2: train=1.1026, val=1.2126
+Epoch 3: train=0.9223, val=1.2017
+Epoch 4: train=0.8025, val=1.2319
+Epoch 5: train=0.6838, val=1.2316
 TEMPORAL_MODE=none
-  r_composite: 0.584 ± 0.014
-  r_valence:   0.643 ± 0.024
-  r_arousal:   0.524 ± 0.006
+  r_composite: 0.592 ± 0.008
+  r_valence:   0.677 ± 0.002
+  r_arousal:   0.508 ± 0.016
 
 --- TEMPORAL_MODE = wave ---
-Epoch 1: train=1.6027, val=1.2972
-Epoch 2: train=1.1801, val=1.1446
-Epoch 3: train=0.9545, val=1.1864
-Epoch 4: train=0.8127, val=1.1355
-Epoch 5: train=0.6928, val=1.1821
-Epoch 1: train=1.5907, val=1.2813
-Epoch 2: train=1.1525, val=1.2794
-Epoch 3: train=0.9551, val=1.3042
-Epoch 4: train=0.7763, val=1.2758
-Epoch 5: train=0.6677, val=1.2813
-Epoch 1: train=1.5459, val=1.3536
-Epoch 2: train=1.1070, val=1.2913
-Epoch 3: train=0.8960, val=1.3047
-Epoch 4: train=0.7217, val=1.2778
-Epoch 5: train=0.6182, val=1.3026
+Epoch 1: train=1.5104, val=1.2923
+Epoch 2: train=1.1577, val=1.1335
+Epoch 3: train=0.9867, val=1.1181
+Epoch 4: train=0.8345, val=1.0843
+Epoch 5: train=0.7497, val=1.1284
+Epoch 1: train=1.4389, val=1.2189
+Epoch 2: train=1.1324, val=1.2090
+Epoch 3: train=0.9526, val=1.2744
+Epoch 4: train=0.8154, val=1.1976
+Epoch 5: train=0.7351, val=1.2130
+Epoch 1: train=1.4677, val=1.3812
+Epoch 2: train=1.1188, val=1.2153
+Epoch 3: train=0.9287, val=1.1873
+Epoch 4: train=0.7991, val=1.2127
+Epoch 5: train=0.7028, val=1.2187
 TEMPORAL_MODE=wave
-  r_composite: 0.590 ± 0.009
-  r_valence:   0.670 ± 0.002
-  r_arousal:   0.511 ± 0.017
+  r_composite: 0.602 ± 0.006
+  r_valence:   0.698 ± 0.010
+  r_arousal:   0.506 ± 0.019
 
 --- TEMPORAL_MODE = date ---
-Epoch 1: train=1.6203, val=1.3007
-Epoch 2: train=1.1928, val=1.1470
-Epoch 3: train=0.9499, val=1.2501
-Epoch 4: train=0.7970, val=1.1443
-Epoch 5: train=0.6929, val=1.1964
-Epoch 1: train=1.5810, val=1.3101
-Epoch 2: train=1.1686, val=1.3003
-Epoch 3: train=0.9594, val=1.3260
-Epoch 4: train=0.7827, val=1.2815
-Epoch 5: train=0.6621, val=1.2891
-Epoch 1: train=1.5538, val=1.4178
-Epoch 2: train=1.1265, val=1.2954
-Epoch 3: train=1.0460, val=1.2617
-Epoch 4: train=0.8240, val=1.2257
-Epoch 5: train=0.7219, val=1.2472
+Epoch 1: train=1.5060, val=1.2554
+Epoch 2: train=1.1641, val=1.1608
+Epoch 3: train=0.9979, val=1.1403
+Epoch 4: train=0.8566, val=1.1117
+Epoch 5: train=0.7767, val=1.1348
+Epoch 1: train=1.4494, val=1.2281
+Epoch 2: train=1.1284, val=1.1686
+Epoch 3: train=0.9467, val=1.2242
+Epoch 4: train=0.8162, val=1.1461
+Epoch 5: train=0.7213, val=1.1742
+Epoch 1: train=1.4828, val=1.4208
+Epoch 2: train=1.1370, val=1.2629
+Epoch 3: train=0.9556, val=1.2231
+Epoch 4: train=0.8265, val=1.2270
+Epoch 5: train=0.7187, val=1.2295
 TEMPORAL_MODE=date
-  r_composite: 0.597 ± 0.001
-  r_valence:   0.670 ± 0.009
-  r_arousal:   0.524 ± 0.008
+  r_composite: 0.594 ± 0.010
+  r_valence:   0.685 ± 0.002
+  r_arousal:   0.503 ± 0.020
 
 --- TEMPORAL_MODE = hour ---
-Epoch 1: train=1.6073, val=1.3611
-Epoch 2: train=1.1975, val=1.1636
-Epoch 3: train=0.9675, val=1.2239
-Epoch 4: train=0.8141, val=1.1465
-Epoch 5: train=0.6957, val=1.1944
-Epoch 1: train=1.5895, val=1.2736
-Epoch 2: train=1.1636, val=1.2338
-Epoch 3: train=1.0315, val=1.2808
-Epoch 4: train=0.8679, val=1.2560
-Epoch 5: train=0.7594, val=1.2722
-Epoch 1: train=1.5615, val=1.3891
-Epoch 2: train=1.1283, val=1.3314
-Epoch 3: train=0.9215, val=1.2797
-Epoch 4: train=0.7566, val=1.2656
-Epoch 5: train=0.6501, val=1.2885
+Epoch 1: train=1.5075, val=1.2816
+Epoch 2: train=1.1539, val=1.1435
+Epoch 3: train=0.9699, val=1.1596
+Epoch 4: train=0.8303, val=1.1079
+Epoch 5: train=0.7339, val=1.1507
+Epoch 1: train=1.4294, val=1.2257
+Epoch 2: train=1.1327, val=1.1961
+Epoch 3: train=0.9454, val=1.2800
+Epoch 4: train=0.8087, val=1.2143
+Epoch 5: train=0.7155, val=1.2373
+Epoch 1: train=1.4687, val=1.3736
+Epoch 2: train=1.1153, val=1.2428
+Epoch 3: train=0.9329, val=1.1990
+Epoch 4: train=0.7969, val=1.2291
+Epoch 5: train=0.7086, val=1.2253
 TEMPORAL_MODE=hour
-  r_composite: 0.588 ± 0.015
-  r_valence:   0.658 ± 0.011
-  r_arousal:   0.518 ± 0.024
+  r_composite: 0.577 ± 0.013
+  r_valence:   0.677 ± 0.018
+  r_arousal:   0.478 ± 0.009
 
 --- TEMPORAL_MODE = full ---
-Epoch 1: train=1.6187, val=1.2815
-Epoch 2: train=1.1764, val=1.1175
-Epoch 3: train=0.9509, val=1.2023
-Epoch 4: train=0.7865, val=1.1161
-Epoch 5: train=0.6836, val=1.1649
-Epoch 1: train=1.5818, val=1.3078
-Epoch 2: train=1.1540, val=1.3253
-Epoch 3: train=0.9436, val=1.3347
-Epoch 4: train=0.7779, val=1.3291
-Epoch 5: train=0.6517, val=1.3283
-Epoch 1: train=1.5839, val=1.4188
-Epoch 2: train=1.1311, val=1.3161
-Epoch 3: train=0.9655, val=1.2676
-Epoch 4: train=0.8141, val=1.2520
-Epoch 5: train=0.7002, val=1.2815
+Epoch 1: train=1.5150, val=1.3125
+Epoch 2: train=1.1786, val=1.1531
+Epoch 3: train=0.9735, val=1.1180
+Epoch 4: train=0.8579, val=1.0917
+Epoch 5: train=0.7647, val=1.1212
+Epoch 1: train=1.4496, val=1.2298
+Epoch 2: train=1.1495, val=1.1934
+Epoch 3: train=0.9627, val=1.2397
+Epoch 4: train=0.8350, val=1.1673
+Epoch 5: train=0.7462, val=1.1786
+Epoch 1: train=1.4903, val=1.4008
+Epoch 2: train=1.1365, val=1.2237
+Epoch 3: train=0.9673, val=1.2089
+Epoch 4: train=0.8347, val=1.2184
+Epoch 5: train=0.7246, val=1.2199
 TEMPORAL_MODE=full
-  r_composite: 0.591 ± 0.008
-  r_valence:   0.659 ± 0.018
-  r_arousal:   0.524 ± 0.004
+  r_composite: 0.587 ± 0.002
+  r_valence:   0.695 ± 0.002
+  r_arousal:   0.479 ± 0.003
 
->>> Bester Wert für TEMPORAL_MODE: date
+>>> Bester Wert für TEMPORAL_MODE: wave
 Sieger TEMPORAL_MODE
-  r_composite: 0.597 ± 0.001
-  r_valence:   0.670 ± 0.009
-  r_arousal:   0.524 ± 0.008
+  r_composite: 0.602 ± 0.006
+  r_valence:   0.698 ± 0.010
+  r_arousal:   0.506 ± 0.019
 
 ==================================================
 Finale beste Konfiguration
 ==================================================
-TEMPORAL_MODE: date
+TEMPORAL_MODE: wave
 
 ==================================================
 Alle getesteten Werte — Übersicht
 ==================================================
 TEMPORAL_MODE=none
-  r_composite: 0.584 ± 0.014
-  r_valence:   0.643 ± 0.024
-  r_arousal:   0.524 ± 0.006
+  r_composite: 0.592 ± 0.008
+  r_valence:   0.677 ± 0.002
+  r_arousal:   0.508 ± 0.016
 TEMPORAL_MODE=wave
-  r_composite: 0.590 ± 0.009
-  r_valence:   0.670 ± 0.002
-  r_arousal:   0.511 ± 0.017
+  r_composite: 0.602 ± 0.006
+  r_valence:   0.698 ± 0.010
+  r_arousal:   0.506 ± 0.019
 TEMPORAL_MODE=date
-  r_composite: 0.597 ± 0.001
-  r_valence:   0.670 ± 0.009
-  r_arousal:   0.524 ± 0.008
+  r_composite: 0.594 ± 0.010
+  r_valence:   0.685 ± 0.002
+  r_arousal:   0.503 ± 0.020
 TEMPORAL_MODE=hour
-  r_composite: 0.588 ± 0.015
-  r_valence:   0.658 ± 0.011
-  r_arousal:   0.518 ± 0.024
+  r_composite: 0.577 ± 0.013
+  r_valence:   0.677 ± 0.018
+  r_arousal:   0.478 ± 0.009
 TEMPORAL_MODE=full
-  r_composite: 0.591 ± 0.008
-  r_valence:   0.659 ± 0.018
-  r_arousal:   0.524 ± 0.004
+  r_composite: 0.587 ± 0.002
+  r_valence:   0.695 ± 0.002
+  r_arousal:   0.479 ± 0.003
