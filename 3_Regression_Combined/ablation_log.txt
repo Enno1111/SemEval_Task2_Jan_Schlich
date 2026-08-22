@@ -101,3 +101,445 @@ Epoch 5: train=0.4880, val=1.1156
 Epoch 1: train=2.0328, val=1.5225
 Epoch 2: train=1.2683, val=1.0985
 Epoch 3: train=0.9383, val=1.0728
+Epoch 4: train=0.7198, val=1.0812
+Epoch 5: train=0.5605, val=1.0836
+answerdotai/ModernBERT-base
+  r_composite: 0.599 ± 0.011
+  r_valence:   0.693 ± 0.008
+  r_arousal:   0.506 ± 0.029
+
+--- MODEL_NAME = microsoft/deberta-base-mnli (LR=2e-05) ---
+Epoch 1: train=1.6706, val=1.2874
+Epoch 2: train=1.1238, val=1.0719
+Epoch 3: train=0.8944, val=1.1220
+Epoch 4: train=0.7535, val=1.1350
+Epoch 5: train=0.6655, val=1.1520
+Epoch 1: train=1.6786, val=1.2081
+Epoch 2: train=1.1060, val=1.1352
+Epoch 3: train=0.8939, val=1.1726
+Epoch 4: train=0.7576, val=1.1016
+Epoch 5: train=0.6542, val=1.1251
+Epoch 1: train=1.5378, val=1.3776
+Epoch 2: train=1.0659, val=1.1342
+Epoch 3: train=0.8785, val=1.1018
+Epoch 4: train=0.7452, val=1.0980
+Epoch 5: train=0.6425, val=1.1109
+microsoft/deberta-base-mnli
+  r_composite: 0.618 ± 0.012
+  r_valence:   0.700 ± 0.017
+  r_arousal:   0.536 ± 0.007
+
+--- MODEL_NAME = distilroberta-base (LR=1e-05) ---
+Epoch 1: train=2.0284, val=1.3669
+Epoch 2: train=1.3323, val=1.1711
+Epoch 3: train=1.1783, val=1.1134
+Epoch 4: train=1.0681, val=1.1070
+Epoch 5: train=1.0136, val=1.1066
+Epoch 1: train=1.9922, val=1.3939
+Epoch 2: train=1.3053, val=1.2152
+Epoch 3: train=1.1083, val=1.2098
+Epoch 4: train=1.0093, val=1.1723
+Epoch 5: train=0.9412, val=1.1619
+Epoch 1: train=2.0269, val=1.4024
+Epoch 2: train=1.2773, val=1.1829
+Epoch 3: train=1.0816, val=1.1053
+Epoch 4: train=0.9774, val=1.1391
+Epoch 5: train=0.9133, val=1.1075
+distilroberta-base
+  r_composite: 0.575 ± 0.014
+  r_valence:   0.675 ± 0.001
+  r_arousal:   0.474 ± 0.027
+
+--- MODEL_NAME = SamLowe/roberta-base-go_emotions (LR=1e-05) ---
+Epoch 1: train=1.5730, val=1.2320
+Epoch 2: train=1.2593, val=1.1862
+Epoch 3: train=1.1173, val=1.1673
+Epoch 4: train=1.0305, val=1.1503
+Epoch 5: train=0.9670, val=1.1507
+Epoch 1: train=1.5867, val=1.3145
+Epoch 2: train=1.2497, val=1.2465
+Epoch 3: train=1.1149, val=1.2205
+Epoch 4: train=1.0380, val=1.1789
+Epoch 5: train=0.9602, val=1.1669
+Epoch 1: train=1.6135, val=1.3750
+Epoch 2: train=1.2860, val=1.2688
+Epoch 3: train=1.1124, val=1.2268
+Epoch 4: train=1.0385, val=1.2027
+Epoch 5: train=0.9665, val=1.1738
+SamLowe/roberta-base-go_emotions
+  r_composite: 0.568 ± 0.006
+  r_valence:   0.659 ± 0.008
+  r_arousal:   0.476 ± 0.010
+
+--- MODEL_NAME = RobroKools/vad-bert (LR=1e-05) ---
+Epoch 1: train=1.6840, val=1.2188
+Epoch 2: train=1.1543, val=1.1212
+Epoch 3: train=0.9648, val=1.1055
+Epoch 4: train=0.8697, val=1.1457
+Epoch 5: train=0.8104, val=1.1218
+Epoch 1: train=1.6060, val=1.2611
+Epoch 2: train=1.1288, val=1.1333
+Epoch 3: train=0.9293, val=1.1529
+Epoch 4: train=0.8363, val=1.1479
+Epoch 5: train=0.7652, val=1.1445
+Epoch 1: train=1.6227, val=1.3179
+Epoch 2: train=1.1206, val=1.1226
+Epoch 3: train=0.9476, val=1.0803
+Epoch 4: train=0.8332, val=1.0759
+Epoch 5: train=0.7766, val=1.0712
+RobroKools/vad-bert
+  r_composite: 0.567 ± 0.010
+  r_valence:   0.678 ± 0.006
+  r_arousal:   0.457 ± 0.015
+
+>>> Bestes Modell: microsoft/deberta-base-mnli
+Bestes Modell
+  r_composite: 0.618 ± 0.012
+  r_valence:   0.700 ± 0.017
+  r_arousal:   0.536 ± 0.007
+
+##################################################
+# Ablation: POOLING_STRATEGY
+##################################################
+
+--- POOLING_STRATEGY = cls ---
+Epoch 1: train=1.6706, val=1.2874
+Epoch 2: train=1.1238, val=1.0719
+Epoch 3: train=0.8944, val=1.1220
+Epoch 4: train=0.7535, val=1.1350
+Epoch 5: train=0.6655, val=1.1520
+Epoch 1: train=1.6786, val=1.2081
+Epoch 2: train=1.1060, val=1.1352
+Epoch 3: train=0.8939, val=1.1726
+Epoch 4: train=0.7576, val=1.1016
+Epoch 5: train=0.6542, val=1.1251
+Epoch 1: train=1.5378, val=1.3776
+Epoch 2: train=1.0659, val=1.1342
+Epoch 3: train=0.8785, val=1.1018
+Epoch 4: train=0.7452, val=1.0980
+Epoch 5: train=0.6425, val=1.1109
+POOLING_STRATEGY=cls
+  r_composite: 0.618 ± 0.012
+  r_valence:   0.700 ± 0.017
+  r_arousal:   0.536 ± 0.007
+
+--- POOLING_STRATEGY = mean ---
+Epoch 1: train=1.6441, val=1.2352
+Epoch 2: train=1.1502, val=1.1040
+Epoch 3: train=0.9025, val=1.1163
+Epoch 4: train=0.7432, val=1.1077
+Epoch 5: train=0.6395, val=1.1450
+Epoch 1: train=1.5823, val=1.2456
+Epoch 2: train=1.1259, val=1.2294
+Epoch 3: train=0.9085, val=1.2345
+Epoch 4: train=0.7621, val=1.2010
+Epoch 5: train=0.6551, val=1.1844
+Epoch 1: train=1.5632, val=1.4207
+Epoch 2: train=1.1175, val=1.1504
+Epoch 3: train=0.9080, val=1.1546
+Epoch 4: train=0.7407, val=1.1586
+Epoch 5: train=0.6309, val=1.1761
+POOLING_STRATEGY=mean
+  r_composite: 0.601 ± 0.021
+  r_valence:   0.682 ± 0.009
+  r_arousal:   0.520 ± 0.036
+
+>>> Bester Wert für POOLING_STRATEGY: cls
+Sieger POOLING_STRATEGY
+  r_composite: 0.618 ± 0.012
+  r_valence:   0.700 ± 0.017
+  r_arousal:   0.536 ± 0.007
+
+##################################################
+# Ablation: HEAD_HIDDEN_SIZE
+##################################################
+
+--- HEAD_HIDDEN_SIZE = None ---
+Epoch 1: train=1.7660, val=1.3352
+Epoch 2: train=1.1984, val=1.1004
+Epoch 3: train=0.9738, val=1.1735
+Epoch 4: train=0.8416, val=1.1582
+Epoch 5: train=0.7478, val=1.1691
+Epoch 1: train=1.7986, val=1.2666
+Epoch 2: train=1.2381, val=1.2160
+Epoch 3: train=1.0605, val=1.2294
+Epoch 4: train=0.8856, val=1.1401
+Epoch 5: train=0.7772, val=1.1370
+Epoch 1: train=1.6877, val=1.3470
+Epoch 2: train=1.1849, val=1.1319
+Epoch 3: train=0.9747, val=1.1153
+Epoch 4: train=0.8528, val=1.1364
+Epoch 5: train=0.7509, val=1.1144
+HEAD_HIDDEN_SIZE=None
+  r_composite: 0.602 ± 0.013
+  r_valence:   0.692 ± 0.017
+  r_arousal:   0.513 ± 0.015
+
+--- HEAD_HIDDEN_SIZE = 128 ---
+Epoch 1: train=1.6658, val=1.1729
+Epoch 2: train=1.1331, val=1.0491
+Epoch 3: train=0.9110, val=1.0535
+Epoch 4: train=0.7606, val=1.0855
+Epoch 5: train=0.6897, val=1.1007
+Epoch 1: train=1.5072, val=1.2199
+Epoch 2: train=1.0487, val=1.1192
+Epoch 3: train=0.8375, val=1.2135
+Epoch 4: train=0.7183, val=1.1738
+Epoch 5: train=0.6145, val=1.1739
+Epoch 1: train=1.5520, val=1.3263
+Epoch 2: train=1.0713, val=1.1297
+Epoch 3: train=0.9152, val=1.0803
+Epoch 4: train=0.7556, val=1.1358
+Epoch 5: train=0.6766, val=1.1007
+HEAD_HIDDEN_SIZE=128
+  r_composite: 0.614 ± 0.018
+  r_valence:   0.696 ± 0.028
+  r_arousal:   0.533 ± 0.007
+
+--- HEAD_HIDDEN_SIZE = 256 ---
+Epoch 1: train=1.6706, val=1.2874
+Epoch 2: train=1.1238, val=1.0719
+Epoch 3: train=0.8944, val=1.1220
+Epoch 4: train=0.7535, val=1.1350
+Epoch 5: train=0.6655, val=1.1520
+Epoch 1: train=1.6786, val=1.2081
+Epoch 2: train=1.1060, val=1.1352
+Epoch 3: train=0.8939, val=1.1726
+Epoch 4: train=0.7576, val=1.1016
+Epoch 5: train=0.6542, val=1.1251
+Epoch 1: train=1.5378, val=1.3776
+Epoch 2: train=1.0659, val=1.1342
+Epoch 3: train=0.8785, val=1.1018
+Epoch 4: train=0.7452, val=1.0980
+Epoch 5: train=0.6425, val=1.1109
+HEAD_HIDDEN_SIZE=256
+  r_composite: 0.618 ± 0.012
+  r_valence:   0.700 ± 0.017
+  r_arousal:   0.536 ± 0.007
+
+>>> Bester Wert für HEAD_HIDDEN_SIZE: 256
+Sieger HEAD_HIDDEN_SIZE
+  r_composite: 0.618 ± 0.012
+  r_valence:   0.700 ± 0.017
+  r_arousal:   0.536 ± 0.007
+
+##################################################
+# Ablation: LEARNING_RATE
+##################################################
+
+--- LEARNING_RATE = 2e-05 ---
+Epoch 1: train=1.6706, val=1.2874
+Epoch 2: train=1.1238, val=1.0719
+Epoch 3: train=0.8944, val=1.1220
+Epoch 4: train=0.7535, val=1.1350
+Epoch 5: train=0.6655, val=1.1520
+Epoch 1: train=1.6786, val=1.2081
+Epoch 2: train=1.1060, val=1.1352
+Epoch 3: train=0.8939, val=1.1726
+Epoch 4: train=0.7576, val=1.1016
+Epoch 5: train=0.6542, val=1.1251
+Epoch 1: train=1.5378, val=1.3776
+Epoch 2: train=1.0659, val=1.1342
+Epoch 3: train=0.8785, val=1.1018
+Epoch 4: train=0.7452, val=1.0980
+Epoch 5: train=0.6425, val=1.1109
+LEARNING_RATE=2e-05
+  r_composite: 0.618 ± 0.012
+  r_valence:   0.700 ± 0.017
+  r_arousal:   0.536 ± 0.007
+
+--- LEARNING_RATE = 3e-05 ---
+Epoch 1: train=1.6018, val=1.3071
+Epoch 2: train=1.0941, val=1.0913
+Epoch 3: train=0.8622, val=1.1019
+Epoch 4: train=0.6782, val=1.1392
+Epoch 5: train=0.5629, val=1.1706
+Epoch 1: train=1.5859, val=1.1476
+Epoch 2: train=1.0686, val=1.0642
+Epoch 3: train=0.8482, val=1.1405
+Epoch 4: train=0.6997, val=1.0867
+Epoch 5: train=0.5750, val=1.1029
+Epoch 1: train=1.5315, val=1.3467
+Epoch 2: train=1.0393, val=1.0926
+Epoch 3: train=0.8533, val=1.0848
+Epoch 4: train=0.6873, val=1.1051
+Epoch 5: train=0.5859, val=1.1112
+LEARNING_RATE=3e-05
+  r_composite: 0.599 ± 0.005
+  r_valence:   0.685 ± 0.012
+  r_arousal:   0.514 ± 0.022
+
+--- LEARNING_RATE = 5e-05 ---
+Epoch 1: train=1.6044, val=1.4250
+Epoch 2: train=1.1443, val=1.1501
+Epoch 3: train=0.8750, val=1.1379
+Epoch 4: train=0.6866, val=1.0945
+Epoch 5: train=0.5446, val=1.1218
+Epoch 1: train=1.6520, val=1.3079
+Epoch 2: train=1.1763, val=1.1844
+Epoch 3: train=0.9358, val=1.1277
+Epoch 4: train=0.7580, val=1.1374
+Epoch 5: train=0.6274, val=1.1262
+Epoch 1: train=1.5314, val=1.4457
+Epoch 2: train=1.0450, val=1.0723
+Epoch 3: train=0.8076, val=1.1119
+Epoch 4: train=0.6279, val=1.1421
+Epoch 5: train=0.5000, val=1.1398
+LEARNING_RATE=5e-05
+  r_composite: 0.620 ± 0.006
+  r_valence:   0.695 ± 0.010
+  r_arousal:   0.546 ± 0.015
+
+>>> Bester Wert für LEARNING_RATE: 5e-05
+Sieger LEARNING_RATE
+  r_composite: 0.620 ± 0.006
+  r_valence:   0.695 ± 0.010
+  r_arousal:   0.546 ± 0.015
+
+##################################################
+# Ablation: BATCH_SIZE
+##################################################
+
+--- BATCH_SIZE = 16 ---
+Epoch 1: train=1.6044, val=1.4250
+Epoch 2: train=1.1443, val=1.1501
+Epoch 3: train=0.8750, val=1.1379
+Epoch 4: train=0.6866, val=1.0945
+Epoch 5: train=0.5446, val=1.1218
+Epoch 1: train=1.6520, val=1.3079
+Epoch 2: train=1.1763, val=1.1844
+Epoch 3: train=0.9358, val=1.1277
+Epoch 4: train=0.7580, val=1.1374
+Epoch 5: train=0.6274, val=1.1262
+Epoch 1: train=1.5314, val=1.4457
+Epoch 2: train=1.0450, val=1.0723
+Epoch 3: train=0.8076, val=1.1119
+Epoch 4: train=0.6279, val=1.1421
+Epoch 5: train=0.5000, val=1.1398
+BATCH_SIZE=16
+  r_composite: 0.620 ± 0.006
+  r_valence:   0.695 ± 0.010
+  r_arousal:   0.546 ± 0.015
+
+--- BATCH_SIZE = 32 ---
+Epoch 1: train=1.8054, val=1.2266
+Epoch 2: train=1.1928, val=1.0761
+Epoch 3: train=0.9360, val=1.0177
+Epoch 4: train=0.8071, val=1.0750
+Epoch 5: train=0.6732, val=1.1125
+Epoch 1: train=1.8459, val=1.5454
+Epoch 2: train=1.3934, val=1.2068
+Epoch 3: train=1.0505, val=1.1773
+Epoch 4: train=0.9149, val=1.1021
+Epoch 5: train=0.8108, val=1.1186
+Epoch 1: train=1.6310, val=1.4162
+Epoch 2: train=1.1459, val=1.1151
+Epoch 3: train=0.8864, val=1.1220
+Epoch 4: train=0.7219, val=1.1389
+Epoch 5: train=0.6220, val=1.1222
+BATCH_SIZE=32
+  r_composite: 0.601 ± 0.010
+  r_valence:   0.695 ± 0.007
+  r_arousal:   0.506 ± 0.012
+
+>>> Bester Wert für BATCH_SIZE: 16
+Sieger BATCH_SIZE
+  r_composite: 0.620 ± 0.006
+  r_valence:   0.695 ± 0.010
+  r_arousal:   0.546 ± 0.015
+
+##################################################
+# Ablation: DROPOUT
+##################################################
+
+--- DROPOUT = 0.1 ---
+Epoch 1: train=1.6044, val=1.4250
+Epoch 2: train=1.1443, val=1.1501
+Epoch 3: train=0.8750, val=1.1379
+Epoch 4: train=0.6866, val=1.0945
+Epoch 5: train=0.5446, val=1.1218
+Epoch 1: train=1.6520, val=1.3079
+Epoch 2: train=1.1763, val=1.1844
+Epoch 3: train=0.9358, val=1.1277
+Epoch 4: train=0.7580, val=1.1374
+Epoch 5: train=0.6274, val=1.1262
+Epoch 1: train=1.5314, val=1.4457
+Epoch 2: train=1.0450, val=1.0723
+Epoch 3: train=0.8076, val=1.1119
+Epoch 4: train=0.6279, val=1.1421
+Epoch 5: train=0.5000, val=1.1398
+DROPOUT=0.1
+  r_composite: 0.620 ± 0.006
+  r_valence:   0.695 ± 0.010
+  r_arousal:   0.546 ± 0.015
+
+--- DROPOUT = 0.2 ---
+Epoch 1: train=1.7080, val=1.4893
+Epoch 2: train=1.1626, val=1.1656
+Epoch 3: train=0.8973, val=1.1395
+Epoch 4: train=0.7093, val=1.1174
+Epoch 5: train=0.5785, val=1.1749
+Epoch 1: train=1.5767, val=1.2161
+Epoch 2: train=1.1156, val=1.1606
+Epoch 3: train=0.8680, val=1.1617
+Epoch 4: train=0.6751, val=1.1881
+Epoch 5: train=0.5589, val=1.1810
+Epoch 1: train=1.5338, val=1.3766
+Epoch 2: train=1.0651, val=1.1273
+Epoch 3: train=0.8978, val=1.0924
+Epoch 4: train=0.7795, val=1.1213
+Epoch 5: train=0.6326, val=1.1360
+DROPOUT=0.2
+  r_composite: 0.608 ± 0.008
+  r_valence:   0.693 ± 0.017
+  r_arousal:   0.523 ± 0.022
+
+>>> Bester Wert für DROPOUT: 0.1
+Sieger DROPOUT
+  r_composite: 0.620 ± 0.006
+  r_valence:   0.695 ± 0.010
+  r_arousal:   0.546 ± 0.015
+
+==================================================
+Finale beste Konfiguration
+==================================================
+MODEL_NAME: microsoft/deberta-base-mnli
+POOLING_STRATEGY: cls
+HEAD_HIDDEN_SIZE: 256
+LEARNING_RATE: 5e-05
+BATCH_SIZE: 16
+DROPOUT: 0.1
+
+==================================================
+Sieger pro Parameter — alle Metriken
+==================================================
+
+MODEL_NAME = microsoft/deberta-base-mnli
+  r_composite: 0.618 ± 0.012
+  r_valence:   0.700 ± 0.017
+  r_arousal:   0.536 ± 0.007
+
+POOLING_STRATEGY = cls
+  r_composite: 0.618 ± 0.012
+  r_valence:   0.700 ± 0.017
+  r_arousal:   0.536 ± 0.007
+
+HEAD_HIDDEN_SIZE = 256
+  r_composite: 0.618 ± 0.012
+  r_valence:   0.700 ± 0.017
+  r_arousal:   0.536 ± 0.007
+
+LEARNING_RATE = 5e-05
+  r_composite: 0.620 ± 0.006
+  r_valence:   0.695 ± 0.010
+  r_arousal:   0.546 ± 0.015
+
+BATCH_SIZE = 16
+  r_composite: 0.620 ± 0.006
+  r_valence:   0.695 ± 0.010
+  r_arousal:   0.546 ± 0.015
+
+DROPOUT = 0.1
+  r_composite: 0.620 ± 0.006
+  r_valence:   0.695 ± 0.010
+  r_arousal:   0.546 ± 0.015
