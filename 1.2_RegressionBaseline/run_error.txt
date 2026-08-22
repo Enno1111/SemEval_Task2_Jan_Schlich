@@ -1,87 +1,14 @@
-Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 13812.27it/s]
-[transformers] [1mRobertaModel LOAD REPORT[0m from: cardiffnlp/twitter-roberta-base-emotion
-Key                        | Status     | 
----------------------------+------------+-
-classifier.out_proj.bias   | UNEXPECTED | 
-classifier.out_proj.weight | UNEXPECTED | 
-classifier.dense.weight    | UNEXPECTED | 
-classifier.dense.bias      | UNEXPECTED | 
-pooler.dense.weight        | MISSING    | 
-pooler.dense.bias          | MISSING    | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
-/home/jaschlic/venv/lib64/python3.12/site-packages/torch/autograd/graph.py:979: UserWarning: Memory Efficient attention defaults to a non-deterministic algorithm. To explicitly enable determinism call torch.use_deterministic_algorithms(True, warn_only=False). (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/native/transformers/cuda/attention_backward.cu:833.)
+Some weights of RobertaModel were not initialized from the model checkpoint at cardiffnlp/twitter-roberta-base-emotion and are newly initialized: ['pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/home/jaschlic/venv/lib/python3.9/site-packages/torch/autograd/graph.py:823: UserWarning: Memory Efficient attention defaults to a non-deterministic algorithm. To explicitly enable determinism call torch.use_deterministic_algorithms(True, warn_only=False). (Triggered internally at /pytorch/aten/src/ATen/native/transformers/cuda/attention_backward.cu:683.)
   return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
-Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 18288.98it/s]
-[transformers] [1mRobertaModel LOAD REPORT[0m from: cardiffnlp/twitter-roberta-base-emotion
-Key                        | Status     | 
----------------------------+------------+-
-classifier.out_proj.bias   | UNEXPECTED | 
-classifier.out_proj.weight | UNEXPECTED | 
-classifier.dense.weight    | UNEXPECTED | 
-classifier.dense.bias      | UNEXPECTED | 
-pooler.dense.weight        | MISSING    | 
-pooler.dense.bias          | MISSING    | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
-Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 20819.34it/s]
-[transformers] [1mRobertaModel LOAD REPORT[0m from: cardiffnlp/twitter-roberta-base-emotion
-Key                        | Status     | 
----------------------------+------------+-
-classifier.out_proj.bias   | UNEXPECTED | 
-classifier.out_proj.weight | UNEXPECTED | 
-classifier.dense.weight    | UNEXPECTED | 
-classifier.dense.bias      | UNEXPECTED | 
-pooler.dense.weight        | MISSING    | 
-pooler.dense.bias          | MISSING    | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
-Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 21133.51it/s]
-[transformers] [1mRobertaModel LOAD REPORT[0m from: cardiffnlp/twitter-roberta-base-emotion
-Key                        | Status     | 
----------------------------+------------+-
-classifier.out_proj.bias   | UNEXPECTED | 
-classifier.out_proj.weight | UNEXPECTED | 
-classifier.dense.weight    | UNEXPECTED | 
-classifier.dense.bias      | UNEXPECTED | 
-pooler.dense.weight        | MISSING    | 
-pooler.dense.bias          | MISSING    | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
-Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 16698.89it/s]
-[transformers] [1mRobertaModel LOAD REPORT[0m from: cardiffnlp/twitter-roberta-base-emotion
-Key                        | Status     | 
----------------------------+------------+-
-classifier.out_proj.bias   | UNEXPECTED | 
-classifier.out_proj.weight | UNEXPECTED | 
-classifier.dense.weight    | UNEXPECTED | 
-classifier.dense.bias      | UNEXPECTED | 
-pooler.dense.weight        | MISSING    | 
-pooler.dense.bias          | MISSING    | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
-Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 21039.34it/s]
-[transformers] [1mRobertaModel LOAD REPORT[0m from: cardiffnlp/twitter-roberta-base-emotion
-Key                        | Status     | 
----------------------------+------------+-
-classifier.out_proj.bias   | UNEXPECTED | 
-classifier.out_proj.weight | UNEXPECTED | 
-classifier.dense.weight    | UNEXPECTED | 
-classifier.dense.bias      | UNEXPECTED | 
-pooler.dense.weight        | MISSING    | 
-pooler.dense.bias          | MISSING    | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+Some weights of RobertaModel were not initialized from the model checkpoint at cardiffnlp/twitter-roberta-base-emotion and are newly initialized: ['pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Some weights of RobertaModel were not initialized from the model checkpoint at cardiffnlp/twitter-roberta-base-emotion and are newly initialized: ['pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Some weights of RobertaModel were not initialized from the model checkpoint at cardiffnlp/twitter-roberta-base-emotion and are newly initialized: ['pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Some weights of RobertaModel were not initialized from the model checkpoint at cardiffnlp/twitter-roberta-base-emotion and are newly initialized: ['pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Some weights of RobertaModel were not initialized from the model checkpoint at cardiffnlp/twitter-roberta-base-emotion and are newly initialized: ['pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.

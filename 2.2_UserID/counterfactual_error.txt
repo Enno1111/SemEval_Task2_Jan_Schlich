@@ -1,15 +1,2 @@
-Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 21796.93it/s]
-[transformers] [1mRobertaModel LOAD REPORT[0m from: cardiffnlp/twitter-roberta-base-emotion
-Key                        | Status     | 
----------------------------+------------+-
-classifier.dense.weight    | UNEXPECTED | 
-classifier.out_proj.bias   | UNEXPECTED | 
-classifier.out_proj.weight | UNEXPECTED | 
-classifier.dense.bias      | UNEXPECTED | 
-pooler.dense.weight        | MISSING    | 
-pooler.dense.bias          | MISSING    | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
-Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Some weights of RobertaModel were not initialized from the model checkpoint at cardiffnlp/twitter-roberta-base-emotion and are newly initialized: ['pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.

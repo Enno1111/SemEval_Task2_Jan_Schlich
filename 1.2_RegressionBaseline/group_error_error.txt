@@ -1,4 +1,4 @@
-Traceback (most recent call last):
-  File "/home/jaschlic/SemEval_Task2_Jan_Schlich/1.2_RegressionBaseline/group_error_analysis.py", line 15, in <module>
-    import numpy as np
-ModuleNotFoundError: No module named 'numpy'
+/home/jaschlic/SemEval_Task2_Jan_Schlich/1.2_RegressionBaseline/group_error_analysis.py:71: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11.
+  ax.boxplot(data, labels=labels, showmeans=True)
+/home/jaschlic/SemEval_Task2_Jan_Schlich/1.2_RegressionBaseline/group_error_analysis.py:71: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11.
+  ax.boxplot(data, labels=labels, showmeans=True)
