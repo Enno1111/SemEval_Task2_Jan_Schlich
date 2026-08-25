@@ -266,5 +266,8 @@ def main():
     },
 }, SAVE_PATH)
 
+    return best_val_loss
+
+
 if __name__ == "__main__":
     main()

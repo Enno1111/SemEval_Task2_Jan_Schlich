@@ -68,37 +68,21 @@ def evaluate():
 
 
 def run_seeds():
-    all_results = []
+    losses = []
 
     for seed in SEEDS:
         train_module.SEED = seed
-        predict_module.SEED = seed
-
-        train_module.main()
-        predict_module.main()
-
-        results = evaluate()
-        all_results.append(results)
-
-    r_composite_vals = [r["r_composite"] for r in all_results]
-    r_valence_vals   = [r["r_valence"] for r in all_results]
-    r_arousal_vals   = [r["r_arousal"] for r in all_results]
+        losses.append(train_module.main())
 
     return {
-        "r_composite":     np.mean(r_composite_vals),
-        "r_composite_std": np.std(r_composite_vals),
-        "r_valence":       np.mean(r_valence_vals),
-        "r_valence_std":   np.std(r_valence_vals),
-        "r_arousal":       np.mean(r_arousal_vals),
-        "r_arousal_std":   np.std(r_arousal_vals),
+        "val_loss":     float(np.mean(losses)),
+        "val_loss_std": float(np.std(losses)),
     }
 
 
 def print_result(label, result):
     print(f"{label}")
-    print(f"  r_composite: {result['r_composite']:.3f} ± {result['r_composite_std']:.3f}")
-    print(f"  r_valence:   {result['r_valence']:.3f} ± {result['r_valence_std']:.3f}")
-    print(f"  r_arousal:   {result['r_arousal']:.3f} ± {result['r_arousal_std']:.3f}")
+    print(f"  val_loss: {result['val_loss']:.4f} ± {result['val_loss_std']:.4f}")
 
 
 def main():
@@ -142,7 +126,7 @@ def main():
 
         print_result(f"{model_name}", result)
 
-    best_model_result = max(model_step_results, key=lambda r: r["r_composite"])
+    best_model_result = min(model_step_results, key=lambda r: r["val_loss"])
     best_config.update(best_model_result["value"])   # MODEL_NAME + ggf. LEARNING_RATE übernehmen
     all_step_results["MODEL_NAME"] = model_step_results
     winners["MODEL_NAME"] = best_model_result
@@ -173,7 +157,7 @@ def main():
 
             print_result(f"{param_name}={value}", result)
 
-        best_result = max(step_results, key=lambda r: r["r_composite"])
+        best_result = min(step_results, key=lambda r: r["val_loss"])
         best_config[param_name] = best_result["value"]
         all_step_results[param_name] = step_results
         winners[param_name] = best_result
@@ -196,9 +180,7 @@ def main():
     for param_name, result in winners.items():
         label = result["value"]["MODEL_NAME"] if param_name == "MODEL_NAME" else result["value"]
         print(f"\n{param_name} = {label}")
-        print(f"  r_composite: {result['r_composite']:.3f} ± {result['r_composite_std']:.3f}")
-        print(f"  r_valence:   {result['r_valence']:.3f} ± {result['r_valence_std']:.3f}")
-        print(f"  r_arousal:   {result['r_arousal']:.3f} ± {result['r_arousal_std']:.3f}")
+        print(f"  val_loss: {result['val_loss']:.4f} ± {result['val_loss_std']:.4f}")
 
 
 if __name__ == "__main__":
