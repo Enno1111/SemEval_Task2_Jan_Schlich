@@ -51,7 +51,7 @@ def token_group_masses(model, tokenizer, texts, date_strs, max_length):
             attn = out.attentions[-1][0].mean(dim=0)   # [seq, seq], letzter Layer, ueber Heads gemittelt
 
             valid = attention_mask[0].bool()
-            attn_received = (attn * valid.unsqueeze(0)).sum(dim=0)
+            attn_received = (attn * valid.unsqueeze(1)).sum(dim=0)
             attn_received = attn_received / attn_received.sum().clamp(min=1e-9)
 
             seq_len = int(valid.sum().item())
