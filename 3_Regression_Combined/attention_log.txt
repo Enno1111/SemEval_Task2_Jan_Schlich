@@ -1,8 +1,8 @@
-seen           n=  692  mass_uid=0.0670 (enrich 0.598)  mass_date=0.0386 (enrich 0.186)  mass_cls=0.4375  mass_content=0.4568 (enrich 0.766)  mean_seq_len=53.9
-unseen         n= 1045  mass_uid=0.0933 (enrich 0.705)  mass_date=0.0307 (enrich 0.156)  mass_cls=0.4484  mass_content=0.4276 (enrich 0.796)  mean_seq_len=49.6
-seen_own_id    n=  601  mass_uid=0.0642 (enrich 0.573)  mass_date=0.0399 (enrich 0.185)  mass_cls=0.4381  mass_content=0.4578 (enrich 0.774)  mean_seq_len=53.5
-seen_unknown   n=   91  mass_uid=0.0856 (enrich 0.769)  mass_date=0.0301 (enrich 0.191)  mass_cls=0.4341  mass_content=0.4503 (enrich 0.713)  mean_seq_len=56.5
-is_words       n=  930  mass_uid=0.1126 (enrich 0.610)  mass_date=0.0397 (enrich 0.119)  mass_cls=0.4377  mass_content=0.4101 (enrich 0.950)  mean_seq_len=27.4
-not_is_words   n=  807  mass_uid=0.0486 (enrich 0.723)  mass_date=0.0272 (enrich 0.224)  mass_cls=0.4514  mass_content=0.4729 (enrich 0.593)  mean_seq_len=78.9
+seen           n=  692  mass_uid=0.0314 (enrich 0.290)  mass_date=0.0386 (enrich 0.169)  mass_cls=0.4346  mass_content=0.4955 (enrich 0.835)  mean_seq_len=53.9
+unseen         n= 1045  mass_uid=0.0344 (enrich 0.270)  mass_date=0.0323 (enrich 0.136)  mass_cls=0.4642  mass_content=0.4691 (enrich 0.878)  mean_seq_len=49.6
+seen_own_id    n=  601  mass_uid=0.0317 (enrich 0.291)  mass_date=0.0401 (enrich 0.171)  mass_cls=0.4328  mass_content=0.4954 (enrich 0.841)  mean_seq_len=53.5
+seen_unknown   n=   91  mass_uid=0.0291 (enrich 0.282)  mass_date=0.0287 (enrich 0.161)  mass_cls=0.4459  mass_content=0.4963 (enrich 0.791)  mean_seq_len=56.5
+is_words       n=  930  mass_uid=0.0435 (enrich 0.236)  mass_date=0.0489 (enrich 0.145)  mass_cls=0.4511  mass_content=0.4566 (enrich 1.056)  mean_seq_len=27.4
+not_is_words   n=  807  mass_uid=0.0213 (enrich 0.326)  mass_date=0.0185 (enrich 0.154)  mass_cls=0.4539  mass_content=0.5062 (enrich 0.635)  mean_seq_len=78.9
 
 Ergebnisse in explainability_out/ gespeichert.

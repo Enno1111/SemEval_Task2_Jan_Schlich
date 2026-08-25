@@ -1,0 +1,100 @@
+Verarbeite 1737 Texte ...
+12 Layer x 12 Heads, 1737 auswertbare Texte
+
+=== Signal: uid ===
+Mittel ueber alle Heads: 0.754
+Maximum:                 3.737  (Layer 10, Head 5)
+  Heads > 1.0:  33 von 144
+  Heads > 2.0:   3 von 144
+  Heads > 3.0:   2 von 144
+  Heads > 5.0:   0 von 144
+
+Top 15 Heads:
+ layer  head  enrichment_uid
+    10     5        3.737030
+    10     9        3.191519
+    10     3        2.363234
+     6     8        1.683944
+     7     9        1.661809
+    10     7        1.522147
+     6    11        1.507238
+     6     1        1.418482
+     8     6        1.333959
+    10     1        1.312474
+     4     1        1.304013
+     0     4        1.295950
+     7     0        1.274045
+     9     4        1.258080
+    10     0        1.238945
+
+Mittelwert und Maximum pro Layer:
+  Layer  0: mean 0.975   max 1.296 (Head 4)
+  Layer  1: mean 0.527   max 1.145 (Head 7)
+  Layer  2: mean 0.557   max 0.895 (Head 1)
+  Layer  3: mean 0.455   max 0.812 (Head 3)
+  Layer  4: mean 0.746   max 1.304 (Head 1)
+  Layer  5: mean 0.536   max 1.067 (Head 4)
+  Layer  6: mean 0.878   max 1.684 (Head 8)
+  Layer  7: mean 0.886   max 1.662 (Head 9)
+  Layer  8: mean 0.850   max 1.334 (Head 6)
+  Layer  9: mean 0.809   max 1.258 (Head 4)
+  Layer 10: mean 1.547   max 3.737 (Head 5)
+  Layer 11: mean 0.278   max 0.818 (Head 9)
+
+Staerkster Head pro Gruppe:
+  seen           Layer 10 Head  5  3.656
+  unseen         Layer 10 Head  5  3.791
+  seen_own_id    Layer 10 Head  5  3.603
+  seen_unknown   Layer 10 Head  5  4.002
+  is_words       Layer 10 Head  9  2.177
+  not_is_words   Layer 10 Head  5  5.779
+
+=== Signal: date ===
+Mittel ueber alle Heads: 0.552
+Maximum:                 1.085  (Layer 0, Head 4)
+  Heads > 1.0:  10 von 144
+  Heads > 2.0:   0 von 144
+  Heads > 3.0:   0 von 144
+  Heads > 5.0:   0 von 144
+
+Top 15 Heads:
+ layer  head  enrichment_date
+     0     4         1.084596
+     0    10         1.056318
+     7     0         1.034231
+     0     9         1.024371
+     0    11         1.021908
+     4     1         1.011209
+     0     3         1.010296
+     8     7         1.009882
+     1     2         1.004125
+     0     2         1.002567
+     0     0         0.996743
+     0     6         0.984373
+     0     1         0.981039
+     0     8         0.962754
+     7     8         0.962076
+
+Mittelwert und Maximum pro Layer:
+  Layer  0: mean 0.994   max 1.085 (Head 4)
+  Layer  1: mean 0.556   max 1.004 (Head 2)
+  Layer  2: mean 0.532   max 0.718 (Head 3)
+  Layer  3: mean 0.525   max 0.812 (Head 9)
+  Layer  4: mean 0.610   max 1.011 (Head 1)
+  Layer  5: mean 0.557   max 0.928 (Head 1)
+  Layer  6: mean 0.424   max 0.607 (Head 4)
+  Layer  7: mean 0.577   max 1.034 (Head 0)
+  Layer  8: mean 0.590   max 1.010 (Head 7)
+  Layer  9: mean 0.577   max 0.784 (Head 4)
+  Layer 10: mean 0.538   max 0.751 (Head 5)
+  Layer 11: mean 0.149   max 0.511 (Head 9)
+
+Staerkster Head pro Gruppe:
+  seen           Layer  0 Head  4  1.096
+  unseen         Layer  0 Head  4  1.077
+  seen_own_id    Layer  0 Head  4  1.097
+  seen_unknown   Layer  0 Head  4  1.091
+  is_words       Layer  7 Head  0  1.181
+  not_is_words   Layer  4 Head  1  1.320
+
+Ergebnisse in explainability_out/ gespeichert.

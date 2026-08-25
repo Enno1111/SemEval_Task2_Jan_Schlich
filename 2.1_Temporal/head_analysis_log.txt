@@ -1,0 +1,51 @@
+Verarbeite 1737 Texte ...
+12 Layer x 12 Heads, 1737 auswertbare Texte
+
+Mittel ueber alle Heads: 0.544
+Maximum:                 1.251  (Layer 3, Head 11)
+  Heads > 1.0:  11 von 144
+  Heads > 2.0:   0 von 144
+  Heads > 3.0:   0 von 144
+  Heads > 5.0:   0 von 144
+
+Top 15 Heads (ueber alle Texte):
+ layer  head  enrichment_date
+     3    11         1.250888
+     0     4         1.170085
+     0     1         1.068707
+     0     0         1.067407
+     0     3         1.056341
+     0    10         1.052668
+     7     0         1.042214
+     0    11         1.040939
+     4     1         1.026439
+     0     2         1.017057
+     0     8         1.014378
+     7     8         0.983207
+     8     7         0.972379
+     6     8         0.970950
+    10     4         0.935945
+
+Mittelwert und Maximum pro Layer:
+  Layer  0: mean 0.998   max 1.170 (Head 4)
+  Layer  1: mean 0.437   max 0.894 (Head 2)
+  Layer  2: mean 0.469   max 0.742 (Head 1)
+  Layer  3: mean 0.604   max 1.251 (Head 11)
+  Layer  4: mean 0.537   max 1.026 (Head 1)
+  Layer  5: mean 0.396   max 0.634 (Head 1)
+  Layer  6: mean 0.707   max 0.971 (Head 8)
+  Layer  7: mean 0.659   max 1.042 (Head 0)
+  Layer  8: mean 0.606   max 0.972 (Head 7)
+  Layer  9: mean 0.503   max 0.910 (Head 4)
+  Layer 10: mean 0.433   max 0.936 (Head 4)
+  Layer 11: mean 0.176   max 0.562 (Head 6)
+
+Staerkster Head pro Gruppe:
+  seen           Layer  3 Head 11  1.277
+  unseen         Layer  3 Head 11  1.233
+  seen_own_id    Layer  3 Head 11  1.272
+  seen_unknown   Layer  3 Head 11  1.313
+  is_words       Layer  0 Head  4  1.193
+  not_is_words   Layer  3 Head 11  1.553
+
+Ergebnisse in explainability_out/ gespeichert.
