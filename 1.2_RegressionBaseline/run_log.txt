@@ -3,55 +3,55 @@
 Seed 42
 ========================================
 Training...
-Epoch 1: train=1.4939, val=1.2370
-Epoch 2: train=1.1357, val=1.1243
-Epoch 3: train=0.9463, val=1.1277
-Epoch 4: train=0.8059, val=1.1211
-Epoch 5: train=0.7359, val=1.1435
+Epoch 1: train=1.7041, val=1.3359
+Epoch 2: train=1.1955, val=1.1662
+Epoch 3: train=0.9788, val=1.1268
+Epoch 4: train=0.8404, val=1.0973
+Epoch 5: train=0.7619, val=1.1435
 Predicting...
 Evaluating...
-  seen: r_composite=0.552 r_valence=0.684 r_arousal=0.421
-  unseen: r_composite=0.613 r_valence=0.669 r_arousal=0.556
-  seen_own_id: r_composite=0.635 r_valence=0.713 r_arousal=0.556
-  seen_unknown: r_composite=0.486 r_valence=0.684 r_arousal=0.288
-  is_words: r_composite=0.623 r_valence=0.671 r_arousal=0.576
-  not_is_words: r_composite=0.516 r_valence=0.663 r_arousal=0.369
+  seen: r_composite=0.536 r_valence=0.659 r_arousal=0.413
+  unseen: r_composite=0.621 r_valence=0.667 r_arousal=0.575
+  seen_own_id: r_composite=0.626 r_valence=0.719 r_arousal=0.532
+  seen_unknown: r_composite=0.451 r_valence=0.618 r_arousal=0.284
+  is_words: r_composite=0.635 r_valence=0.674 r_arousal=0.596
+  not_is_words: r_composite=0.495 r_valence=0.641 r_arousal=0.350
 
 ========================================
 Seed 123
 ========================================
 Training...
-Epoch 1: train=1.4606, val=1.2356
-Epoch 2: train=1.1368, val=1.1949
-Epoch 3: train=0.9568, val=1.2556
-Epoch 4: train=0.8063, val=1.1936
-Epoch 5: train=0.7225, val=1.2202
+Epoch 1: train=1.6483, val=1.3047
+Epoch 2: train=1.2068, val=1.1911
+Epoch 3: train=1.0119, val=1.2382
+Epoch 4: train=0.8732, val=1.1947
+Epoch 5: train=0.7825, val=1.2076
 Predicting...
 Evaluating...
-  seen: r_composite=0.575 r_valence=0.700 r_arousal=0.450
-  unseen: r_composite=0.625 r_valence=0.655 r_arousal=0.595
-  seen_own_id: r_composite=0.626 r_valence=0.717 r_arousal=0.534
-  seen_unknown: r_composite=0.539 r_valence=0.734 r_arousal=0.345
-  is_words: r_composite=0.659 r_valence=0.680 r_arousal=0.637
-  not_is_words: r_composite=0.525 r_valence=0.659 r_arousal=0.391
+  seen: r_composite=0.521 r_valence=0.651 r_arousal=0.390
+  unseen: r_composite=0.597 r_valence=0.621 r_arousal=0.573
+  seen_own_id: r_composite=0.593 r_valence=0.690 r_arousal=0.495
+  seen_unknown: r_composite=0.483 r_valence=0.672 r_arousal=0.294
+  is_words: r_composite=0.609 r_valence=0.658 r_arousal=0.560
+  not_is_words: r_composite=0.487 r_valence=0.617 r_arousal=0.357
 
 ========================================
 Seed 456
 ========================================
 Training...
-Epoch 1: train=1.4736, val=1.3598
-Epoch 2: train=1.1026, val=1.2126
-Epoch 3: train=0.9223, val=1.2017
-Epoch 4: train=0.8025, val=1.2319
-Epoch 5: train=0.6838, val=1.2316
+Epoch 1: train=1.6614, val=1.3325
+Epoch 2: train=1.1451, val=1.1943
+Epoch 3: train=0.9660, val=1.1776
+Epoch 4: train=0.8111, val=1.2039
+Epoch 5: train=0.7196, val=1.1914
 Predicting...
 Evaluating...
-  seen: r_composite=0.560 r_valence=0.709 r_arousal=0.411
-  unseen: r_composite=0.628 r_valence=0.647 r_arousal=0.610
-  seen_own_id: r_composite=0.615 r_valence=0.722 r_arousal=0.509
-  seen_unknown: r_composite=0.524 r_valence=0.747 r_arousal=0.301
-  is_words: r_composite=0.618 r_valence=0.682 r_arousal=0.555
-  not_is_words: r_composite=0.523 r_valence=0.653 r_arousal=0.393
+  seen: r_composite=0.575 r_valence=0.693 r_arousal=0.456
+  unseen: r_composite=0.623 r_valence=0.645 r_arousal=0.600
+  seen_own_id: r_composite=0.625 r_valence=0.728 r_arousal=0.523
+  seen_unknown: r_composite=0.538 r_valence=0.692 r_arousal=0.383
+  is_words: r_composite=0.637 r_valence=0.685 r_arousal=0.590
+  not_is_words: r_composite=0.518 r_valence=0.636 r_arousal=0.401
 
 ========================================
 Gruppen (MIN_USER_TEXTS = 10)
@@ -68,31 +68,31 @@ Ergebnis ueber 3 Seeds
 ========================================
 
 seen:
-  r_composite: 0.562 ± 0.009
-  r_valence: 0.698 ± 0.010
-  r_arousal: 0.427 ± 0.017
+  r_composite: 0.544 ± 0.023
+  r_valence: 0.668 ± 0.018
+  r_arousal: 0.420 ± 0.027
 
 unseen:
-  r_composite: 0.622 ± 0.007
-  r_valence: 0.657 ± 0.009
-  r_arousal: 0.587 ± 0.023
+  r_composite: 0.614 ± 0.012
+  r_valence: 0.645 ± 0.019
+  r_arousal: 0.583 ± 0.012
 
 seen_own_id:
-  r_composite: 0.625 ± 0.008
-  r_valence: 0.718 ± 0.003
-  r_arousal: 0.533 ± 0.019
+  r_composite: 0.615 ± 0.016
+  r_valence: 0.712 ± 0.016
+  r_arousal: 0.517 ± 0.016
 
 seen_unknown:
-  r_composite: 0.516 ± 0.023
-  r_valence: 0.722 ± 0.027
-  r_arousal: 0.311 ± 0.024
+  r_composite: 0.490 ± 0.036
+  r_valence: 0.661 ± 0.032
+  r_arousal: 0.320 ± 0.045
 
 is_words:
-  r_composite: 0.633 ± 0.018
-  r_valence: 0.678 ± 0.005
-  r_arousal: 0.589 ± 0.035
+  r_composite: 0.627 ± 0.013
+  r_valence: 0.672 ± 0.011
+  r_arousal: 0.582 ± 0.016
 
 not_is_words:
-  r_composite: 0.521 ± 0.004
-  r_valence: 0.658 ± 0.004
-  r_arousal: 0.384 ± 0.011
+  r_composite: 0.500 ± 0.013
+  r_valence: 0.631 ± 0.010
+  r_arousal: 0.369 ± 0.022
