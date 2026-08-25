@@ -1,0 +1,42 @@
+Stichprobe: 200 Texte mit individueller User-ID
+
+12 Layer x 12 Heads, gemittelt ueber 200 Texte
+Mittel ueber alle Heads: 0.862
+Maximum:                 3.819  (Layer 10, Head 5)
+Heads mit Enrichment > 1.0: 46 von 144
+Heads mit Enrichment > 2.0: 4 von 144
+Heads mit Enrichment > 5.0: 0 von 144
+
+Top 15 Heads:
+ layer  head  enrichment_uid
+    10     5        3.819201
+    10     9        3.222256
+    10     1        2.185826
+     8     4        2.177193
+     6    11        1.964536
+     7     0        1.924748
+     8     6        1.884933
+     8    11        1.876958
+     6     2        1.801105
+     7     9        1.750609
+     6     1        1.721723
+    11     3        1.684077
+     6     8        1.662005
+    10     4        1.644143
+     9    11        1.597425
+
+Mittelwert pro Layer:
+  Layer  0: 0.989   max 1.466
+  Layer  1: 0.414   max 0.804
+  Layer  2: 0.486   max 0.881
+  Layer  3: 0.464   max 0.972
+  Layer  4: 0.830   max 1.490
+  Layer  5: 0.675   max 1.570
+  Layer  6: 1.176   max 1.965
+  Layer  7: 0.959   max 1.925
+  Layer  8: 1.271   max 2.177
+  Layer  9: 0.867   max 1.597
+  Layer 10: 1.669   max 3.819
+  Layer 11: 0.550   max 1.684
+
+Gespeichert in explainability_out/head_diagnostic.csv
