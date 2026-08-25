@@ -1,29 +1,29 @@
        group  target    n      bias      mae     rmse      std
-        seen valence  692  0.042380 0.767189 0.964047 0.963811
-        seen arousal  692  0.092356 0.476296 0.589242 0.582380
-      unseen valence 1045  0.318952 0.770091 0.939983 0.884640
-      unseen arousal 1045 -0.062540 0.524689 0.630516 0.627707
- seen_own_id valence  601  0.059723 0.782290 0.982065 0.981064
- seen_own_id arousal  601  0.099626 0.471149 0.584910 0.576843
-seen_unknown valence   91 -0.072159 0.667458 0.835342 0.836830
-seen_unknown arousal   91  0.044340 0.510292 0.617088 0.618903
-    is_words valence  930  0.295587 0.744884 0.909545 0.860638
-    is_words arousal  930  0.038966 0.483673 0.580936 0.579940
-not_is_words valence  807  0.108719 0.796652 0.993848 0.988496
-not_is_words arousal  807 -0.046695 0.530460 0.650844 0.649569
+        seen valence  692  0.018457 0.708126 0.910053 0.910524
+        seen arousal  692  0.086569 0.471641 0.612954 0.607249
+      unseen valence 1045  0.305908 0.783416 0.963702 0.914299
+      unseen arousal 1045 -0.015709 0.500476 0.625388 0.625490
+ seen_own_id valence  601  0.036228 0.712500 0.920014 0.920067
+ seen_own_id arousal  601  0.077630 0.464199 0.607437 0.602958
+seen_unknown valence   91 -0.098906 0.679237 0.841312 0.840107
+seen_unknown arousal   91  0.145607 0.520790 0.648212 0.635146
+    is_words valence  930  0.231476 0.712263 0.888624 0.858408
+    is_words arousal  930  0.035531 0.466915 0.588428 0.587671
+not_is_words valence  807  0.145197 0.800853 1.001393 0.991425
+not_is_words arousal  807  0.012945 0.514426 0.655444 0.655722
 
 Bias von valence nach Extremitaet des Gold-Labels:
 valence
-low     0.434015
-mid     0.157890
-high    0.019604
+low     0.418146
+mid     0.160836
+high   -0.022151
 dtype: float64
 
 Bias von arousal nach Extremitaet des Gold-Labels:
 arousal
-low     0.527884
-mid    -0.165722
-high   -0.861622
+low     0.511914
+mid    -0.125622
+high   -0.770129
 dtype: float64
 
 Plots und Summary in explainability_out/ gespeichert.

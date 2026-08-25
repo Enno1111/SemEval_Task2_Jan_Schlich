@@ -1,8 +1,8 @@
-seen           n=  692  mass_uid=0.1851  enrich_uid=1.170  mass_cls=0.1314  mass_content=0.6834  enrich_content=0.852  mean_seq_len=45.0
-unseen         n= 1045  mass_uid=0.1954  enrich_uid=1.121  mass_cls=0.1288  mass_content=0.6758  enrich_content=0.887  mean_seq_len=41.1
-seen_own_id    n=  601  mass_uid=0.1860  enrich_uid=1.163  mass_cls=0.1320  mass_content=0.6820  enrich_content=0.853  mean_seq_len=44.6
-seen_unknown   n=   91  mass_uid=0.1796  enrich_uid=1.217  mass_cls=0.1274  mass_content=0.6930  enrich_content=0.843  mean_seq_len=47.7
-is_words       n=  930  mass_uid=0.2720  enrich_uid=1.011  mass_cls=0.1462  mass_content=0.5819  enrich_content=0.876  mean_seq_len=18.6
-not_is_words   n=  807  mass_uid=0.0984  enrich_uid=1.290  mass_cls=0.1111  mass_content=0.7905  enrich_content=0.869  mean_seq_len=70.3
+seen           n=  692  mass_uid=0.1009  enrich_uid=0.847  mass_cls=0.3869  mass_content=0.5122  enrich_content=0.647  mean_seq_len=45.0
+unseen         n= 1045  mass_uid=0.0929  enrich_uid=0.705  mass_cls=0.4321  mass_content=0.4750  enrich_content=0.634  mean_seq_len=41.1
+seen_own_id    n=  601  mass_uid=0.1015  enrich_uid=0.843  mass_cls=0.3832  mass_content=0.5152  enrich_content=0.653  mean_seq_len=44.6
+seen_unknown   n=   91  mass_uid=0.0969  enrich_uid=0.869  mass_cls=0.4109  mass_content=0.4922  enrich_content=0.605  mean_seq_len=47.7
+is_words       n=  930  mass_uid=0.0995  enrich_uid=0.374  mass_cls=0.4378  mass_content=0.4627  enrich_content=0.696  mean_seq_len=18.6
+not_is_words   n=  807  mass_uid=0.0922  enrich_uid=1.207  mass_cls=0.3868  mass_content=0.5210  enrich_content=0.573  mean_seq_len=70.3
 
 Ergebnisse in explainability_out/ gespeichert.

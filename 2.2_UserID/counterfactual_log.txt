@@ -1,8 +1,8 @@
 Ablation: User-ID -> UNKNOWN ...
        group    n  mean_|delta_user|_valence  mean_|delta_user|_arousal
-        seen  692               3.654064e-01               1.883468e-01
-      unseen 1045               3.290704e-17               2.432161e-17
- seen_own_id  601               4.207342e-01               2.168652e-01
-seen_unknown   91               2.085481e-17               1.872900e-17
-    is_words  930               1.662729e-01               7.322566e-02
-not_is_words  807               1.217192e-01               7.712033e-02
+        seen  692               2.417469e-01               1.273661e-01
+      unseen 1045               2.663838e-17               2.163559e-17
+ seen_own_id  601               2.783508e-01               1.466512e-01
+seen_unknown   91               1.738536e-17               2.464832e-17
+    is_words  930               9.051407e-02               4.710411e-02
+not_is_words  807               1.029873e-01               5.493251e-02
