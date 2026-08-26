@@ -1,4 +1,6 @@
        group  target    n      bias      mae     rmse      std
+     overall valence 1737  0.048101 0.744421 0.939908 0.938947
+     overall arousal 1737 -0.017180 0.498308 0.630705 0.630653
         seen valence  692 -0.001634 0.734654 0.939285 0.939963
         seen arousal  692  0.089387 0.485456 0.621406 0.615388
       unseen valence 1045  0.081036 0.750888 0.940320 0.937271
