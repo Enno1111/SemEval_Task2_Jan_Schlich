@@ -1,8 +1,9 @@
-seen           n=  692  mass_uid=0.0314 (enrich 0.290)  mass_date=0.0386 (enrich 0.169)  mass_cls=0.4346  mass_content=0.4955 (enrich 0.835)  mean_seq_len=53.9
-unseen         n= 1045  mass_uid=0.0344 (enrich 0.270)  mass_date=0.0323 (enrich 0.136)  mass_cls=0.4642  mass_content=0.4691 (enrich 0.878)  mean_seq_len=49.6
-seen_own_id    n=  601  mass_uid=0.0317 (enrich 0.291)  mass_date=0.0401 (enrich 0.171)  mass_cls=0.4328  mass_content=0.4954 (enrich 0.841)  mean_seq_len=53.5
-seen_unknown   n=   91  mass_uid=0.0291 (enrich 0.282)  mass_date=0.0287 (enrich 0.161)  mass_cls=0.4459  mass_content=0.4963 (enrich 0.791)  mean_seq_len=56.5
-is_words       n=  930  mass_uid=0.0435 (enrich 0.236)  mass_date=0.0489 (enrich 0.145)  mass_cls=0.4511  mass_content=0.4566 (enrich 1.056)  mean_seq_len=27.4
-not_is_words   n=  807  mass_uid=0.0213 (enrich 0.326)  mass_date=0.0185 (enrich 0.154)  mass_cls=0.4539  mass_content=0.5062 (enrich 0.635)  mean_seq_len=78.9
+overall        n= 1737  mass_uid=0.0225 (enrich 0.190)  mass_date=0.0261 (enrich 0.109)  mass_cls=0.4269  mass_content=0.5245 (enrich 0.937)  mean_seq_len=51.3
+seen           n=  692  mass_uid=0.0244 (enrich 0.221)  mass_date=0.0282 (enrich 0.123)  mass_cls=0.4193  mass_content=0.5281 (enrich 0.892)  mean_seq_len=53.9
+unseen         n= 1045  mass_uid=0.0212 (enrich 0.169)  mass_date=0.0247 (enrich 0.100)  mass_cls=0.4320  mass_content=0.5221 (enrich 0.967)  mean_seq_len=49.6
+seen_own_id    n=  601  mass_uid=0.0251 (enrich 0.226)  mass_date=0.0291 (enrich 0.123)  mass_cls=0.4172  mass_content=0.5285 (enrich 0.899)  mean_seq_len=53.5
+seen_unknown   n=   91  mass_uid=0.0193 (enrich 0.189)  mass_date=0.0223 (enrich 0.119)  mass_cls=0.4330  mass_content=0.5254 (enrich 0.843)  mean_seq_len=56.5
+is_words       n=  930  mass_uid=0.0292 (enrich 0.159)  mass_date=0.0377 (enrich 0.111)  mass_cls=0.4386  mass_content=0.4945 (enrich 1.144)  mean_seq_len=27.4
+not_is_words   n=  807  mass_uid=0.0146 (enrich 0.225)  mass_date=0.0128 (enrich 0.106)  mass_cls=0.4136  mass_content=0.5590 (enrich 0.698)  mean_seq_len=78.9
 
 Ergebnisse in explainability_out/ gespeichert.

@@ -1,9 +1,10 @@
 Ablation (a): User-ID -> UNKNOWN ...
 Ablation (b): Datums-Prefix -> 'year: 0000 month: 00 day: 00' ...
        group    n  mean_|delta_user|_valence  mean_|delta_user|_arousal  mean_|delta_date|_valence  mean_|delta_date|_arousal
-        seen  692               2.622059e-01               1.040883e-01                   0.063172                   0.073691
-      unseen 1045               3.115032e-17               2.621611e-17                   0.077276                   0.098398
- seen_own_id  601               3.019076e-01               1.198488e-01                   0.059914                   0.070124
-seen_unknown   91               1.388434e-17               2.253234e-17                   0.084691                   0.097254
-    is_words  930               1.221535e-01               4.056550e-02                   0.087166                   0.123525
-not_is_words  807               8.406907e-02               4.250707e-02                   0.053785                   0.048255
+     overall 1737               1.206697e-01               4.135375e-02                   0.101030                   0.101590
+        seen  692               3.028949e-01               1.038027e-01                   0.099194                   0.089367
+      unseen 1045               3.049088e-17               2.155601e-17                   0.102245                   0.109684
+ seen_own_id  601               3.487575e-01               1.195199e-01                   0.099605                   0.087317
+seen_unknown   91               2.968093e-17               2.085481e-17                   0.096483                   0.102907
+    is_words  930               1.547724e-01               4.228423e-02                   0.118504                   0.126961
+not_is_words  807               8.136917e-02               4.028146e-02                   0.080892                   0.072352
