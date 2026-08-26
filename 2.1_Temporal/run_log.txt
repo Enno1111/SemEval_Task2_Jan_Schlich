@@ -10,6 +10,7 @@ Epoch 4: train=0.8840, val=1.0726
 Epoch 5: train=0.7701, val=1.1206
 Predicting...
 Evaluating...
+  overall: r_composite=0.602 r_valence=0.656 r_arousal=0.548
   seen: r_composite=0.563 r_valence=0.653 r_arousal=0.473
   unseen: r_composite=0.642 r_valence=0.662 r_arousal=0.622
   seen_own_id: r_composite=0.637 r_valence=0.715 r_arousal=0.558
@@ -28,6 +29,7 @@ Epoch 4: train=0.8856, val=1.1683
 Epoch 5: train=0.7797, val=1.1900
 Predicting...
 Evaluating...
+  overall: r_composite=0.571 r_valence=0.658 r_arousal=0.484
   seen: r_composite=0.529 r_valence=0.664 r_arousal=0.394
   unseen: r_composite=0.633 r_valence=0.659 r_arousal=0.606
   seen_own_id: r_composite=0.624 r_valence=0.704 r_arousal=0.543
@@ -46,6 +48,7 @@ Epoch 4: train=0.8638, val=1.1878
 Epoch 5: train=0.7778, val=1.1979
 Predicting...
 Evaluating...
+  overall: r_composite=0.596 r_valence=0.678 r_arousal=0.515
   seen: r_composite=0.572 r_valence=0.701 r_arousal=0.443
   unseen: r_composite=0.628 r_valence=0.650 r_arousal=0.605
   seen_own_id: r_composite=0.624 r_valence=0.734 r_arousal=0.515
@@ -56,6 +59,7 @@ Evaluating...
 ========================================
 Gruppen (MIN_USER_TEXTS = 10)
 ========================================
+  overall         1737 texte,  91 user
   seen             692 texte,  46 user
   unseen          1045 texte,  45 user
   seen_own_id      601 texte,  27 user
@@ -66,6 +70,11 @@ Gruppen (MIN_USER_TEXTS = 10)
 ========================================
 Ergebnis ueber 3 Seeds
 ========================================
+
+overall:
+  r_composite: 0.590 ± 0.014
+  r_valence: 0.664 ± 0.010
+  r_arousal: 0.516 ± 0.026
 
 seen:
   r_composite: 0.555 ± 0.019
