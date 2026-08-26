@@ -37,6 +37,7 @@ _train_counts = pd.read_csv(train_module.DATA_CSV).groupby("user_id").size()
 OWN_ID_USERS = set(_train_counts[_train_counts >= MIN_USER_TEXTS].index)
 
 GROUPS = [
+    ("overall",      lambda df: df["user_id"].notna()),
     ("seen",         lambda df: df["is_seen_user"] == True),
     ("unseen",       lambda df: df["is_seen_user"] == False),
     ("seen_own_id",  lambda df: (df["is_seen_user"] == True) & df["user_id"].isin(OWN_ID_USERS)),
