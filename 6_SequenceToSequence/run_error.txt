@@ -1,73 +1,0 @@
-Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 21193.73it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-config              | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 21378.36it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-config              | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 19541.78it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-config              | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 21713.20it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-config              | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 18220.34it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-config              | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 21768.98it/s]
-[transformers] [1mDebertaModel LOAD REPORT[0m from: microsoft/deberta-base-mnli
-Key                 | Status     |  | 
---------------------+------------+--+-
-pooler.dense.weight | UNEXPECTED |  | 
-classifier.weight   | UNEXPECTED |  | 
-classifier.bias     | UNEXPECTED |  | 
-pooler.dense.bias   | UNEXPECTED |  | 
-config              | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.

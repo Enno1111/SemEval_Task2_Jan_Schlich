@@ -5,8 +5,8 @@
 #SBATCH --time=11:00:00
 #SBATCH --mem=32G
 #SBATCH --cpus-per-task=4
-#SBATCH --output=ablation_log.txt
-#SBATCH --error=ablation_error.txt
+#SBATCH --output=results/logs/ablation_log.txt
+#SBATCH --error=results/logs/ablation_error.txt
 
 source /home/jaschlic/venv/bin/activate
 python -u ablation.py

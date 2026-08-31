@@ -16,9 +16,9 @@ from model import AffectDataset
 from predict import load_model, predict, load_test_data, CHECKPOINT_PATH, TEST_CSV, BATCH_SIZE
 from run import GROUPS
 
-OUT_DIR = "explainability_out"
+OUT_DIR = "results"
 os.makedirs(OUT_DIR, exist_ok=True)
-ORIGINAL_PREDICTIONS_CSV = "predictions.csv"
+ORIGINAL_PREDICTIONS_CSV = "results/predictions.csv"
 
 # Statt den Prefix ersatzlos zu loeschen, wird ein struktur-identischer
 # Platzhalter eingesetzt: gleiche Form, gleiche Tokenanzahl, aber ohne

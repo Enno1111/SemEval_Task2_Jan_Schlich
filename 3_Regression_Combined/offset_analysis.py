@@ -16,8 +16,8 @@ import os
 import numpy as np
 import pandas as pd
 
-IN_CSV = os.path.join("explainability_out", "counterfactual_ablation_full.csv")
-OUT_CSV = os.path.join("explainability_out", "offset_analysis_summary.csv")
+IN_CSV = os.path.join("results", "counterfactual_ablation_full.csv")
+OUT_CSV = os.path.join("results", "offset_analysis_summary.csv")
 MIN_TEXTS_PER_USER = 3
 
 

@@ -20,9 +20,9 @@ from model import AffectDataset
 from predict import load_model, predict, CHECKPOINT_PATH, TEST_CSV, BATCH_SIZE, UNKNOWN_USER
 from run import GROUPS
 
-OUT_DIR = "explainability_out"
+OUT_DIR = "results"
 os.makedirs(OUT_DIR, exist_ok=True)
-ORIGINAL_PREDICTIONS_CSV = "predictions.csv"
+ORIGINAL_PREDICTIONS_CSV = "results/predictions.csv"
 
 
 def build_loader(texts, effective_ids, user_id_map, tokenizer, max_length):

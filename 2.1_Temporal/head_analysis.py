@@ -22,7 +22,7 @@ import torch
 from predict import load_model, load_test_data, CHECKPOINT_PATH, TEST_CSV
 from run import GROUPS
 
-OUT_DIR = "explainability_out"
+OUT_DIR = "results"
 os.makedirs(OUT_DIR, exist_ok=True)
 TOP_N = 15
 SIGNAL = "date"

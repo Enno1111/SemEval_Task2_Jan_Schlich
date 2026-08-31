@@ -5,8 +5,8 @@
 #SBATCH --time=11:00:00
 #SBATCH --mem=32G
 #SBATCH --cpus-per-task=4
-#SBATCH --output=run_log.txt
-#SBATCH --error=run_error.txt
+#SBATCH --output=results/logs/run_log.txt
+#SBATCH --error=results/logs/run_error.txt
 
 source /home/jaschlic/venv/bin/activate
 python -u run.py

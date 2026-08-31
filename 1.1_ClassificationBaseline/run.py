@@ -10,7 +10,7 @@ import predict as predict_module
 from eval import task1_correlation
 
 SEEDS = [42, 123, 456]
-PREDICTIONS_CSV = "predictions.csv"
+PREDICTIONS_CSV = "results/predictions.csv"
 
 def evaluate():
     df = pd.read_csv(PREDICTIONS_CSV)

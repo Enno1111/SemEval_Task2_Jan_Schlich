@@ -5,8 +5,8 @@
 #SBATCH --time=00:15:00
 #SBATCH --mem=16G
 #SBATCH --cpus-per-task=4
-#SBATCH --output=group_error_log.txt
-#SBATCH --error=group_error_error.txt
+#SBATCH --output=results/logs/group_error_log.txt
+#SBATCH --error=results/logs/group_error_error.txt
 
 source /home/jaschlic/venv/bin/activate
 /home/jaschlic/venv/bin/python -u group_error_analysis.py

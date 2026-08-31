@@ -1,5 +1,4 @@
 """
-fully vibe coded
 ablation.py
 Führt eine sequentielle Ablation-Studie für die UserID-Parameter durch:
 zuerst MIN_USER_TEXTS (aktuell bester Wert: 15), danach USER_ID_LENGTH
@@ -18,7 +17,7 @@ import predict as predict_module
 from eval import task1_correlation
 
 SEEDS = [42, 123, 456]
-PREDICTIONS_CSV = "predictions.csv"
+PREDICTIONS_CSV = "results/predictions.csv"
 
 # Ablation-Schritte, in dieser Reihenfolge
 ABLATION_STEPS = [

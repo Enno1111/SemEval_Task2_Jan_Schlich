@@ -1,5 +1,4 @@
 """
-fully vibe coded
 run.py
 Trainiert/prediktet ueber SEEDS hinweg mit der aktuellen model.py-Config und
 gibt r_composite/r_valence/r_arousal gemittelt mit Standardabweichung aus --
@@ -26,7 +25,7 @@ import predict as predict_module
 from eval import task1_correlation
 
 SEEDS = [42, 123, 456]
-PREDICTIONS_CSV = "predictions.csv"
+PREDICTIONS_CSV = "results/predictions.csv"
 
 # Schwelle fuer "eigene ID": aus model.py, falls dort vorhanden (2.2/3),
 # sonst der dort ueblich verwendete Wert -- so bleiben die Gruppen ueber

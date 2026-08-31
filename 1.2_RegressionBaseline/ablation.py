@@ -1,5 +1,4 @@
 """
-fully vibe coded
 ablation.py
 Führt eine sequentielle Ablation-Studie durch. Der erste Schritt testet
 verschiedene Encoder-Modelle (mit ggf. abweichender Learning Rate pro
@@ -18,7 +17,7 @@ import predict as predict_module
 from eval import task1_correlation
 
 SEEDS = [42, 123, 456]
-PREDICTIONS_CSV = "predictions.csv"
+PREDICTIONS_CSV = "results/predictions.csv"
 
 # Kandidaten für MODEL_NAME mit optionalen Parameter-Overrides
 # (z.B. abweichende Learning Rate für bereits emotion-finegetunte Modelle)

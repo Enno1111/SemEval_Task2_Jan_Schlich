@@ -5,7 +5,7 @@ from model import AffectDataset, DualHead
 
 CHECKPOINT_PATH = "../models/dual_head_model_regression.pt"
 TEST_CSV = "../data/test_labels_subtask1.csv"
-OUTPUT_CSV = "predictions.csv"
+OUTPUT_CSV = "results/predictions.csv"
 BATCH_SIZE = 16
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 

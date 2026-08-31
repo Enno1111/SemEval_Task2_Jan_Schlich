@@ -18,7 +18,7 @@ import matplotlib.pyplot as plt
 
 from run import GROUPS, PREDICTIONS_CSV  # nur Modul-Level-Definitionen, kein run.main()!
 
-OUT_DIR = "explainability_out"
+OUT_DIR = "results"
 os.makedirs(OUT_DIR, exist_ok=True)
 
 
